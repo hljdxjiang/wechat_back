@@ -1,8 +1,6 @@
-import React, { useRef, FC, useState } from 'react'
-import { Button, Input, } from 'antd'
-import { isAuthorized } from '@/assets/js/publicFunc'
+import React, {FC, useState} from 'react'
+import {Input,} from 'antd'
 import userCommentInfoApi from '@/api/user/userCommentInfo'
-import { onItemChange } from "@/utils/tableCommon";
 import MyPage from '@/components/common/myPage';
 
 const UserCommentInfo: FC = () => {
@@ -10,130 +8,108 @@ const UserCommentInfo: FC = () => {
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
     const searchConfigList = [
-                                                {
-                    key:'tenantId',
-                slot: <Input placeholder="租户ID" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'userId',
-                slot: <Input placeholder="" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'commentId',
-                slot: <Input placeholder="消息ID" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'commentPid',
-                slot: <Input placeholder="消息父ID" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'commentDetail',
-                slot: <Input placeholder="评论详情" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'relateType',
-                slot: <Input placeholder="关联类型" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'relateId',
-                slot: <Input placeholder="关联ID" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'trampleAmount',
-                slot: <Input placeholder="点踩量" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'crownAmount',
-                slot: <Input placeholder="点顶量" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                                                ]
+        {
+            key: 'userId',
+            slot: <Input placeholder="" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'commentId',
+            slot: <Input placeholder="消息ID" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'commentPid',
+            slot: <Input placeholder="消息父ID" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'commentDetail',
+            slot: <Input placeholder="评论详情" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'relateType',
+            slot: <Input placeholder="关联类型" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'relateId',
+            slot: <Input placeholder="关联ID" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'trampleAmount',
+            slot: <Input placeholder="点踩量" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'crownAmount',
+            slot: <Input placeholder="点顶量" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+    ]
     const columns = [
-                                                        {
-                                        title: '',
-            key: 'id',
-            dataIndex: 'id',
-            }
-            
-                    
-                                                ,{
-                        title: '',
+
+
+        {
+            title: '',
             key: 'userId',
             dataIndex: 'userId',
-            }
-            
-                                                ,{
-                        title: '消息ID',
+        }
+
+        , {
+            title: '消息ID',
             key: 'commentId',
             dataIndex: 'commentId',
-            }
-            
-                                                ,{
-                        title: '消息父ID',
+        }
+
+        , {
+            title: '消息父ID',
             key: 'commentPid',
             dataIndex: 'commentPid',
-            }
-            
-                                                ,{
-                        title: '评论详情',
+        }
+
+        , {
+            title: '评论详情',
             key: 'commentDetail',
             dataIndex: 'commentDetail',
-            }
-            
-                                                ,{
-                        title: '关联类型',
+        }
+
+        , {
+            title: '关联类型',
             key: 'relateType',
             dataIndex: 'relateType',
-            }
-            
-                                                ,{
-                        title: '关联ID',
+        }
+
+        , {
+            title: '关联ID',
             key: 'relateId',
             dataIndex: 'relateId',
-            }
-            
-                                                ,{
-                        title: '点踩量',
+        }
+
+        , {
+            title: '点踩量',
             key: 'trampleAmount',
             dataIndex: 'trampleAmount',
-            }
-            
-                                                ,{
-                        title: '点顶量',
+        }
+
+        , {
+            title: '点顶量',
             key: 'crownAmount',
             dataIndex: 'crownAmount',
-            }
-            
-                                                ,{
-                        title: '创建时间',
-            key: 'createTime',
-            dataIndex: 'createTime',
-            }
-            
-                                                ,{
-                        title: '最后修改时间',
-            key: 'lastModifiedTime',
-            dataIndex: 'lastModifiedTime',
-            }
-            
-            ]
+        }
+
+
+    ]
     return (
         <>
             <MyPage

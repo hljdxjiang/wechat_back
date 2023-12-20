@@ -1,8 +1,6 @@
-import React, { useRef, FC, useState } from 'react'
-import { Button, Input, } from 'antd'
-import { isAuthorized } from '@/assets/js/publicFunc'
+import React, {FC, useState} from 'react'
+import {Input,} from 'antd'
 import backRuleDetailApi from '@/api/back/backRuleDetail'
-import { onItemChange } from "@/utils/tableCommon";
 import MyPage from '@/components/common/myPage';
 
 const BackRuleDetail: FC = () => {
@@ -10,58 +8,47 @@ const BackRuleDetail: FC = () => {
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
     const searchConfigList = [
-                                                {
-                    key:'tenantId',
-                slot: <Input placeholder="租户ID" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'roleId',
-                slot: <Input placeholder="" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'keyValue',
-                slot: <Input placeholder="" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                                ,{
-                    key:'keyType',
-                slot: <Input placeholder="" allowClear />,
-                rules: [],
-                initialValue: ''
-            }
-                        ]
+        {
+            key: 'roleId',
+            slot: <Input placeholder="" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'keyValue',
+            slot: <Input placeholder="" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'keyType',
+            slot: <Input placeholder="" allowClear/>,
+            rules: [],
+            initialValue: ''
+        }
+    ]
     const columns = [
-                                                        {
-                                        title: '',
-            key: 'id',
-            dataIndex: 'id',
-            }
-            
-                    
-                                                ,{
-                        title: '',
+
+
+        {
+            title: '',
             key: 'roleId',
             dataIndex: 'roleId',
-            }
-            
-                                                ,{
-                        title: '',
+        }
+
+        , {
+            title: '',
             key: 'keyValue',
             dataIndex: 'keyValue',
-            }
-            
-                                                ,{
-                        title: '',
+        }
+
+        , {
+            title: '',
             key: 'keyType',
             dataIndex: 'keyType',
-            }
-            
-            ]
+        }
+
+    ]
     return (
         <>
             <MyPage

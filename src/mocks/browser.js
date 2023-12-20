@@ -1,5 +1,5 @@
 // src/mocks/browser.js
-import { setupWorker } from 'msw'
+import {setupWorker} from 'msw'
 import handlers from './handlers'
 import app from './app.mock'
 import auth from './authentication_mock'

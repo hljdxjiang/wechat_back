@@ -5,5 +5,5 @@
 
 /* 热更新BUG https://github.com/facebook/create-react-app/issues/11773#issuecomment-1047510705*/
 iframe {
-  pointer-events: none;
+    pointer-events: none;
 }

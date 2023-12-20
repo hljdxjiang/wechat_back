@@ -1,16 +1,16 @@
-import { useEffect, useReducer } from 'react'
+import {useEffect, useReducer} from 'react'
 
 function dataReducer(state, action) {
-  switch (action.type) {
-    case 'loading':
-      return { ...state, loading: true }
-    case 'response':
-      return { ...state, loading: false, data: action.data }
-    case 'error':
-      return { ...state, loading: false, error: action.error }
-    default:
-      return state
-  }
+    switch (action.type) {
+        case 'loading':
+            return {...state, loading: true}
+        case 'response':
+            return {...state, loading: false, data: action.data}
+        case 'error':
+            return {...state, loading: false, error: action.error}
+        default:
+            return state
+    }
 }
 
 /**
@@ -19,26 +19,26 @@ function dataReducer(state, action) {
  * (i.e. axios, react-query, Apollo).
  */
 export function useFetch(url, options = {}) {
-  const [{ loading, error, data }, dispatch] = useReducer(dataReducer, {
-    data: null,
-    loading: false,
-    error: null
-  })
+    const [{loading, error, data}, dispatch] = useReducer(dataReducer, {
+        data: null,
+        loading: false,
+        error: null
+    })
 
-  // Serialize the "fetch" options so it may become
-  // a dependency to the "useEffect" below.
-  const serializedOptions = JSON.stringify(options)
+    // Serialize the "fetch" options so it may become
+    // a dependency to the "useEffect" below.
+    const serializedOptions = JSON.stringify(options)
 
-  useEffect(() => {
-    dispatch({ type: 'loading' })
+    useEffect(() => {
+        dispatch({type: 'loading'})
 
-    fetch(url, JSON.parse(serializedOptions))
-      .then((res) => {
-        return res.json()
-      })
-      .then((data) => dispatch({ type: 'response', data }))
-      .catch((error) => dispatch({ type: 'error', error }))
-  }, [url, serializedOptions])
+        fetch(url, JSON.parse(serializedOptions))
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => dispatch({type: 'response', data}))
+            .catch((error) => dispatch({type: 'error', error}))
+    }, [url, serializedOptions])
 
-  return { loading, error, data }
+    return {loading, error, data}
 }

@@ -19,6 +19,6 @@ export default {
     },
     // 模糊查询
     query(params?: object): Promise<CommonObjectType<string>> {
-      return request.post('tUserInfo/fuzzyQuery', params)
+        return request.post('tUserInfo/fuzzyQuery', params)
     }
 }
