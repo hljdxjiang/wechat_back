@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallLotteryConditionApi from '@/api/mall/mallLotteryCondition'
 import MyPage from '@/components/common/myPage';
 
@@ -10,37 +10,37 @@ const MallLotteryCondition: FC = () => {
     const searchConfigList = [
         {
             key: 'lotteryId',
-            slot: <Input placeholder="抽奖ID" allowClear/>,
+            slot: <Input placeholder="抽奖ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'conditionId',
-            slot: <Input placeholder="条件ID" allowClear/>,
+            slot: <Input placeholder="条件ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'conditionValue',
-            slot: <Input placeholder="条件值" allowClear/>,
+            slot: <Input placeholder="条件值" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'conditionType',
-            slot: <Input placeholder="条件类别" allowClear/>,
+            slot: <Input placeholder="条件类别" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'conditionWay',
-            slot: <Input placeholder="条件方式：大于，小于，等于，包含" allowClear/>,
+            slot: <Input placeholder="条件方式：大于，小于，等于，包含" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -95,7 +95,7 @@ const MallLotteryCondition: FC = () => {
                 addApiFun={mallLotteryConditionApi.add}
                 editApiFun={mallLotteryConditionApi.edit}
                 delApiFun={mallLotteryConditionApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

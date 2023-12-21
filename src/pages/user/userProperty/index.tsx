@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import userPropertyApi from '@/api/user/userProperty'
 import MyPage from '@/components/common/myPage';
 
@@ -10,49 +10,49 @@ const UserProperty: FC = () => {
     const searchConfigList = [
         {
             key: 'userid',
-            slot: <Input placeholder="登录账号" allowClear/>,
+            slot: <Input placeholder="登录账号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'integral',
-            slot: <Input placeholder="积分" allowClear/>,
+            slot: <Input placeholder="积分" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'species',
-            slot: <Input placeholder="金币" allowClear/>,
+            slot: <Input placeholder="金币" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'silverIcon',
-            slot: <Input placeholder="银币" allowClear/>,
+            slot: <Input placeholder="银币" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'balance',
-            slot: <Input placeholder="余额" allowClear/>,
+            slot: <Input placeholder="余额" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'giftAmount',
-            slot: <Input placeholder="赠送金额余额" allowClear/>,
+            slot: <Input placeholder="赠送金额余额" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'createtime',
-            slot: <Input placeholder="创建时间" allowClear/>,
+            slot: <Input placeholder="创建时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastmodifiedtime',
-            slot: <Input placeholder="最后修改时间" allowClear/>,
+            slot: <Input placeholder="最后修改时间" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -118,7 +118,7 @@ const UserProperty: FC = () => {
                 addApiFun={userPropertyApi.add}
                 editApiFun={userPropertyApi.edit}
                 delApiFun={userPropertyApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

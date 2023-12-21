@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import crmProdDetailApi from '@/api/crm/crmProdDetail'
 import MyPage from '@/components/common/myPage';
 
@@ -10,91 +10,91 @@ const CrmProdDetail: FC = () => {
     const searchConfigList = [
         {
             key: 'prodId',
-            slot: <Input placeholder="产品编号" allowClear/>,
+            slot: <Input placeholder="产品编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodName',
-            slot: <Input placeholder="产品名称" allowClear/>,
+            slot: <Input placeholder="产品名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodGroupId',
-            slot: <Input placeholder="分组ID" allowClear/>,
+            slot: <Input placeholder="分组ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodTitle',
-            slot: <Input placeholder="展示标题" allowClear/>,
+            slot: <Input placeholder="展示标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodDesc',
-            slot: <Input placeholder="产品简介" allowClear/>,
+            slot: <Input placeholder="产品简介" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodDetail',
-            slot: <Input placeholder="产品详细介绍" allowClear/>,
+            slot: <Input placeholder="产品详细介绍" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodLogo',
-            slot: <Input placeholder="产品封面" allowClear/>,
+            slot: <Input placeholder="产品封面" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodBid',
-            slot: <Input placeholder="产品进价" allowClear/>,
+            slot: <Input placeholder="产品进价" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodPrice',
-            slot: <Input placeholder="产品建议售价" allowClear/>,
+            slot: <Input placeholder="产品建议售价" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodAmount',
-            slot: <Input placeholder="产品建议库存" allowClear/>,
+            slot: <Input placeholder="产品建议库存" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodLimit',
-            slot: <Input placeholder="产品最低库存" allowClear/>,
+            slot: <Input placeholder="产品最低库存" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodModule',
-            slot: <Input placeholder="产品型号" allowClear/>,
+            slot: <Input placeholder="产品型号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodSpecs',
-            slot: <Input placeholder="产品规格" allowClear/>,
+            slot: <Input placeholder="产品规格" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="用户备注" allowClear/>,
+            slot: <Input placeholder="用户备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态" allowClear/>,
+            slot: <Input placeholder="状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -203,7 +203,7 @@ const CrmProdDetail: FC = () => {
                 addApiFun={crmProdDetailApi.add}
                 editApiFun={crmProdDetailApi.edit}
                 delApiFun={crmProdDetailApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

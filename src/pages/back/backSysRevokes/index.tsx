@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import backSysRevokesApi from '@/api/back/backSysRevokes'
 import MyPage from '@/components/common/myPage';
 
@@ -10,31 +10,31 @@ const BackSysRevokes: FC = () => {
     const searchConfigList = [
         {
             key: 'revokeId',
-            slot: <Input placeholder="权限ID" allowClear/>,
+            slot: <Input placeholder="权限ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'revokeTitle',
-            slot: <Input placeholder="菜单权限标题" allowClear/>,
+            slot: <Input placeholder="菜单权限标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'revokeType',
-            slot: <Input placeholder="权限类型" allowClear/>,
+            slot: <Input placeholder="权限类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'revokeParentid',
-            slot: <Input placeholder="权限父ID" allowClear/>,
+            slot: <Input placeholder="权限父ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="备注信息" allowClear/>,
+            slot: <Input placeholder="备注信息" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -82,7 +82,7 @@ const BackSysRevokes: FC = () => {
                 addApiFun={backSysRevokesApi.add}
                 editApiFun={backSysRevokesApi.edit}
                 delApiFun={backSysRevokesApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

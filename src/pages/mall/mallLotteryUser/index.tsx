@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallLotteryUserApi from '@/api/mall/mallLotteryUser'
 import MyPage from '@/components/common/myPage';
 
@@ -10,31 +10,31 @@ const MallLotteryUser: FC = () => {
     const searchConfigList = [
         {
             key: 'lotteryId',
-            slot: <Input placeholder="抽奖ID" allowClear/>,
+            slot: <Input placeholder="抽奖ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="参与状态0参与8未中奖9中奖" allowClear/>,
+            slot: <Input placeholder="参与状态0参与8未中奖9中奖" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userid',
-            slot: <Input placeholder="参与用户ID" allowClear/>,
+            slot: <Input placeholder="参与用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'complateTime',
-            slot: <Input placeholder="完成时间" allowClear/>,
+            slot: <Input placeholder="完成时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rewardId',
-            slot: <Input placeholder="奖品ID" allowClear/>,
+            slot: <Input placeholder="奖品ID" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -83,7 +83,7 @@ const MallLotteryUser: FC = () => {
                 addApiFun={mallLotteryUserApi.add}
                 editApiFun={mallLotteryUserApi.edit}
                 delApiFun={mallLotteryUserApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

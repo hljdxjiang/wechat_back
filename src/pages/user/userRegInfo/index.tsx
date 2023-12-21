@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import userRegInfoApi from '@/api/user/userRegInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,181 +10,181 @@ const UserRegInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'mobileNo',
-            slot: <Input placeholder="客户手机号" allowClear/>,
+            slot: <Input placeholder="客户手机号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'idType',
-            slot: <Input placeholder="证件类型" allowClear/>,
+            slot: <Input placeholder="证件类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'idNo',
-            slot: <Input placeholder="证件号" allowClear/>,
+            slot: <Input placeholder="证件号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'validDate',
-            slot: <Input placeholder="证件生效日期" allowClear/>,
+            slot: <Input placeholder="证件生效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expiredDate',
-            slot: <Input placeholder="证件失效日期" allowClear/>,
+            slot: <Input placeholder="证件失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'issueAuthority',
-            slot: <Input placeholder="发证机构" allowClear/>,
+            slot: <Input placeholder="发证机构" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userName',
-            slot: <Input placeholder="姓名" allowClear/>,
+            slot: <Input placeholder="姓名" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'gender',
-            slot: <Input placeholder="性别" allowClear/>,
+            slot: <Input placeholder="性别" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'birthDate',
-            slot: <Input placeholder="生日" allowClear/>,
+            slot: <Input placeholder="生日" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'email',
-            slot: <Input placeholder="邮箱" allowClear/>,
+            slot: <Input placeholder="邮箱" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tranPwd',
-            slot: <Input placeholder="密码" allowClear/>,
+            slot: <Input placeholder="密码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'saverId',
-            slot: <Input placeholder="客户经理" allowClear/>,
+            slot: <Input placeholder="客户经理" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'sourcePlatform',
-            slot: <Input placeholder="渠道编号" allowClear/>,
+            slot: <Input placeholder="渠道编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'referee',
-            slot: <Input placeholder="推荐人" allowClear/>,
+            slot: <Input placeholder="推荐人" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'address',
-            slot: <Input placeholder="地址" allowClear/>,
+            slot: <Input placeholder="地址" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'occupation',
-            slot: <Input placeholder="职业" allowClear/>,
+            slot: <Input placeholder="职业" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'regSource',
-            slot: <Input placeholder="注册来源" allowClear/>,
+            slot: <Input placeholder="注册来源" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'idPathFace',
-            slot: <Input placeholder="证件照片地址正面id" allowClear/>,
+            slot: <Input placeholder="证件照片地址正面id" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'idPathEmblem',
-            slot: <Input placeholder="证件照片地址背面id" allowClear/>,
+            slot: <Input placeholder="证件照片地址背面id" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'idPathHand',
-            slot: <Input placeholder="证件照片地址手持id" allowClear/>,
+            slot: <Input placeholder="证件照片地址手持id" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'distCode',
-            slot: <Input placeholder="开户地区编码" allowClear/>,
+            slot: <Input placeholder="开户地区编码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userIp',
-            slot: <Input placeholder="用户IP" allowClear/>,
+            slot: <Input placeholder="用户IP" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'setTranPwdTime',
-            slot: <Input placeholder="交易密码设置时间" allowClear/>,
+            slot: <Input placeholder="交易密码设置时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'deviceId',
-            slot: <Input placeholder="最后登录设备ID" allowClear/>,
+            slot: <Input placeholder="最后登录设备ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'loginPwd',
-            slot: <Input placeholder="登录密码" allowClear/>,
+            slot: <Input placeholder="登录密码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'gesturePwd',
-            slot: <Input placeholder="手势密码" allowClear/>,
+            slot: <Input placeholder="手势密码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'faceIdPwd',
-            slot: <Input placeholder="人脸/指纹密码" allowClear/>,
+            slot: <Input placeholder="人脸/指纹密码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userLabel',
-            slot: <Input placeholder="用户标签ID" allowClear/>,
+            slot: <Input placeholder="用户标签ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -383,7 +383,7 @@ const UserRegInfo: FC = () => {
                 addApiFun={userRegInfoApi.add}
                 editApiFun={userRegInfoApi.edit}
                 delApiFun={userRegInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

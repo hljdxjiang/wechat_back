@@ -1,5 +1,5 @@
-import React, {FC, useState} from "react";
-import {Input} from "antd";
+import React, { FC, useState } from "react";
+import { Input } from "antd";
 import bbsCommentInfoApi from "@/api/bbs/bbsCommentInfo";
 import MyPage from "@/components/common/myPage";
 
@@ -10,45 +10,45 @@ const BbsCommentInfo: FC = () => {
     const searchConfigList = [
         {
             key: "commentPid",
-            slot: <Input placeholder="消息父ID" allowClear/>,
+            slot: <Input placeholder="消息父ID" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "commentId",
-            slot: <Input placeholder="消息ID" allowClear/>,
+            slot: <Input placeholder="消息ID" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "commentType",
-            slot: <Input placeholder="消息类型" allowClear/>,
+            slot: <Input placeholder="消息类型" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "commentDesc",
-            slot: <Input placeholder="文章名称" allowClear/>,
+            slot: <Input placeholder="文章名称" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "userId",
-            slot: <Input placeholder="作者ID" allowClear/>,
+            slot: <Input placeholder="作者ID" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "status",
             slot: (
-                <Input placeholder="状态0草稿1审核中8审核拒绝9审核通过" allowClear/>
+                <Input placeholder="状态0草稿1审核中8审核拒绝9审核通过" allowClear />
             ),
             rules: [],
             initialValue: "",
         },
         {
             key: "articleContent",
-            slot: <Input placeholder="文章详情" allowClear/>,
+            slot: <Input placeholder="文章详情" allowClear />,
             rules: [],
             initialValue: "",
         },
@@ -105,7 +105,7 @@ const BbsCommentInfo: FC = () => {
                 addApiFun={bbsCommentInfoApi.add}
                 editApiFun={bbsCommentInfoApi.edit}
                 delApiFun={bbsCommentInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

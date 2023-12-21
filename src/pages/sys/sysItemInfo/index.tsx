@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysItemInfoApi from '@/api/sys/sysItemInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,67 +10,67 @@ const SysItemInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'itemId',
-            slot: <Input placeholder="标签ID" allowClear/>,
+            slot: <Input placeholder="标签ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'itemSort',
-            slot: <Input placeholder="排序" allowClear/>,
+            slot: <Input placeholder="排序" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'itemTitle',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'itemValue',
-            slot: <Input placeholder="要素值" allowClear/>,
+            slot: <Input placeholder="要素值" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'itemDesc',
-            slot: <Input placeholder="要素描述" allowClear/>,
+            slot: <Input placeholder="要素描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'itemType',
-            slot: <Input placeholder="要素类型" allowClear/>,
+            slot: <Input placeholder="要素类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'titleShowType',
-            slot: <Input placeholder="标题展示样式" allowClear/>,
+            slot: <Input placeholder="标题展示样式" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'titleUrl',
-            slot: <Input placeholder="标题跳转链接" allowClear/>,
+            slot: <Input placeholder="标题跳转链接" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'valueUrl',
-            slot: <Input placeholder="值跳转练级" allowClear/>,
+            slot: <Input placeholder="值跳转练级" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'valueShowType',
-            slot: <Input placeholder="值展示样式" allowClear/>,
+            slot: <Input placeholder="值展示样式" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -155,7 +155,7 @@ const SysItemInfo: FC = () => {
                 addApiFun={sysItemInfoApi.add}
                 editApiFun={sysItemInfoApi.edit}
                 delApiFun={sysItemInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import crmSaleDetailApi from '@/api/crm/crmSaleDetail'
 import MyPage from '@/components/common/myPage';
 
@@ -10,43 +10,43 @@ const CrmSaleDetail: FC = () => {
     const searchConfigList = [
         {
             key: 'batchId',
-            slot: <Input placeholder="批次ID" allowClear/>,
+            slot: <Input placeholder="批次ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'amount',
-            slot: <Input placeholder="销售数量" allowClear/>,
+            slot: <Input placeholder="销售数量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'realPrice',
-            slot: <Input placeholder="真实销售金额" allowClear/>,
+            slot: <Input placeholder="真实销售金额" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodId',
-            slot: <Input placeholder="产品ID" allowClear/>,
+            slot: <Input placeholder="产品ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodPrice',
-            slot: <Input placeholder="产品建议售价" allowClear/>,
+            slot: <Input placeholder="产品建议售价" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="用户备注" allowClear/>,
+            slot: <Input placeholder="用户备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -107,7 +107,7 @@ const CrmSaleDetail: FC = () => {
                 addApiFun={crmSaleDetailApi.add}
                 editApiFun={crmSaleDetailApi.edit}
                 delApiFun={crmSaleDetailApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

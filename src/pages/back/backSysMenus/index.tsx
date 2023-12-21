@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import backSysMenusApi from '@/api/back/backSysMenus'
 import MyPage from '@/components/common/myPage';
 
@@ -10,61 +10,61 @@ const BackSysMenus: FC = () => {
     const searchConfigList = [
         {
             key: 'menuId',
-            slot: <Input placeholder="菜单ID" allowClear/>,
+            slot: <Input placeholder="菜单ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'path',
-            slot: <Input placeholder="跳转路径" allowClear/>,
+            slot: <Input placeholder="跳转路径" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'name',
-            slot: <Input placeholder="菜单权限标题" allowClear/>,
+            slot: <Input placeholder="菜单权限标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'icon',
-            slot: <Input placeholder="菜单图标" allowClear/>,
+            slot: <Input placeholder="菜单图标" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'hideinmenu',
-            slot: <Input placeholder="是否展示0展示1不展示" allowClear/>,
+            slot: <Input placeholder="是否展示0展示1不展示" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'exact',
-            slot: <Input placeholder="匹配规则，0精确匹配" allowClear/>,
+            slot: <Input placeholder="匹配规则，0精确匹配" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'component',
-            slot: <Input placeholder="链接组件" allowClear/>,
+            slot: <Input placeholder="链接组件" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'type',
-            slot: <Input placeholder="菜单类型" allowClear/>,
+            slot: <Input placeholder="菜单类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'parentId',
-            slot: <Input placeholder="权限父ID" allowClear/>,
+            slot: <Input placeholder="权限父ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="备注信息" allowClear/>,
+            slot: <Input placeholder="备注信息" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -142,7 +142,7 @@ const BackSysMenus: FC = () => {
                 addApiFun={backSysMenusApi.add}
                 editApiFun={backSysMenusApi.edit}
                 delApiFun={backSysMenusApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

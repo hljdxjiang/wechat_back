@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import wechatUserApi from '@/api/wechat/wechatUser'
 import MyPage from '@/components/common/myPage';
 
@@ -10,79 +10,79 @@ const WechatUser: FC = () => {
     const searchConfigList = [
         {
             key: 'unionid',
-            slot: <Input placeholder="开放平台下统一ID" allowClear/>,
+            slot: <Input placeholder="开放平台下统一ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'wxopenid',
-            slot: <Input placeholder="微信公众号openId" allowClear/>,
+            slot: <Input placeholder="微信公众号openId" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'nickname',
-            slot: <Input placeholder="微信昵称" allowClear/>,
+            slot: <Input placeholder="微信昵称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'sex',
-            slot: <Input placeholder="性别1为男,2为女,0为未知" allowClear/>,
+            slot: <Input placeholder="性别1为男,2为女,0为未知" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'province',
-            slot: <Input placeholder="省" allowClear/>,
+            slot: <Input placeholder="省" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'city',
-            slot: <Input placeholder="城市" allowClear/>,
+            slot: <Input placeholder="城市" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'country',
-            slot: <Input placeholder="国家" allowClear/>,
+            slot: <Input placeholder="国家" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'headimgurl',
-            slot: <Input placeholder="头像地址" allowClear/>,
+            slot: <Input placeholder="头像地址" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'privilege',
-            slot: <Input placeholder="用户特权信息" allowClear/>,
+            slot: <Input placeholder="用户特权信息" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'mobileNo',
-            slot: <Input placeholder="手机号码" allowClear/>,
+            slot: <Input placeholder="手机号码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userId',
-            slot: <Input placeholder="客户ID" allowClear/>,
+            slot: <Input placeholder="客户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="用户备注" allowClear/>,
+            slot: <Input placeholder="用户备注" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -179,7 +179,7 @@ const WechatUser: FC = () => {
                 addApiFun={wechatUserApi.add}
                 editApiFun={wechatUserApi.edit}
                 delApiFun={wechatUserApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

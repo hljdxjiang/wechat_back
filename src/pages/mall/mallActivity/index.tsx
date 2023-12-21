@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallActivityApi from '@/api/mall/mallActivity'
 import MyPage from '@/components/common/myPage';
 
@@ -10,73 +10,73 @@ const MallActivity: FC = () => {
     const searchConfigList = [
         {
             key: 'activityId',
-            slot: <Input placeholder="活动ID" allowClear/>,
+            slot: <Input placeholder="活动ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'activityTitle',
-            slot: <Input placeholder="活动标题" allowClear/>,
+            slot: <Input placeholder="活动标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'activityDetail',
-            slot: <Input placeholder="活动详情" allowClear/>,
+            slot: <Input placeholder="活动详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'activityType',
-            slot: <Input placeholder="活动类别" allowClear/>,
+            slot: <Input placeholder="活动类别" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'reward',
-            slot: <Input placeholder="奖励类型" allowClear/>,
+            slot: <Input placeholder="奖励类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rewardAmount',
-            slot: <Input placeholder="奖励金额" allowClear/>,
+            slot: <Input placeholder="奖励金额" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vaildDate',
-            slot: <Input placeholder="活动生效日" allowClear/>,
+            slot: <Input placeholder="活动生效日" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expireDate',
-            slot: <Input placeholder="活动失效日期" allowClear/>,
+            slot: <Input placeholder="活动失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rewardValidDate',
-            slot: <Input placeholder="奖励使用开始日期" allowClear/>,
+            slot: <Input placeholder="奖励使用开始日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rewardExpireDate',
-            slot: <Input placeholder="奖励失效日期" allowClear/>,
+            slot: <Input placeholder="奖励失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'numbero',
-            slot: <Input placeholder="最多参与人数" allowClear/>,
+            slot: <Input placeholder="最多参与人数" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -167,7 +167,7 @@ const MallActivity: FC = () => {
                 addApiFun={mallActivityApi.add}
                 editApiFun={mallActivityApi.edit}
                 delApiFun={mallActivityApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

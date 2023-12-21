@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import crmReferrerInfoApi from '@/api/crm/crmReferrerInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,79 +10,79 @@ const CrmReferrerInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'tenantid',
-            slot: <Input placeholder="租户ID" allowClear/>,
+            slot: <Input placeholder="租户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'referrerId',
-            slot: <Input placeholder="推荐人编号" allowClear/>,
+            slot: <Input placeholder="推荐人编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'referrerCertNo',
-            slot: <Input placeholder="推荐人证件号" allowClear/>,
+            slot: <Input placeholder="推荐人证件号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'referrerCertType',
-            slot: <Input placeholder="推荐人证件类型" allowClear/>,
+            slot: <Input placeholder="推荐人证件类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'referrerName',
-            slot: <Input placeholder="推荐人姓名" allowClear/>,
+            slot: <Input placeholder="推荐人姓名" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'referrerEmail',
-            slot: <Input placeholder="推荐人邮箱" allowClear/>,
+            slot: <Input placeholder="推荐人邮箱" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'mobileNo',
-            slot: <Input placeholder="推荐人手机号" allowClear/>,
+            slot: <Input placeholder="推荐人手机号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'referrerCardNo',
-            slot: <Input placeholder="推荐人卡号" allowClear/>,
+            slot: <Input placeholder="推荐人卡号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态（0正常1停用）" allowClear/>,
+            slot: <Input placeholder="状态（0正常1停用）" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'channelNo',
-            slot: <Input placeholder="推荐人渠道编号" allowClear/>,
+            slot: <Input placeholder="推荐人渠道编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'createtime',
-            slot: <Input placeholder="创建时间" allowClear/>,
+            slot: <Input placeholder="创建时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastmodifiedtime',
-            slot: <Input placeholder="最后修改时间" allowClear/>,
+            slot: <Input placeholder="最后修改时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="备注" allowClear/>,
+            slot: <Input placeholder="备注" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -177,7 +177,7 @@ const CrmReferrerInfo: FC = () => {
                 addApiFun={crmReferrerInfoApi.add}
                 editApiFun={crmReferrerInfoApi.edit}
                 delApiFun={crmReferrerInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

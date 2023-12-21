@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import crmProdTypeApi from '@/api/crm/crmProdType'
 import MyPage from '@/components/common/myPage';
 
@@ -10,25 +10,25 @@ const CrmProdType: FC = () => {
     const searchConfigList = [
         {
             key: 'prodTypeId',
-            slot: <Input placeholder="分类ID" allowClear/>,
+            slot: <Input placeholder="分类ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodTypeName',
-            slot: <Input placeholder="分类标识" allowClear/>,
+            slot: <Input placeholder="分类标识" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'parentId',
-            slot: <Input placeholder="父ID" allowClear/>,
+            slot: <Input placeholder="父ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -71,7 +71,7 @@ const CrmProdType: FC = () => {
                 addApiFun={crmProdTypeApi.add}
                 editApiFun={crmProdTypeApi.edit}
                 delApiFun={crmProdTypeApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

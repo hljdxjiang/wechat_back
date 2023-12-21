@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import backSysRoleDetailApi from '@/api/back/backSysRoleDetail'
 import MyPage from '@/components/common/myPage';
 
@@ -10,31 +10,31 @@ const BackSysRoleDetail: FC = () => {
     const searchConfigList = [
         {
             key: 'roleid',
-            slot: <Input placeholder="角色ID" allowClear/>,
+            slot: <Input placeholder="角色ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'path',
-            slot: <Input placeholder="权限路径" allowClear/>,
+            slot: <Input placeholder="权限路径" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'title',
-            slot: <Input placeholder="权限描述" allowClear/>,
+            slot: <Input placeholder="权限描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'type',
-            slot: <Input placeholder="权限类型" allowClear/>,
+            slot: <Input placeholder="权限类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'parentPath',
-            slot: <Input placeholder="父ID" allowClear/>,
+            slot: <Input placeholder="父ID" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -82,7 +82,7 @@ const BackSysRoleDetail: FC = () => {
                 addApiFun={backSysRoleDetailApi.add}
                 editApiFun={backSysRoleDetailApi.edit}
                 delApiFun={backSysRoleDetailApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysFlowInfoApi from '@/api/sys/sysFlowInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,85 +10,85 @@ const SysFlowInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'flowId',
-            slot: <Input placeholder="页面ID" allowClear/>,
+            slot: <Input placeholder="页面ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowTitle',
-            slot: <Input placeholder="页面标题" allowClear/>,
+            slot: <Input placeholder="页面标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowType',
-            slot: <Input placeholder="页面类型" allowClear/>,
+            slot: <Input placeholder="页面类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowShowType',
-            slot: <Input placeholder="楼层展示样式" allowClear/>,
+            slot: <Input placeholder="楼层展示样式" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'controlFlag',
-            slot: <Input placeholder="控制标识：ALL,LOCAL,OFF" allowClear/>,
+            slot: <Input placeholder="控制标识：ALL,LOCAL,OFF" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowRemark',
-            slot: <Input placeholder="页面备注" allowClear/>,
+            slot: <Input placeholder="页面备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userid',
-            slot: <Input placeholder="创建用户ID" allowClear/>,
+            slot: <Input placeholder="创建用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'modifyUserid',
-            slot: <Input placeholder="最后修改用户ID" allowClear/>,
+            slot: <Input placeholder="最后修改用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowData',
-            slot: <Input placeholder="楼层数据" allowClear/>,
+            slot: <Input placeholder="楼层数据" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowDataCount',
-            slot: <Input placeholder="读取数据数量" allowClear/>,
+            slot: <Input placeholder="读取数据数量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowImg',
-            slot: <Input placeholder="楼层图片" allowClear/>,
+            slot: <Input placeholder="楼层图片" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowUrl',
-            slot: <Input placeholder="楼层跳转链接" allowClear/>,
+            slot: <Input placeholder="楼层跳转链接" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'channel',
-            slot: <Input placeholder="展示渠道" allowClear/>,
+            slot: <Input placeholder="展示渠道" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -191,7 +191,7 @@ const SysFlowInfo: FC = () => {
                 addApiFun={sysFlowInfoApi.add}
                 editApiFun={sysFlowInfoApi.edit}
                 delApiFun={sysFlowInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

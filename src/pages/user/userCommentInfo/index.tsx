@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import userCommentInfoApi from '@/api/user/userCommentInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,49 +10,49 @@ const UserCommentInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'commentId',
-            slot: <Input placeholder="消息ID" allowClear/>,
+            slot: <Input placeholder="消息ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'commentPid',
-            slot: <Input placeholder="消息父ID" allowClear/>,
+            slot: <Input placeholder="消息父ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'commentDetail',
-            slot: <Input placeholder="评论详情" allowClear/>,
+            slot: <Input placeholder="评论详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'relateType',
-            slot: <Input placeholder="关联类型" allowClear/>,
+            slot: <Input placeholder="关联类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'relateId',
-            slot: <Input placeholder="关联ID" allowClear/>,
+            slot: <Input placeholder="关联ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'trampleAmount',
-            slot: <Input placeholder="点踩量" allowClear/>,
+            slot: <Input placeholder="点踩量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'crownAmount',
-            slot: <Input placeholder="点顶量" allowClear/>,
+            slot: <Input placeholder="点顶量" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -119,7 +119,7 @@ const UserCommentInfo: FC = () => {
                 addApiFun={userCommentInfoApi.add}
                 editApiFun={userCommentInfoApi.edit}
                 delApiFun={userCommentInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

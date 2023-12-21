@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallLotteryWinnerApi from '@/api/mall/mallLotteryWinner'
 import MyPage from '@/components/common/myPage';
 
@@ -10,43 +10,43 @@ const MallLotteryWinner: FC = () => {
     const searchConfigList = [
         {
             key: 'lotteryId',
-            slot: <Input placeholder="抽奖ID" allowClear/>,
+            slot: <Input placeholder="抽奖ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userid',
-            slot: <Input placeholder="参与用户ID" allowClear/>,
+            slot: <Input placeholder="参与用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prizeType',
-            slot: <Input placeholder="奖品类别：0实物1积分2金币3银币4优惠券5卡券" allowClear/>,
+            slot: <Input placeholder="奖品类别：0实物1积分2金币3银币4优惠券5卡券" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prizeId',
-            slot: <Input placeholder="奖品ID" allowClear/>,
+            slot: <Input placeholder="奖品ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prizeAmount',
-            slot: <Input placeholder="奖品数量" allowClear/>,
+            slot: <Input placeholder="奖品数量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="领取状态0未领取9已领取" allowClear/>,
+            slot: <Input placeholder="领取状态0未领取9已领取" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'relateId',
-            slot: <Input placeholder="实体订单ID" allowClear/>,
+            slot: <Input placeholder="实体订单ID" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -107,7 +107,7 @@ const MallLotteryWinner: FC = () => {
                 addApiFun={mallLotteryWinnerApi.add}
                 editApiFun={mallLotteryWinnerApi.edit}
                 delApiFun={mallLotteryWinnerApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

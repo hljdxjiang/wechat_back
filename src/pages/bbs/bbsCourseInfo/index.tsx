@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import bbsCourseInfoApi from '@/api/bbs/bbsCourseInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,79 +10,79 @@ const BbsCourseInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'courseId',
-            slot: <Input placeholder="课程ID" allowClear/>,
+            slot: <Input placeholder="课程ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'courseType',
-            slot: <Input placeholder="课程类型" allowClear/>,
+            slot: <Input placeholder="课程类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'courseTitle',
-            slot: <Input placeholder="课程标题" allowClear/>,
+            slot: <Input placeholder="课程标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userId',
-            slot: <Input placeholder="作者ID" allowClear/>,
+            slot: <Input placeholder="作者ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="备注" allowClear/>,
+            slot: <Input placeholder="备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'columnId',
-            slot: <Input placeholder="专题标签" allowClear/>,
+            slot: <Input placeholder="专题标签" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'labelId',
-            slot: <Input placeholder="文章标签" allowClear/>,
+            slot: <Input placeholder="文章标签" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态0草稿1审核中8审核拒绝9审核通过" allowClear/>,
+            slot: <Input placeholder="状态0草稿1审核中8审核拒绝9审核通过" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'courseSummary',
-            slot: <Input placeholder="课程摘要" allowClear/>,
+            slot: <Input placeholder="课程摘要" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'courseDesc',
-            slot: <Input placeholder="课程描述" allowClear/>,
+            slot: <Input placeholder="课程描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'price',
-            slot: <Input placeholder="课程价格" allowClear/>,
+            slot: <Input placeholder="课程价格" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'custLevel',
-            slot: <Input placeholder="客户级别" allowClear/>,
+            slot: <Input placeholder="客户级别" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vipType',
-            slot: <Input placeholder="会员类型0免费会员" allowClear/>,
+            slot: <Input placeholder="会员类型0免费会员" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -179,7 +179,7 @@ const BbsCourseInfo: FC = () => {
                 addApiFun={bbsCourseInfoApi.add}
                 editApiFun={bbsCourseInfoApi.edit}
                 delApiFun={bbsCourseInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

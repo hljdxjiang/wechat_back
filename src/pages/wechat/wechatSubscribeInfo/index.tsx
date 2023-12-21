@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import wechatSubscribeInfoApi from '@/api/wechat/wechatSubscribeInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,43 +10,43 @@ const WechatSubscribeInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'appid',
-            slot: <Input placeholder="微信APPID" allowClear/>,
+            slot: <Input placeholder="微信APPID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'wxopenid',
-            slot: <Input placeholder="微信Openid" allowClear/>,
+            slot: <Input placeholder="微信Openid" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'templateId',
-            slot: <Input placeholder="模板ID" allowClear/>,
+            slot: <Input placeholder="模板ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'popupSence',
-            slot: <Input placeholder="场景值" allowClear/>,
+            slot: <Input placeholder="场景值" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'subscribeStatusString',
-            slot: <Input placeholder="用户点击行为：同意、取消发送通知" allowClear/>,
+            slot: <Input placeholder="用户点击行为：同意、取消发送通知" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'sendStatus',
-            slot: <Input placeholder="0未发送，1发送失败9发生成功" allowClear/>,
+            slot: <Input placeholder="0未发送，1发送失败9发生成功" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'sendResult',
-            slot: <Input placeholder="推送结果" allowClear/>,
+            slot: <Input placeholder="推送结果" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -106,7 +106,7 @@ const WechatSubscribeInfo: FC = () => {
                 addApiFun={wechatSubscribeInfoApi.add}
                 editApiFun={wechatSubscribeInfoApi.edit}
                 delApiFun={wechatSubscribeInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

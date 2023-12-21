@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysResourceInfoApi from '@/api/sys/sysResourceInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,49 +10,49 @@ const SysResourceInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'resourceId',
-            slot: <Input placeholder="资源ID" allowClear/>,
+            slot: <Input placeholder="资源ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'resourceType',
-            slot: <Input placeholder="资源类型:图片，视频，文档" allowClear/>,
+            slot: <Input placeholder="资源类型:图片，视频，文档" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'linkUrl',
-            slot: <Input placeholder="链接地址" allowClear/>,
+            slot: <Input placeholder="链接地址" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="资源状态" allowClear/>,
+            slot: <Input placeholder="资源状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userId',
-            slot: <Input placeholder="作者ID" allowClear/>,
+            slot: <Input placeholder="作者ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="备注" allowClear/>,
+            slot: <Input placeholder="备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expireTime',
-            slot: <Input placeholder="失效时间" allowClear/>,
+            slot: <Input placeholder="失效时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'validTime',
-            slot: <Input placeholder="生效时间" allowClear/>,
+            slot: <Input placeholder="生效时间" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -119,7 +119,7 @@ const SysResourceInfo: FC = () => {
                 addApiFun={sysResourceInfoApi.add}
                 editApiFun={sysResourceInfoApi.edit}
                 delApiFun={sysResourceInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

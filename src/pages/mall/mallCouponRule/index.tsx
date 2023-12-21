@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallCouponRuleApi from '@/api/mall/mallCouponRule'
 import MyPage from '@/components/common/myPage';
 
@@ -10,19 +10,19 @@ const MallCouponRule: FC = () => {
     const searchConfigList = [
         {
             key: 'couponId',
-            slot: <Input placeholder="优惠券编号" allowClear/>,
+            slot: <Input placeholder="优惠券编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态" allowClear/>,
+            slot: <Input placeholder="状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'ruleId',
-            slot: <Input placeholder="规则ID" allowClear/>,
+            slot: <Input placeholder="规则ID" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -59,7 +59,7 @@ const MallCouponRule: FC = () => {
                 addApiFun={mallCouponRuleApi.add}
                 editApiFun={mallCouponRuleApi.edit}
                 delApiFun={mallCouponRuleApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

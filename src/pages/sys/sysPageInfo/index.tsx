@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysPageInfoApi from '@/api/sys/sysPageInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,55 +10,55 @@ const SysPageInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'pageId',
-            slot: <Input placeholder="页面ID" allowClear/>,
+            slot: <Input placeholder="页面ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'pageTitle',
-            slot: <Input placeholder="页面标题" allowClear/>,
+            slot: <Input placeholder="页面标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'pageType',
-            slot: <Input placeholder="页面类型" allowClear/>,
+            slot: <Input placeholder="页面类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'controlFlag',
-            slot: <Input placeholder="控制标识：ALL,LOCAL,OFF" allowClear/>,
+            slot: <Input placeholder="控制标识：ALL,LOCAL,OFF" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'needLogin',
-            slot: <Input placeholder="是否需要登录0需要1不需要" allowClear/>,
+            slot: <Input placeholder="是否需要登录0需要1不需要" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'pageRemark',
-            slot: <Input placeholder="页面备注" allowClear/>,
+            slot: <Input placeholder="页面备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userid',
-            slot: <Input placeholder="创建用户ID" allowClear/>,
+            slot: <Input placeholder="创建用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'modifyUserid',
-            slot: <Input placeholder="最后修改用户ID" allowClear/>,
+            slot: <Input placeholder="最后修改用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -131,7 +131,7 @@ const SysPageInfo: FC = () => {
                 addApiFun={sysPageInfoApi.add}
                 editApiFun={sysPageInfoApi.edit}
                 delApiFun={sysPageInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

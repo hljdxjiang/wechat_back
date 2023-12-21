@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import backUserLoginRecordApi from '@/api/back/backUserLoginRecord'
 import MyPage from '@/components/common/myPage';
 
@@ -10,61 +10,61 @@ const BackUserLoginRecord: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="用户ID" allowClear/>,
+            slot: <Input placeholder="用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'ipAddr',
-            slot: <Input placeholder="登录Ip" allowClear/>,
+            slot: <Input placeholder="登录Ip" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'country',
-            slot: <Input placeholder="国家" allowClear/>,
+            slot: <Input placeholder="国家" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'province',
-            slot: <Input placeholder="省份" allowClear/>,
+            slot: <Input placeholder="省份" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'city',
-            slot: <Input placeholder="城市" allowClear/>,
+            slot: <Input placeholder="城市" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'county',
-            slot: <Input placeholder="县区" allowClear/>,
+            slot: <Input placeholder="县区" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'loginTime',
-            slot: <Input placeholder="登录时间" allowClear/>,
+            slot: <Input placeholder="登录时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'loginResult',
-            slot: <Input placeholder="登录结果描述" allowClear/>,
+            slot: <Input placeholder="登录结果描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'loginResultCode',
-            slot: <Input placeholder="登录结果码值" allowClear/>,
+            slot: <Input placeholder="登录结果码值" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'isp',
-            slot: <Input placeholder="运营商" allowClear/>,
+            slot: <Input placeholder="运营商" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -142,7 +142,7 @@ const BackUserLoginRecord: FC = () => {
                 addApiFun={backUserLoginRecordApi.add}
                 editApiFun={backUserLoginRecordApi.edit}
                 delApiFun={backUserLoginRecordApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

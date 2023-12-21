@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysBlacklistApi from '@/api/sys/sysBlacklist'
 import MyPage from '@/components/common/myPage';
 
@@ -10,31 +10,31 @@ const SysBlacklist: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="用户编号" allowClear/>,
+            slot: <Input placeholder="用户编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'channel',
-            slot: <Input placeholder="操作渠道" allowClear/>,
+            slot: <Input placeholder="操作渠道" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="黑名单原因" allowClear/>,
+            slot: <Input placeholder="黑名单原因" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'mobileNo',
-            slot: <Input placeholder="手机号" allowClear/>,
+            slot: <Input placeholder="手机号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'blackType',
-            slot: <Input placeholder="黑名单类型" allowClear/>,
+            slot: <Input placeholder="黑名单类型" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -83,7 +83,7 @@ const SysBlacklist: FC = () => {
                 addApiFun={sysBlacklistApi.add}
                 editApiFun={sysBlacklistApi.edit}
                 delApiFun={sysBlacklistApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

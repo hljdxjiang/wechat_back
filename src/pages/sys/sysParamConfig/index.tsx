@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysParamConfigApi from '@/api/sys/sysParamConfig'
 import MyPage from '@/components/common/myPage';
 
@@ -10,31 +10,31 @@ const SysParamConfig: FC = () => {
     const searchConfigList = [
         {
             key: 'configName',
-            slot: <Input placeholder="配置中文名" allowClear/>,
+            slot: <Input placeholder="配置中文名" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'configKey',
-            slot: <Input placeholder="配置主键" allowClear/>,
+            slot: <Input placeholder="配置主键" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'configValue',
-            slot: <Input placeholder="配置值" allowClear/>,
+            slot: <Input placeholder="配置值" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'configDesc',
-            slot: <Input placeholder="配置描述" allowClear/>,
+            slot: <Input placeholder="配置描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastUpdateTime',
-            slot: <Input placeholder="最后修改时间" allowClear/>,
+            slot: <Input placeholder="最后修改时间" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -83,7 +83,7 @@ const SysParamConfig: FC = () => {
                 addApiFun={sysParamConfigApi.add}
                 editApiFun={sysParamConfigApi.edit}
                 delApiFun={sysParamConfigApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

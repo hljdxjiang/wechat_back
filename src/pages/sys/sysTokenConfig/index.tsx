@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysTokenConfigApi from '@/api/sys/sysTokenConfig'
 import MyPage from '@/components/common/myPage';
 
@@ -10,43 +10,43 @@ const SysTokenConfig: FC = () => {
     const searchConfigList = [
         {
             key: 'appid',
-            slot: <Input placeholder="程序ID" allowClear/>,
+            slot: <Input placeholder="程序ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tokenKey',
-            slot: <Input placeholder="Token码值" allowClear/>,
+            slot: <Input placeholder="Token码值" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tokenDesc',
-            slot: <Input placeholder="Token描述" allowClear/>,
+            slot: <Input placeholder="Token描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tokenVaildType',
-            slot: <Input placeholder="Token有效期类型" allowClear/>,
+            slot: <Input placeholder="Token有效期类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tokenValidTime',
-            slot: <Input placeholder="token有效期时常" allowClear/>,
+            slot: <Input placeholder="token有效期时常" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tokenStatus',
-            slot: <Input placeholder="配置状态" allowClear/>,
+            slot: <Input placeholder="配置状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastUpdateTime',
-            slot: <Input placeholder="最后修改时间" allowClear/>,
+            slot: <Input placeholder="最后修改时间" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -107,7 +107,7 @@ const SysTokenConfig: FC = () => {
                 addApiFun={sysTokenConfigApi.add}
                 editApiFun={sysTokenConfigApi.edit}
                 delApiFun={sysTokenConfigApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

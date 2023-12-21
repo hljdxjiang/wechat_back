@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysPageFlowInfoApi from '@/api/sys/sysPageFlowInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,37 +10,37 @@ const SysPageFlowInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'pageId',
-            slot: <Input placeholder="页面ID" allowClear/>,
+            slot: <Input placeholder="页面ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowId',
-            slot: <Input placeholder="楼层ID" allowClear/>,
+            slot: <Input placeholder="楼层ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'flowSort',
-            slot: <Input placeholder="楼层排序" allowClear/>,
+            slot: <Input placeholder="楼层排序" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态0启用1关闭" allowClear/>,
+            slot: <Input placeholder="状态0启用1关闭" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'channel',
-            slot: <Input placeholder="展示渠道" allowClear/>,
+            slot: <Input placeholder="展示渠道" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'controlFlag',
-            slot: <Input placeholder="控制标识：ALL,LOCAL,OFF" allowClear/>,
+            slot: <Input placeholder="控制标识：ALL,LOCAL,OFF" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -95,7 +95,7 @@ const SysPageFlowInfo: FC = () => {
                 addApiFun={sysPageFlowInfoApi.add}
                 editApiFun={sysPageFlowInfoApi.edit}
                 delApiFun={sysPageFlowInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

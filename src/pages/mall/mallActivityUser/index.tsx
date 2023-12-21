@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallActivityUserApi from '@/api/mall/mallActivityUser'
 import MyPage from '@/components/common/myPage';
 
@@ -10,25 +10,25 @@ const MallActivityUser: FC = () => {
     const searchConfigList = [
         {
             key: 'activityId',
-            slot: <Input placeholder="活动ID" allowClear/>,
+            slot: <Input placeholder="活动ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="参与状态0参与1完成" allowClear/>,
+            slot: <Input placeholder="参与状态0参与1完成" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userid',
-            slot: <Input placeholder="参与用户ID" allowClear/>,
+            slot: <Input placeholder="参与用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'complateTime',
-            slot: <Input placeholder="完成时间" allowClear/>,
+            slot: <Input placeholder="完成时间" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -71,7 +71,7 @@ const MallActivityUser: FC = () => {
                 addApiFun={mallActivityUserApi.add}
                 editApiFun={mallActivityUserApi.edit}
                 delApiFun={mallActivityUserApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

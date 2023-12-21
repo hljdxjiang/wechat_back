@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import crmBrandInfoApi from '@/api/crm/crmBrandInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,115 +10,115 @@ const CrmBrandInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'brandId',
-            slot: <Input placeholder="品牌编号" allowClear/>,
+            slot: <Input placeholder="品牌编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandName',
-            slot: <Input placeholder="品牌名称" allowClear/>,
+            slot: <Input placeholder="品牌名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandLogo',
-            slot: <Input placeholder="品牌logo路径" allowClear/>,
+            slot: <Input placeholder="品牌logo路径" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'companyName',
-            slot: <Input placeholder="企业名称" allowClear/>,
+            slot: <Input placeholder="企业名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandUscc',
-            slot: <Input placeholder="企业社会信用代码" allowClear/>,
+            slot: <Input placeholder="企业社会信用代码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'connectUname',
-            slot: <Input placeholder="联系人姓名" allowClear/>,
+            slot: <Input placeholder="联系人姓名" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'connectMobileNo',
-            slot: <Input placeholder="联系人电话" allowClear/>,
+            slot: <Input placeholder="联系人电话" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'connectWechatId',
-            slot: <Input placeholder="联系人微信ID" allowClear/>,
+            slot: <Input placeholder="联系人微信ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandDesc',
-            slot: <Input placeholder="品牌简介" allowClear/>,
+            slot: <Input placeholder="品牌简介" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'companyDesc',
-            slot: <Input placeholder="企业简介" allowClear/>,
+            slot: <Input placeholder="企业简介" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandDetail',
-            slot: <Input placeholder="品牌详情" allowClear/>,
+            slot: <Input placeholder="品牌详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'companyDetail',
-            slot: <Input placeholder="企业详情" allowClear/>,
+            slot: <Input placeholder="企业详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vaildDate',
-            slot: <Input placeholder="合约生效日" allowClear/>,
+            slot: <Input placeholder="合约生效日" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expiredDate',
-            slot: <Input placeholder="合约失效日期" allowClear/>,
+            slot: <Input placeholder="合约失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandFee',
-            slot: <Input placeholder="品牌加盟费" allowClear/>,
+            slot: <Input placeholder="品牌加盟费" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandMargin',
-            slot: <Input placeholder="押金/保证金" allowClear/>,
+            slot: <Input placeholder="押金/保证金" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="备注" allowClear/>,
+            slot: <Input placeholder="备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandCommonDesc',
-            slot: <Input placeholder="产品公共展示信息" allowClear/>,
+            slot: <Input placeholder="产品公共展示信息" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -251,7 +251,7 @@ const CrmBrandInfo: FC = () => {
                 addApiFun={crmBrandInfoApi.add}
                 editApiFun={crmBrandInfoApi.edit}
                 delApiFun={crmBrandInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

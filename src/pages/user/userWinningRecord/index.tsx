@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import userWinningRecordApi from '@/api/user/userWinningRecord'
 import MyPage from '@/components/common/myPage';
 
@@ -10,43 +10,43 @@ const UserWinningRecord: FC = () => {
     const searchConfigList = [
         {
             key: 'userid',
-            slot: <Input placeholder="登录账号" allowClear/>,
+            slot: <Input placeholder="登录账号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'createtime',
-            slot: <Input placeholder="创建时间" allowClear/>,
+            slot: <Input placeholder="创建时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastmodifiedtime',
-            slot: <Input placeholder="最后修改时间" allowClear/>,
+            slot: <Input placeholder="最后修改时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lotteryId',
-            slot: <Input placeholder="抽奖ID" allowClear/>,
+            slot: <Input placeholder="抽奖ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'winType',
-            slot: <Input placeholder="奖品类型" allowClear/>,
+            slot: <Input placeholder="奖品类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'winProdCode',
-            slot: <Input placeholder="奖品编号" allowClear/>,
+            slot: <Input placeholder="奖品编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'winProdPass',
-            slot: <Input placeholder="奖品秘钥" allowClear/>,
+            slot: <Input placeholder="奖品秘钥" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -106,7 +106,7 @@ const UserWinningRecord: FC = () => {
                 addApiFun={userWinningRecordApi.add}
                 editApiFun={userWinningRecordApi.edit}
                 delApiFun={userWinningRecordApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

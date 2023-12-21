@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import wechatMenusItemApi from '@/api/wechat/wechatMenusItem'
 import MyPage from '@/components/common/myPage';
 
@@ -10,55 +10,55 @@ const WechatMenusItem: FC = () => {
     const searchConfigList = [
         {
             key: 'itemId',
-            slot: <Input placeholder="菜单ID" allowClear/>,
+            slot: <Input placeholder="菜单ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'name',
-            slot: <Input placeholder="菜单名称" allowClear/>,
+            slot: <Input placeholder="菜单名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'type',
-            slot: <Input placeholder="菜单类型" allowClear/>,
+            slot: <Input placeholder="菜单类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'key',
-            slot: <Input placeholder="事件ID" allowClear/>,
+            slot: <Input placeholder="事件ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'url',
-            slot: <Input placeholder="跳转链接" allowClear/>,
+            slot: <Input placeholder="跳转链接" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'appid',
-            slot: <Input placeholder="小程序ID" allowClear/>,
+            slot: <Input placeholder="小程序ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'pagepath',
-            slot: <Input placeholder="小程序地址" allowClear/>,
+            slot: <Input placeholder="小程序地址" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'articleId',
-            slot: <Input placeholder="图文消息ID" allowClear/>,
+            slot: <Input placeholder="图文消息ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'articleViewLimited',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -131,7 +131,7 @@ const WechatMenusItem: FC = () => {
                 addApiFun={wechatMenusItemApi.add}
                 editApiFun={wechatMenusItemApi.edit}
                 delApiFun={wechatMenusItemApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

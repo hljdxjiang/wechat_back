@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import wechatMenusApi from '@/api/wechat/wechatMenus'
 import MyPage from '@/components/common/myPage';
 
@@ -10,37 +10,37 @@ const WechatMenus: FC = () => {
     const searchConfigList = [
         {
             key: 'menuId',
-            slot: <Input placeholder="菜单ID" allowClear/>,
+            slot: <Input placeholder="菜单ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'menuName',
-            slot: <Input placeholder="菜单名称" allowClear/>,
+            slot: <Input placeholder="菜单名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'wxMenuId',
-            slot: <Input placeholder="微信返回的ID" allowClear/>,
+            slot: <Input placeholder="微信返回的ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'version',
-            slot: <Input placeholder="使用版本" allowClear/>,
+            slot: <Input placeholder="使用版本" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="菜单备注" allowClear/>,
+            slot: <Input placeholder="菜单备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'menuType',
-            slot: <Input placeholder="菜单类型0标准菜单1个性化菜单" allowClear/>,
+            slot: <Input placeholder="菜单类型0标准菜单1个性化菜单" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -95,7 +95,7 @@ const WechatMenus: FC = () => {
                 addApiFun={wechatMenusApi.add}
                 editApiFun={wechatMenusApi.edit}
                 delApiFun={wechatMenusApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import tMessageInfoApi from '@/api/message/tMessageInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,67 +10,67 @@ const TMessageInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'hotelName',
-            slot: <Input placeholder="酒店名称" allowClear/>,
+            slot: <Input placeholder="酒店名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'roomName',
-            slot: <Input placeholder="房间名称" allowClear/>,
+            slot: <Input placeholder="房间名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'useableArea',
-            slot: <Input placeholder="房间面积" allowClear/>,
+            slot: <Input placeholder="房间面积" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'floor',
-            slot: <Input placeholder="楼层" allowClear/>,
+            slot: <Input placeholder="楼层" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastJustPrice',
-            slot: <Input placeholder="上次调整时的价格" allowClear/>,
+            slot: <Input placeholder="上次调整时的价格" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'capacity',
-            slot: <Input placeholder="房间容量" allowClear/>,
+            slot: <Input placeholder="房间容量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'myPrice',
-            slot: <Input placeholder="当前上架价格" allowClear/>,
+            slot: <Input placeholder="当前上架价格" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'bedType',
-            slot: <Input placeholder="床型描述" allowClear/>,
+            slot: <Input placeholder="床型描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态0未读1已读" allowClear/>,
+            slot: <Input placeholder="状态0未读1已读" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'priceDiff',
-            slot: <Input placeholder="价格变动" allowClear/>,
+            slot: <Input placeholder="价格变动" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'price',
-            slot: <Input placeholder="当前报价" allowClear/>,
+            slot: <Input placeholder="当前报价" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -157,7 +157,7 @@ const TMessageInfo: FC = () => {
                 addApiFun={tMessageInfoApi.add}
                 editApiFun={tMessageInfoApi.edit}
                 delApiFun={tMessageInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

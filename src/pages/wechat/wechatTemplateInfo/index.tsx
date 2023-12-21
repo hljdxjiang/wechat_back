@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import wechatTemplateInfoApi from '@/api/wechat/wechatTemplateInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,49 +10,49 @@ const WechatTemplateInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'templateId',
-            slot: <Input placeholder="模板ID" allowClear/>,
+            slot: <Input placeholder="模板ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'templateType',
-            slot: <Input placeholder="模板类型" allowClear/>,
+            slot: <Input placeholder="模板类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'templateDes',
-            slot: <Input placeholder="模板功能描述" allowClear/>,
+            slot: <Input placeholder="模板功能描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'templateUrl',
-            slot: <Input placeholder="跳转URL" allowClear/>,
+            slot: <Input placeholder="跳转URL" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'templateConfig',
-            slot: <Input placeholder="模板配置：是否起用|是否推送非实名|是否保存推送记录0否1是" allowClear/>,
+            slot: <Input placeholder="模板配置：是否起用|是否推送非实名|是否保存推送记录0否1是" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'minipAppid',
-            slot: <Input placeholder="跳转小程序ID" allowClear/>,
+            slot: <Input placeholder="跳转小程序ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'minipPagePath',
-            slot: <Input placeholder="跳转小程序路径" allowClear/>,
+            slot: <Input placeholder="跳转小程序路径" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'messageType',
-            slot: <Input placeholder="消息类型：TEMPLATE：模板消息SUBSCRIBLE:订阅消息" allowClear/>,
+            slot: <Input placeholder="消息类型：TEMPLATE：模板消息SUBSCRIBLE:订阅消息" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -119,7 +119,7 @@ const WechatTemplateInfo: FC = () => {
                 addApiFun={wechatTemplateInfoApi.add}
                 editApiFun={wechatTemplateInfoApi.edit}
                 delApiFun={wechatTemplateInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

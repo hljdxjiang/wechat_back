@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallSaleAddrApi from '@/api/mall/mallSaleAddr'
 import MyPage from '@/components/common/myPage';
 
@@ -10,67 +10,67 @@ const MallSaleAddr: FC = () => {
     const searchConfigList = [
         {
             key: 'batchId',
-            slot: <Input placeholder="销售批次ID" allowClear/>,
+            slot: <Input placeholder="销售批次ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userId',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'mobileNo',
-            slot: <Input placeholder="客户手机号" allowClear/>,
+            slot: <Input placeholder="客户手机号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'name',
-            slot: <Input placeholder="姓名" allowClear/>,
+            slot: <Input placeholder="姓名" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'address',
-            slot: <Input placeholder="地址" allowClear/>,
+            slot: <Input placeholder="地址" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'country',
-            slot: <Input placeholder="国家" allowClear/>,
+            slot: <Input placeholder="国家" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'province',
-            slot: <Input placeholder="省份" allowClear/>,
+            slot: <Input placeholder="省份" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'city',
-            slot: <Input placeholder="城市" allowClear/>,
+            slot: <Input placeholder="城市" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'street',
-            slot: <Input placeholder="街道" allowClear/>,
+            slot: <Input placeholder="街道" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'detail',
-            slot: <Input placeholder="详细地址" allowClear/>,
+            slot: <Input placeholder="详细地址" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -155,7 +155,7 @@ const MallSaleAddr: FC = () => {
                 addApiFun={mallSaleAddrApi.add}
                 editApiFun={mallSaleAddrApi.edit}
                 delApiFun={mallSaleAddrApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

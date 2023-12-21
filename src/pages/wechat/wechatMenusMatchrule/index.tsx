@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import wechatMenusMatchruleApi from '@/api/wechat/wechatMenusMatchrule'
 import MyPage from '@/components/common/myPage';
 
@@ -10,19 +10,19 @@ const WechatMenusMatchrule: FC = () => {
     const searchConfigList = [
         {
             key: 'menuId',
-            slot: <Input placeholder="菜单ID" allowClear/>,
+            slot: <Input placeholder="菜单ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'ruleId',
-            slot: <Input placeholder="匹配字段" allowClear/>,
+            slot: <Input placeholder="匹配字段" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'ruleValue',
-            slot: <Input placeholder="匹配字段值" allowClear/>,
+            slot: <Input placeholder="匹配字段值" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -59,7 +59,7 @@ const WechatMenusMatchrule: FC = () => {
                 addApiFun={wechatMenusMatchruleApi.add}
                 editApiFun={wechatMenusMatchruleApi.edit}
                 delApiFun={wechatMenusMatchruleApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

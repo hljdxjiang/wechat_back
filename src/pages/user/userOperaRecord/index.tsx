@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import userOperaRecordApi from '@/api/user/userOperaRecord'
 import MyPage from '@/components/common/myPage';
 
@@ -10,79 +10,79 @@ const UserOperaRecord: FC = () => {
     const searchConfigList = [
         {
             key: 'userid',
-            slot: <Input placeholder="登录账号" allowClear/>,
+            slot: <Input placeholder="登录账号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'operationType',
-            slot: <Input placeholder="操作类型" allowClear/>,
+            slot: <Input placeholder="操作类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'requestUrl',
-            slot: <Input placeholder="客户请求url" allowClear/>,
+            slot: <Input placeholder="客户请求url" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userIp',
-            slot: <Input placeholder="用户ip" allowClear/>,
+            slot: <Input placeholder="用户ip" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'createtime',
-            slot: <Input placeholder="创建时间" allowClear/>,
+            slot: <Input placeholder="创建时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastmodifiedtime',
-            slot: <Input placeholder="最后修改时间" allowClear/>,
+            slot: <Input placeholder="最后修改时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'macAddr',
-            slot: <Input placeholder="用户MAC地址" allowClear/>,
+            slot: <Input placeholder="用户MAC地址" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'transCode',
-            slot: <Input placeholder="交易码" allowClear/>,
+            slot: <Input placeholder="交易码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'version',
-            slot: <Input placeholder="版本号" allowClear/>,
+            slot: <Input placeholder="版本号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'sessionid',
-            slot: <Input placeholder="登录sessionID" allowClear/>,
+            slot: <Input placeholder="登录sessionID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'replayid',
-            slot: <Input placeholder="防止重放攻击ID" allowClear/>,
+            slot: <Input placeholder="防止重放攻击ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'requestBody',
-            slot: <Input placeholder="请求报文" allowClear/>,
+            slot: <Input placeholder="请求报文" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'responseCode',
-            slot: <Input placeholder="返回报文状态" allowClear/>,
+            slot: <Input placeholder="返回报文状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -178,7 +178,7 @@ const UserOperaRecord: FC = () => {
                 addApiFun={userOperaRecordApi.add}
                 editApiFun={userOperaRecordApi.edit}
                 delApiFun={userOperaRecordApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

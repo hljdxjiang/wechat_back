@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysUserLabelsApi from '@/api/sys/sysUserLabels'
 import MyPage from '@/components/common/myPage';
 
@@ -10,25 +10,25 @@ const SysUserLabels: FC = () => {
     const searchConfigList = [
         {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'labelId',
-            slot: <Input placeholder="用户标签ID" allowClear/>,
+            slot: <Input placeholder="用户标签ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'labelKey',
-            slot: <Input placeholder="标签key" allowClear/>,
+            slot: <Input placeholder="标签key" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'labelDesc',
-            slot: <Input placeholder="标签中文描述" allowClear/>,
+            slot: <Input placeholder="标签中文描述" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -71,7 +71,7 @@ const SysUserLabels: FC = () => {
                 addApiFun={sysUserLabelsApi.add}
                 editApiFun={sysUserLabelsApi.edit}
                 delApiFun={sysUserLabelsApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

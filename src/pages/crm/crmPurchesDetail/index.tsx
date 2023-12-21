@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import crmPurchesDetailApi from '@/api/crm/crmPurchesDetail'
 import MyPage from '@/components/common/myPage';
 
@@ -10,37 +10,37 @@ const CrmPurchesDetail: FC = () => {
     const searchConfigList = [
         {
             key: 'brandId',
-            slot: <Input placeholder="品牌" allowClear/>,
+            slot: <Input placeholder="品牌" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'batchId',
-            slot: <Input placeholder="批次ID" allowClear/>,
+            slot: <Input placeholder="批次ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodId',
-            slot: <Input placeholder="产品ID" allowClear/>,
+            slot: <Input placeholder="产品ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'amount',
-            slot: <Input placeholder="进货数量" allowClear/>,
+            slot: <Input placeholder="进货数量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prodPrice',
-            slot: <Input placeholder="进货进货单价" allowClear/>,
+            slot: <Input placeholder="进货进货单价" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="用户备注" allowClear/>,
+            slot: <Input placeholder="用户备注" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -95,7 +95,7 @@ const CrmPurchesDetail: FC = () => {
                 addApiFun={crmPurchesDetailApi.add}
                 editApiFun={crmPurchesDetailApi.edit}
                 delApiFun={crmPurchesDetailApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

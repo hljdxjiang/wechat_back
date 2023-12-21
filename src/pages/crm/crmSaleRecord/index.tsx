@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import crmSaleRecordApi from '@/api/crm/crmSaleRecord'
 import MyPage from '@/components/common/myPage';
 
@@ -10,79 +10,79 @@ const CrmSaleRecord: FC = () => {
     const searchConfigList = [
         {
             key: 'batchId',
-            slot: <Input placeholder="批次ID" allowClear/>,
+            slot: <Input placeholder="批次ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'amount',
-            slot: <Input placeholder="销售数量" allowClear/>,
+            slot: <Input placeholder="销售数量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'orderTime',
-            slot: <Input placeholder="下单日期" allowClear/>,
+            slot: <Input placeholder="下单日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'spend',
-            slot: <Input placeholder="订单费用" allowClear/>,
+            slot: <Input placeholder="订单费用" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'postage',
-            slot: <Input placeholder="邮费" allowClear/>,
+            slot: <Input placeholder="邮费" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'postageCost',
-            slot: <Input placeholder="邮寄成本" allowClear/>,
+            slot: <Input placeholder="邮寄成本" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'traceCode',
-            slot: <Input placeholder="邮件单号" allowClear/>,
+            slot: <Input placeholder="邮件单号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'postDate',
-            slot: <Input placeholder="发货时间" allowClear/>,
+            slot: <Input placeholder="发货时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'realPrice',
-            slot: <Input placeholder="真实销售金额" allowClear/>,
+            slot: <Input placeholder="真实销售金额" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="用户备注" allowClear/>,
+            slot: <Input placeholder="用户备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'channelNo',
-            slot: <Input placeholder="销售渠道" allowClear/>,
+            slot: <Input placeholder="销售渠道" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'referrerId',
-            slot: <Input placeholder="推荐人编号" allowClear/>,
+            slot: <Input placeholder="推荐人编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -179,7 +179,7 @@ const CrmSaleRecord: FC = () => {
                 addApiFun={crmSaleRecordApi.add}
                 editApiFun={crmSaleRecordApi.edit}
                 delApiFun={crmSaleRecordApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

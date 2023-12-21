@@ -1,5 +1,5 @@
-import React, {FC, useState} from "react";
-import {Input} from "antd";
+import React, { FC, useState } from "react";
+import { Input } from "antd";
 import bbsColumnInfoApi from "@/api/bbs/bbsColumnInfo";
 import MyPage from "@/components/common/myPage";
 
@@ -10,31 +10,31 @@ const BbsColumnInfo: FC = () => {
     const searchConfigList = [
         {
             key: "columnId",
-            slot: <Input placeholder="栏目ID" allowClear/>,
+            slot: <Input placeholder="栏目ID" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "columnName",
-            slot: <Input placeholder="栏目名称" allowClear/>,
+            slot: <Input placeholder="栏目名称" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "columnDesc",
-            slot: <Input placeholder="栏目描述" allowClear/>,
+            slot: <Input placeholder="栏目描述" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "remark",
-            slot: <Input placeholder="备注" allowClear/>,
+            slot: <Input placeholder="备注" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "status",
-            slot: <Input placeholder="状态0有效1失效" allowClear/>,
+            slot: <Input placeholder="状态0有效1失效" allowClear />,
             rules: [],
             initialValue: "",
         },
@@ -79,7 +79,7 @@ const BbsColumnInfo: FC = () => {
                 addApiFun={bbsColumnInfoApi.add}
                 editApiFun={bbsColumnInfoApi.edit}
                 delApiFun={bbsColumnInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

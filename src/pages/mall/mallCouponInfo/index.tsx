@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallCouponInfoApi from '@/api/mall/mallCouponInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,91 +10,91 @@ const MallCouponInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'couponId',
-            slot: <Input placeholder="优惠券编号" allowClear/>,
+            slot: <Input placeholder="优惠券编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponName',
-            slot: <Input placeholder="优惠券名称" allowClear/>,
+            slot: <Input placeholder="优惠券名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponDesc',
-            slot: <Input placeholder="优惠券详情" allowClear/>,
+            slot: <Input placeholder="优惠券详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponType',
-            slot: <Input placeholder="优惠券类型" allowClear/>,
+            slot: <Input placeholder="优惠券类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponMethod',
-            slot: <Input placeholder="优惠方式" allowClear/>,
+            slot: <Input placeholder="优惠方式" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponAmount',
-            slot: <Input placeholder="优惠比例" allowClear/>,
+            slot: <Input placeholder="优惠比例" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'controlType',
-            slot: <Input placeholder="优惠券控制类型：白名单LOCAL，全部ALL" allowClear/>,
+            slot: <Input placeholder="优惠券控制类型：白名单LOCAL，全部ALL" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'grantType',
-            slot: <Input placeholder="发放方式：手动,自动,人工" allowClear/>,
+            slot: <Input placeholder="发放方式：手动,自动,人工" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'grantScope',
-            slot: <Input placeholder="发放范围：ALL,VIP,白名单(LOCAL)" allowClear/>,
+            slot: <Input placeholder="发放范围：ALL,VIP,白名单(LOCAL)" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vaildDate',
-            slot: <Input placeholder="开始领取时间" allowClear/>,
+            slot: <Input placeholder="开始领取时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expireDate',
-            slot: <Input placeholder="领取失效日期" allowClear/>,
+            slot: <Input placeholder="领取失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vaildDays',
-            slot: <Input placeholder="有效时间范围" allowClear/>,
+            slot: <Input placeholder="有效时间范围" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'useVaildDate',
-            slot: <Input placeholder="开始使用时间" allowClear/>,
+            slot: <Input placeholder="开始使用时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'useExpireDate',
-            slot: <Input placeholder="使用时效时间" allowClear/>,
+            slot: <Input placeholder="使用时效时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -203,7 +203,7 @@ const MallCouponInfo: FC = () => {
                 addApiFun={mallCouponInfoApi.add}
                 editApiFun={mallCouponInfoApi.edit}
                 delApiFun={mallCouponInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

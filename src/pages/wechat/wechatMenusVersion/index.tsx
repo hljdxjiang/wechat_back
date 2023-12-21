@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import wechatMenusVersionApi from '@/api/wechat/wechatMenusVersion'
 import MyPage from '@/components/common/myPage';
 
@@ -10,25 +10,25 @@ const WechatMenusVersion: FC = () => {
     const searchConfigList = [
         {
             key: 'optionId',
-            slot: <Input placeholder="选项ID" allowClear/>,
+            slot: <Input placeholder="选项ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'optionKey',
-            slot: <Input placeholder="微信选项ID" allowClear/>,
+            slot: <Input placeholder="微信选项ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'optionDesc',
-            slot: <Input placeholder="选项中文描述" allowClear/>,
+            slot: <Input placeholder="选项中文描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'optionType',
-            slot: <Input placeholder="选项类型：text文本select下拉" allowClear/>,
+            slot: <Input placeholder="选项类型：text文本select下拉" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -70,7 +70,7 @@ const WechatMenusVersion: FC = () => {
                 addApiFun={wechatMenusVersionApi.add}
                 editApiFun={wechatMenusVersionApi.edit}
                 delApiFun={wechatMenusVersionApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

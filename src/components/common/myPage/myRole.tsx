@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
-import {Col, DatePicker, Descriptions, Input, Modal, Row, TimePicker, Tree} from 'antd'
+import React, { FC } from 'react'
+import { Col, DatePicker, Descriptions, Input, Modal, Row, TimePicker, Tree } from 'antd'
 import MySelect from '@/components/common/mySelect'
 import MyUpload from '../../../components/common/myUpload';
 import Editor from '../../../components/common/editor';
-import type {DataNode} from 'rc-tree/lib/interface';
-import {Key} from 'antd/es/table/interface';
-import {getAllRevokes, getAppMenus} from '@/assets/js/publicFunc';
-import {MenuRoute} from '@/route/types';
+import type { DataNode } from 'rc-tree/lib/interface';
+import { Key } from 'antd/es/table/interface';
+import { getAllRevokes, getAppMenus } from '@/assets/js/publicFunc';
+import { MenuRoute } from '@/route/types';
 
 /**
  * 封装对话框，展示修改内容
@@ -132,26 +132,26 @@ const MyRole: FC<ModalProps> = (
             var idx = item["dataIndex"];
             if (type === "select") {
                 return (<MySelect data={item["data"]} defaultValue={row[item["dataIndex"]]}
-                                  onChange={handChange.bind(this, idx, "select")} disabled={!canEdit}/>)
+                    onChange={handChange.bind(this, idx, "select")} disabled={!canEdit} />)
             }
             if (type === "date") {
                 return <DatePicker value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "date")}
-                                   disabled={!canEdit}></DatePicker>
+                    disabled={!canEdit}></DatePicker>
             }
             if (type === "datetime") {
                 return <DatePicker showTime={true} value={row[item["dataIndex"]]}
-                                   onChange={handChange.bind(this, idx, "datetime")} disabled={!canEdit}></DatePicker>
+                    onChange={handChange.bind(this, idx, "datetime")} disabled={!canEdit}></DatePicker>
             }
             if (type === "time") {
                 return <TimePicker value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "time")}
-                                   disabled={!canEdit}></TimePicker>
+                    disabled={!canEdit}></TimePicker>
             }
             if (type === "upload") {
                 if (canEdit) {
                     return <MyUpload value={row[item["dataIndex"]]}
-                                     onChange={handChange.bind(this, idx, "upload")}></MyUpload>
+                        onChange={handChange.bind(this, idx, "upload")}></MyUpload>
                 } else {
-                    return <img src={row[item["dataIndex"]]} width="40" alt=""/>
+                    return <img src={row[item["dataIndex"]]} width="40" alt="" />
                 }
             }
             if (type === "edit") {
@@ -159,10 +159,10 @@ const MyRole: FC<ModalProps> = (
             }
             if (type === "textarea") {
                 return <Input.TextArea value={row[item["dataIndex"]]} id={item["dataIndex"]}
-                                       onChange={(e) => handChange(e)}></Input.TextArea>
+                    onChange={(e) => handChange(e)}></Input.TextArea>
             }
             return <Input placeholder={item["title"]} id={item["dataIndex"]} onChange={handChange} allowClear
-                          value={row[item["dataIndex"]]} disabled={!canEdit}/>
+                value={row[item["dataIndex"]]} disabled={!canEdit} />
         }
 
         return (
@@ -235,4 +235,3 @@ MyRole.defaultProps = {
 }
 
 export default MyRole
-  

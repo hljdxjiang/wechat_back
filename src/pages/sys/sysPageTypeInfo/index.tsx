@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysPageTypeInfoApi from '@/api/sys/sysPageTypeInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,49 +10,49 @@ const SysPageTypeInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'typeId',
-            slot: <Input placeholder="类型ID" allowClear/>,
+            slot: <Input placeholder="类型ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'typeDesc',
-            slot: <Input placeholder="类型描述" allowClear/>,
+            slot: <Input placeholder="类型描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态0启用1禁用" allowClear/>,
+            slot: <Input placeholder="状态0启用1禁用" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'typeRemark',
-            slot: <Input placeholder="类型备注" allowClear/>,
+            slot: <Input placeholder="类型备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userid',
-            slot: <Input placeholder="创建用户ID" allowClear/>,
+            slot: <Input placeholder="创建用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'modifyUserid',
-            slot: <Input placeholder="最后修改用户ID" allowClear/>,
+            slot: <Input placeholder="最后修改用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'typeKind',
-            slot: <Input placeholder="类型大类" allowClear/>,
+            slot: <Input placeholder="类型大类" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'typeSort',
-            slot: <Input placeholder="排序" allowClear/>,
+            slot: <Input placeholder="排序" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -119,7 +119,7 @@ const SysPageTypeInfo: FC = () => {
                 addApiFun={sysPageTypeInfoApi.add}
                 editApiFun={sysPageTypeInfoApi.edit}
                 delApiFun={sysPageTypeInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

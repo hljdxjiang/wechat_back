@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallLotteryApi from '@/api/mall/mallLottery'
 import MyPage from '@/components/common/myPage';
 
@@ -10,109 +10,109 @@ const MallLottery: FC = () => {
     const searchConfigList = [
         {
             key: 'lotteryId',
-            slot: <Input placeholder="抽奖ID" allowClear/>,
+            slot: <Input placeholder="抽奖ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lotteryTitle',
-            slot: <Input placeholder="抽奖标题" allowClear/>,
+            slot: <Input placeholder="抽奖标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lotteryDetail',
-            slot: <Input placeholder="抽奖详情" allowClear/>,
+            slot: <Input placeholder="抽奖详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lotteryType',
-            slot: <Input placeholder="抽奖类别：0抽取参与者1参与者抽取奖品" allowClear/>,
+            slot: <Input placeholder="抽奖类别：0抽取参与者1参与者抽取奖品" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'reward',
-            slot: <Input placeholder="奖励类型" allowClear/>,
+            slot: <Input placeholder="奖励类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rewardAmount',
-            slot: <Input placeholder="奖励金额" allowClear/>,
+            slot: <Input placeholder="奖励金额" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vaildDate',
-            slot: <Input placeholder="抽奖生效日" allowClear/>,
+            slot: <Input placeholder="抽奖生效日" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expireDate',
-            slot: <Input placeholder="抽奖失效日期" allowClear/>,
+            slot: <Input placeholder="抽奖失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rewardValidDate',
-            slot: <Input placeholder="奖励使用开始日期" allowClear/>,
+            slot: <Input placeholder="奖励使用开始日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rewardExpireDate',
-            slot: <Input placeholder="奖励失效日期" allowClear/>,
+            slot: <Input placeholder="奖励失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'numbero',
-            slot: <Input placeholder="最多参与人数" allowClear/>,
+            slot: <Input placeholder="最多参与人数" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cost',
-            slot: <Input placeholder="抽奖消费" allowClear/>,
+            slot: <Input placeholder="抽奖消费" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'costType',
-            slot: <Input placeholder="抽奖消费类型" allowClear/>,
+            slot: <Input placeholder="抽奖消费类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rewardType',
-            slot: <Input placeholder="奖品类型" allowClear/>,
+            slot: <Input placeholder="奖品类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cycleAmount',
-            slot: <Input placeholder="循环期数" allowClear/>,
+            slot: <Input placeholder="循环期数" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cyclePeriod',
-            slot: <Input placeholder="间隔天数" allowClear/>,
+            slot: <Input placeholder="间隔天数" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cycleType',
-            slot: <Input placeholder="循环类型0按周期1开奖后次日2开奖后即开" allowClear/>,
+            slot: <Input placeholder="循环类型0按周期1开奖后次日2开奖后即开" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -239,7 +239,7 @@ const MallLottery: FC = () => {
                 addApiFun={mallLotteryApi.add}
                 editApiFun={mallLotteryApi.edit}
                 delApiFun={mallLotteryApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

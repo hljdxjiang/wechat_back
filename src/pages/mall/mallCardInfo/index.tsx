@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallCardInfoApi from '@/api/mall/mallCardInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,55 +10,55 @@ const MallCardInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'cardId',
-            slot: <Input placeholder="卡券编号" allowClear/>,
+            slot: <Input placeholder="卡券编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cardName',
-            slot: <Input placeholder="卡券名称" allowClear/>,
+            slot: <Input placeholder="卡券名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cardNo',
-            slot: <Input placeholder="卡券卡号" allowClear/>,
+            slot: <Input placeholder="卡券卡号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cardPwd',
-            slot: <Input placeholder="卡券卡密" allowClear/>,
+            slot: <Input placeholder="卡券卡密" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cardDesc',
-            slot: <Input placeholder="卡券详情" allowClear/>,
+            slot: <Input placeholder="卡券详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'cardType',
-            slot: <Input placeholder="卡券类型" allowClear/>,
+            slot: <Input placeholder="卡券类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vaildDate',
-            slot: <Input placeholder="生效时间" allowClear/>,
+            slot: <Input placeholder="生效时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expireDate',
-            slot: <Input placeholder="失效日期" allowClear/>,
+            slot: <Input placeholder="失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="卡券状态0未领取1已领取9已使用" allowClear/>,
+            slot: <Input placeholder="卡券状态0未领取1已领取9已使用" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -131,7 +131,7 @@ const MallCardInfo: FC = () => {
                 addApiFun={mallCardInfoApi.add}
                 editApiFun={mallCardInfoApi.edit}
                 delApiFun={mallCardInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import backImgInfoApi from '@/api/back/backImgInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,73 +10,73 @@ const BackImgInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'imgPath',
-            slot: <Input placeholder="图片本地路径" allowClear/>,
+            slot: <Input placeholder="图片本地路径" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'imgDesc',
-            slot: <Input placeholder="图片描述" allowClear/>,
+            slot: <Input placeholder="图片描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'imgSort',
-            slot: <Input placeholder="排序" allowClear/>,
+            slot: <Input placeholder="排序" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'imgType',
-            slot: <Input placeholder="图片类型" allowClear/>,
+            slot: <Input placeholder="图片类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'linkUrl',
-            slot: <Input placeholder="链接地址" allowClear/>,
+            slot: <Input placeholder="链接地址" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'controlFlag',
-            slot: <Input placeholder="控制标识" allowClear/>,
+            slot: <Input placeholder="控制标识" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'whiteType',
-            slot: <Input placeholder="白名单类型" allowClear/>,
+            slot: <Input placeholder="白名单类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'validTime',
-            slot: <Input placeholder="生效时间" allowClear/>,
+            slot: <Input placeholder="生效时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expireTime',
-            slot: <Input placeholder="失效时间" allowClear/>,
+            slot: <Input placeholder="失效时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'channelNo',
-            slot: <Input placeholder="展示渠道" allowClear/>,
+            slot: <Input placeholder="展示渠道" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'needLogin',
-            slot: <Input placeholder="是否需要登录0否1是" allowClear/>,
+            slot: <Input placeholder="是否需要登录0否1是" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -167,7 +167,7 @@ const BackImgInfo: FC = () => {
                 addApiFun={backImgInfoApi.add}
                 editApiFun={backImgInfoApi.edit}
                 delApiFun={backImgInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

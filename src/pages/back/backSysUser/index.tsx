@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import backSysUserApi from '@/api/back/backSysUser'
 import MyPage from '@/components/common/myPage';
 
@@ -10,73 +10,73 @@ const BackSysUser: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="用户ID" allowClear/>,
+            slot: <Input placeholder="用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'passwd',
-            slot: <Input placeholder="密码" allowClear/>,
+            slot: <Input placeholder="密码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'groupId',
-            slot: <Input placeholder="用户分组ID" allowClear/>,
+            slot: <Input placeholder="用户分组ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'roleId',
-            slot: <Input placeholder="角色ID" allowClear/>,
+            slot: <Input placeholder="角色ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userName',
-            slot: <Input placeholder="姓名" allowClear/>,
+            slot: <Input placeholder="姓名" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'mobileNo',
-            slot: <Input placeholder="手机号" allowClear/>,
+            slot: <Input placeholder="手机号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'email',
-            slot: <Input placeholder="邮箱地址" allowClear/>,
+            slot: <Input placeholder="邮箱地址" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'idNo',
-            slot: <Input placeholder="证件号" allowClear/>,
+            slot: <Input placeholder="证件号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'idType',
-            slot: <Input placeholder="证件类型" allowClear/>,
+            slot: <Input placeholder="证件类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'oauthCode',
-            slot: <Input placeholder="二次认证码" allowClear/>,
+            slot: <Input placeholder="二次认证码" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="用户备注" allowClear/>,
+            slot: <Input placeholder="用户备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -167,7 +167,7 @@ const BackSysUser: FC = () => {
                 addApiFun={backSysUserApi.add}
                 editApiFun={backSysUserApi.edit}
                 delApiFun={backSysUserApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

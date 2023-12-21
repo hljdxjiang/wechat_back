@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import backRuleControlApi from '@/api/back/backRuleControl'
 import MyPage from '@/components/common/myPage';
 
@@ -10,31 +10,31 @@ const BackRuleControl: FC = () => {
     const searchConfigList = [
         {
             key: 'controlType',
-            slot: <Input placeholder="产品类型" allowClear/>,
+            slot: <Input placeholder="产品类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'controlDesc',
-            slot: <Input placeholder="产品描述" allowClear/>,
+            slot: <Input placeholder="产品描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'ruleRange',
-            slot: <Input placeholder="规则范围" allowClear/>,
+            slot: <Input placeholder="规则范围" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'controlSwitch',
-            slot: <Input placeholder="控制开关" allowClear/>,
+            slot: <Input placeholder="控制开关" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'ruleExpr',
-            slot: <Input placeholder="规则表达式" allowClear/>,
+            slot: <Input placeholder="规则表达式" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -83,7 +83,7 @@ const BackRuleControl: FC = () => {
                 addApiFun={backRuleControlApi.add}
                 editApiFun={backRuleControlApi.edit}
                 delApiFun={backRuleControlApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

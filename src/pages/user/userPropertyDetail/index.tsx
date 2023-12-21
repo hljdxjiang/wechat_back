@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import userPropertyDetailApi from '@/api/user/userPropertyDetail'
 import MyPage from '@/components/common/myPage';
 
@@ -10,61 +10,61 @@ const UserPropertyDetail: FC = () => {
     const searchConfigList = [
         {
             key: 'userid',
-            slot: <Input placeholder="登录账号" allowClear/>,
+            slot: <Input placeholder="登录账号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'createtime',
-            slot: <Input placeholder="创建时间" allowClear/>,
+            slot: <Input placeholder="创建时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastmodifiedtime',
-            slot: <Input placeholder="最后修改时间" allowClear/>,
+            slot: <Input placeholder="最后修改时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'propertyType',
-            slot: <Input placeholder="资产类型" allowClear/>,
+            slot: <Input placeholder="资产类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'operaType',
-            slot: <Input placeholder="消费类型obtain获取cost消费" allowClear/>,
+            slot: <Input placeholder="消费类型obtain获取cost消费" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'amount',
-            slot: <Input placeholder="金额" allowClear/>,
+            slot: <Input placeholder="金额" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'relateType',
-            slot: <Input placeholder="关联类型" allowClear/>,
+            slot: <Input placeholder="关联类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'relateId',
-            slot: <Input placeholder="关联活动ID" allowClear/>,
+            slot: <Input placeholder="关联活动ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'expireDate',
-            slot: <Input placeholder="失效日期" allowClear/>,
+            slot: <Input placeholder="失效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vaildType',
-            slot: <Input placeholder="有效期类型0永久1定期" allowClear/>,
+            slot: <Input placeholder="有效期类型0永久1定期" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -143,7 +143,7 @@ const UserPropertyDetail: FC = () => {
                 addApiFun={userPropertyDetailApi.add}
                 editApiFun={userPropertyDetailApi.edit}
                 delApiFun={userPropertyDetailApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

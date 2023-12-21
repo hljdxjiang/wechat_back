@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import crmPurchesRecordApi from '@/api/crm/crmPurchesRecord'
 import MyPage from '@/components/common/myPage';
 
@@ -10,67 +10,67 @@ const CrmPurchesRecord: FC = () => {
     const searchConfigList = [
         {
             key: 'batchId',
-            slot: <Input placeholder="批次ID" allowClear/>,
+            slot: <Input placeholder="批次ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'brandId',
-            slot: <Input placeholder="品牌" allowClear/>,
+            slot: <Input placeholder="品牌" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'amount',
-            slot: <Input placeholder="进货数量" allowClear/>,
+            slot: <Input placeholder="进货数量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'arrivalTime',
-            slot: <Input placeholder="到货日期" allowClear/>,
+            slot: <Input placeholder="到货日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'orderTime',
-            slot: <Input placeholder="下单日期" allowClear/>,
+            slot: <Input placeholder="下单日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'spend',
-            slot: <Input placeholder="订单费用" allowClear/>,
+            slot: <Input placeholder="订单费用" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'postage',
-            slot: <Input placeholder="邮费" allowClear/>,
+            slot: <Input placeholder="邮费" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'traceCode',
-            slot: <Input placeholder="邮件单号" allowClear/>,
+            slot: <Input placeholder="邮件单号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'otherCost',
-            slot: <Input placeholder="其他费用" allowClear/>,
+            slot: <Input placeholder="其他费用" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="用户备注" allowClear/>,
+            slot: <Input placeholder="用户备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -155,7 +155,7 @@ const CrmPurchesRecord: FC = () => {
                 addApiFun={crmPurchesRecordApi.add}
                 editApiFun={crmPurchesRecordApi.edit}
                 delApiFun={crmPurchesRecordApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

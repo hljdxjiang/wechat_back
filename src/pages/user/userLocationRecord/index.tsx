@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import userLocationRecordApi from '@/api/user/userLocationRecord'
 import MyPage from '@/components/common/myPage';
 
@@ -10,37 +10,37 @@ const UserLocationRecord: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'latitude',
-            slot: <Input placeholder="地理位置纬度" allowClear/>,
+            slot: <Input placeholder="地理位置纬度" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'longitude',
-            slot: <Input placeholder="地理位置经度" allowClear/>,
+            slot: <Input placeholder="地理位置经度" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'precision',
-            slot: <Input placeholder="地理位置精度" allowClear/>,
+            slot: <Input placeholder="地理位置精度" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'channel',
-            slot: <Input placeholder="渠道" allowClear/>,
+            slot: <Input placeholder="渠道" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'validDate',
-            slot: <Input placeholder="生效日期" allowClear/>,
+            slot: <Input placeholder="生效日期" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -94,7 +94,7 @@ const UserLocationRecord: FC = () => {
                 addApiFun={userLocationRecordApi.add}
                 editApiFun={userLocationRecordApi.edit}
                 delApiFun={userLocationRecordApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

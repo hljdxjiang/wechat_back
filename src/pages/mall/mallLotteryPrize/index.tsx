@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallLotteryPrizeApi from '@/api/mall/mallLotteryPrize'
 import MyPage from '@/components/common/myPage';
 
@@ -10,55 +10,55 @@ const MallLotteryPrize: FC = () => {
     const searchConfigList = [
         {
             key: 'lotteryId',
-            slot: <Input placeholder="抽奖ID" allowClear/>,
+            slot: <Input placeholder="抽奖ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prizeId',
-            slot: <Input placeholder="奖品ID" allowClear/>,
+            slot: <Input placeholder="奖品ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prizeTitle',
-            slot: <Input placeholder="奖品标题" allowClear/>,
+            slot: <Input placeholder="奖品标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prizeDetail',
-            slot: <Input placeholder="奖品详情" allowClear/>,
+            slot: <Input placeholder="奖品详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'prizeType',
-            slot: <Input placeholder="奖品类别：0实物1积分2金币3银币4优惠券" allowClear/>,
+            slot: <Input placeholder="奖品类别：0实物1积分2金币3银币4优惠券" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'rate',
-            slot: <Input placeholder="中奖概率" allowClear/>,
+            slot: <Input placeholder="中奖概率" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'amount',
-            slot: <Input placeholder="奖品数量" allowClear/>,
+            slot: <Input placeholder="奖品数量" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'sort',
-            slot: <Input placeholder="奖品排序" allowClear/>,
+            slot: <Input placeholder="奖品排序" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="奖品状态" allowClear/>,
+            slot: <Input placeholder="奖品状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -131,7 +131,7 @@ const MallLotteryPrize: FC = () => {
                 addApiFun={mallLotteryPrizeApi.add}
                 editApiFun={mallLotteryPrizeApi.edit}
                 delApiFun={mallLotteryPrizeApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

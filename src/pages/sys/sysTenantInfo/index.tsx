@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysTenantInfoApi from '@/api/sys/sysTenantInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,109 +10,109 @@ const SysTenantInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'tenantName',
-            slot: <Input placeholder="租户名称" allowClear/>,
+            slot: <Input placeholder="租户名称" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tenantDesc',
-            slot: <Input placeholder="租户描述" allowClear/>,
+            slot: <Input placeholder="租户描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'registerTime',
-            slot: <Input placeholder="注册日期" allowClear/>,
+            slot: <Input placeholder="注册日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'mobileNo',
-            slot: <Input placeholder="注册手机号" allowClear/>,
+            slot: <Input placeholder="注册手机号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vipLevel',
-            slot: <Input placeholder="会员等级" allowClear/>,
+            slot: <Input placeholder="会员等级" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'vipExpireDay',
-            slot: <Input placeholder="会员过期日期" allowClear/>,
+            slot: <Input placeholder="会员过期日期" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tenantCardNo',
-            slot: <Input placeholder="绑定卡号" allowClear/>,
+            slot: <Input placeholder="绑定卡号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态（0正常1停用）" allowClear/>,
+            slot: <Input placeholder="状态（0正常1停用）" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'remark',
-            slot: <Input placeholder="备注" allowClear/>,
+            slot: <Input placeholder="备注" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'createtime',
-            slot: <Input placeholder="创建时间" allowClear/>,
+            slot: <Input placeholder="创建时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'lastmodifiedtime',
-            slot: <Input placeholder="最后修改时间" allowClear/>,
+            slot: <Input placeholder="最后修改时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tenantFavicon',
-            slot: <Input placeholder="页面角标图片" allowClear/>,
+            slot: <Input placeholder="页面角标图片" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'tenantLogo',
-            slot: <Input placeholder="租户logo" allowClear/>,
+            slot: <Input placeholder="租户logo" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'email',
-            slot: <Input placeholder="租户邮箱" allowClear/>,
+            slot: <Input placeholder="租户邮箱" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'appid',
-            slot: <Input placeholder="微信ID" allowClear/>,
+            slot: <Input placeholder="微信ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'appSecret',
-            slot: <Input placeholder="微信秘钥" allowClear/>,
+            slot: <Input placeholder="微信秘钥" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'wechatToken',
-            slot: <Input placeholder="微信token" allowClear/>,
+            slot: <Input placeholder="微信token" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'minipSecret',
-            slot: <Input placeholder="小程序token" allowClear/>,
+            slot: <Input placeholder="小程序token" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -238,7 +238,7 @@ const SysTenantInfo: FC = () => {
                 addApiFun={sysTenantInfoApi.add}
                 editApiFun={sysTenantInfoApi.edit}
                 delApiFun={sysTenantInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

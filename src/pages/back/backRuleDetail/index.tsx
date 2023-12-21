@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import backRuleDetailApi from '@/api/back/backRuleDetail'
 import MyPage from '@/components/common/myPage';
 
@@ -10,19 +10,19 @@ const BackRuleDetail: FC = () => {
     const searchConfigList = [
         {
             key: 'roleId',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'keyValue',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'keyType',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -58,7 +58,7 @@ const BackRuleDetail: FC = () => {
                 addApiFun={backRuleDetailApi.add}
                 editApiFun={backRuleDetailApi.edit}
                 delApiFun={backRuleDetailApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

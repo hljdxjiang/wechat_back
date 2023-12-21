@@ -1,5 +1,5 @@
-import React, {FC, useState} from "react";
-import {Input} from "antd";
+import React, { FC, useState } from "react";
+import { Input } from "antd";
 import bbsArticleInfoApi from "@/api/bbs/bbsArticleInfo";
 import MyPage from "@/components/common/myPage";
 
@@ -10,57 +10,57 @@ const BbsArticleInfo: FC = () => {
     const searchConfigList = [
         {
             key: "articleId",
-            slot: <Input placeholder="文章ID" allowClear/>,
+            slot: <Input placeholder="文章ID" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "articleType",
-            slot: <Input placeholder="文章类型" allowClear/>,
+            slot: <Input placeholder="文章类型" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "articleTitle",
-            slot: <Input placeholder="文章名称" allowClear/>,
+            slot: <Input placeholder="文章名称" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "userId",
-            slot: <Input placeholder="作者ID" allowClear/>,
+            slot: <Input placeholder="作者ID" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "remark",
-            slot: <Input placeholder="备注" allowClear/>,
+            slot: <Input placeholder="备注" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "columnId",
-            slot: <Input placeholder="专题标签" allowClear/>,
+            slot: <Input placeholder="专题标签" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "labelId",
-            slot: <Input placeholder="文章标签" allowClear/>,
+            slot: <Input placeholder="文章标签" allowClear />,
             rules: [],
             initialValue: "",
         },
         {
             key: "status",
             slot: (
-                <Input placeholder="状态0草稿1审核中8审核拒绝9审核通过" allowClear/>
+                <Input placeholder="状态0草稿1审核中8审核拒绝9审核通过" allowClear />
             ),
             rules: [],
             initialValue: "",
         },
         {
             key: "articleContent",
-            slot: <Input placeholder="文章详情" allowClear/>,
+            slot: <Input placeholder="文章详情" allowClear />,
             rules: [],
             initialValue: "",
         },
@@ -129,7 +129,7 @@ const BbsArticleInfo: FC = () => {
                 addApiFun={bbsArticleInfoApi.add}
                 editApiFun={bbsArticleInfoApi.edit}
                 delApiFun={bbsArticleInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

@@ -8,7 +8,7 @@ export interface AppState {
 }
 
 const initialState: AppState = {
-    collapsed: false,
+    collapsed: true,
     theme: 'default',
     menuMode: 'vertical'
 }

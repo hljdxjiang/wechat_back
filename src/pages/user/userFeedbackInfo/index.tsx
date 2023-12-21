@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import userFeedbackInfoApi from '@/api/user/userFeedbackInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,43 +10,43 @@ const UserFeedbackInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="" allowClear/>,
+            slot: <Input placeholder="" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'mobileNo',
-            slot: <Input placeholder="客户手机号" allowClear/>,
+            slot: <Input placeholder="客户手机号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'feedType',
-            slot: <Input placeholder="反馈类型" allowClear/>,
+            slot: <Input placeholder="反馈类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'feedTitle',
-            slot: <Input placeholder="反馈标题" allowClear/>,
+            slot: <Input placeholder="反馈标题" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'feedDetail',
-            slot: <Input placeholder="反馈详情" allowClear/>,
+            slot: <Input placeholder="反馈详情" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'feedImg',
-            slot: <Input placeholder="反馈影像地址" allowClear/>,
+            slot: <Input placeholder="反馈影像地址" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -107,7 +107,7 @@ const UserFeedbackInfo: FC = () => {
                 addApiFun={userFeedbackInfoApi.add}
                 editApiFun={userFeedbackInfoApi.edit}
                 delApiFun={userFeedbackInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

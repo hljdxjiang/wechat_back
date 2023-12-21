@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import mallUserCouponInfoApi from '@/api/mall/mallUserCouponInfo'
 import MyPage from '@/components/common/myPage';
 
@@ -10,73 +10,73 @@ const MallUserCouponInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="用户ID" allowClear/>,
+            slot: <Input placeholder="用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'userCouponId',
-            slot: <Input placeholder="用户优惠券ID" allowClear/>,
+            slot: <Input placeholder="用户优惠券ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponId',
-            slot: <Input placeholder="优惠券编号" allowClear/>,
+            slot: <Input placeholder="优惠券编号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponType',
-            slot: <Input placeholder="优惠券类型" allowClear/>,
+            slot: <Input placeholder="优惠券类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponMethod',
-            slot: <Input placeholder="优惠方式" allowClear/>,
+            slot: <Input placeholder="优惠方式" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'couponAmount',
-            slot: <Input placeholder="优惠比例" allowClear/>,
+            slot: <Input placeholder="优惠比例" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'useVaildDate',
-            slot: <Input placeholder="开始使用时间" allowClear/>,
+            slot: <Input placeholder="开始使用时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'useExpireDate',
-            slot: <Input placeholder="使用时效时间" allowClear/>,
+            slot: <Input placeholder="使用时效时间" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'status',
-            slot: <Input placeholder="状态0可用1过期9使用" allowClear/>,
+            slot: <Input placeholder="状态0可用1过期9使用" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'relateType',
-            slot: <Input placeholder="使用关联类型" allowClear/>,
+            slot: <Input placeholder="使用关联类型" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'relateId',
-            slot: <Input placeholder="关联订单ID" allowClear/>,
+            slot: <Input placeholder="关联订单ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'access',
-            slot: <Input placeholder="优惠券获取途径" allowClear/>,
+            slot: <Input placeholder="优惠券获取途径" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -167,7 +167,7 @@ const MallUserCouponInfo: FC = () => {
                 addApiFun={mallUserCouponInfoApi.add}
                 editApiFun={mallUserCouponInfoApi.edit}
                 delApiFun={mallUserCouponInfoApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>

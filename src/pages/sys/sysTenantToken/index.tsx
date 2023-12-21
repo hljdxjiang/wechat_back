@@ -1,5 +1,5 @@
-import React, {FC, useState} from 'react'
-import {Input,} from 'antd'
+import React, { FC, useState } from 'react'
+import { Input, } from 'antd'
 import sysTenantTokenApi from '@/api/sys/sysTenantToken'
 import MyPage from '@/components/common/myPage';
 
@@ -10,49 +10,49 @@ const SysTenantToken: FC = () => {
     const searchConfigList = [
         {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear/>,
+            slot: <Input placeholder="用户状态" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'authType',
-            slot: <Input placeholder="认证方式0直接认证1授权认证" allowClear/>,
+            slot: <Input placeholder="认证方式0直接认证1授权认证" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'appid',
-            slot: <Input placeholder="微信ID" allowClear/>,
+            slot: <Input placeholder="微信ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'appSecret',
-            slot: <Input placeholder="微信秘钥" allowClear/>,
+            slot: <Input placeholder="微信秘钥" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'channel',
-            slot: <Input placeholder="token渠道WX,MINIP,JD" allowClear/>,
+            slot: <Input placeholder="token渠道WX,MINIP,JD" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'token',
-            slot: <Input placeholder="token值" allowClear/>,
+            slot: <Input placeholder="token值" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'refreshToken',
-            slot: <Input placeholder="刷新token" allowClear/>,
+            slot: <Input placeholder="刷新token" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'echostr',
-            slot: <Input placeholder="微信配置Key" allowClear/>,
+            slot: <Input placeholder="微信配置Key" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -119,7 +119,7 @@ const SysTenantToken: FC = () => {
                 addApiFun={sysTenantTokenApi.add}
                 editApiFun={sysTenantTokenApi.edit}
                 delApiFun={sysTenantTokenApi.deleteById}
-                showOpeation={false}
+                showOpeation={true}
                 searchConfigList={searchConfigList}
             />
         </>
