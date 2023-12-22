@@ -9,7 +9,7 @@ import {
     WechatFilled
 } from '@ant-design/icons'
 import Home from '@/pages/home'
-import {MenuRoute} from '@/route/types'
+import { MenuRoute } from '@/route/types'
 import TParamConfig from '@/pages/param/tParamConfig'
 import TUserInfo from '@/pages/user/tUserInfo'
 import CrmProdInfo from '@/pages/crm/crmProdInfo'
@@ -108,7 +108,7 @@ const preDefinedRoutes: MenuRoute[] = [
                 key: 'user:list',
                 component: TUserInfo
             }, {
-                path: '/back/sysroles',
+                path: '/user/sysroles',
                 name: '角色信息表',
                 exact: true,
                 key: 'back:sysroles',
@@ -300,7 +300,7 @@ const preDefinedRoutes: MenuRoute[] = [
         icon: SettingFilled,
         routes: [
             {
-                path: '/back/imginfo',
+                path: '/config/imginfo',
                 name: '系统图片配置表',
                 exact: true,
                 key: 'back:imginfo',
@@ -312,12 +312,6 @@ const preDefinedRoutes: MenuRoute[] = [
                 key: 'config.param',
                 //hideInMenu: true,
                 component: TParamConfig
-            }, {
-                path: '/sys/paramconfig',
-                name: '系统参数配置表',
-                exact: true,
-                key: 'sys:paramconfig',
-                component: SysParamConfig
             },
             {
                 path: '/back/sysdict',

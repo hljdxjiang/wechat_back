@@ -1,6 +1,6 @@
-import {createSlice} from '@reduxjs/toolkit'
-import type {RootState} from '@/store'
-import {UserInfo} from '@/app_models/user'
+import { createSlice } from '@reduxjs/toolkit'
+import type { RootState } from '@/store'
+import { UserInfo } from '@/app_models/user'
 
 export interface UserState {
     UserInfo: UserInfo & { is_oidc_user: boolean }
@@ -8,7 +8,7 @@ export interface UserState {
 
 const initialState: UserState = {
     UserInfo: {
-        username: '',
+        userName: '',
         displayName: '',
         permission: [],
         menus: [],
@@ -28,7 +28,7 @@ export const userSlice = createSlice({
     }
 })
 
-export const {setUserInfo} = userSlice.actions
+export const { setUserInfo } = userSlice.actions
 
 export const selectUserInfo = (state: RootState) => state.user.UserInfo
 

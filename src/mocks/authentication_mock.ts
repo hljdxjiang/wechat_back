@@ -1,9 +1,9 @@
-import {rest} from 'msw'
-import type {UserInfo} from '@/app_models/user'
+import { rest } from 'msw'
+import type { UserInfo } from '@/app_models/user'
 
 export const userRes: UserInfo[] = [
     {
-        username: 'admin',
+        userName: 'admin',
         password: '123456',
         token: 'asdfghjkl',
         menus: [
@@ -64,9 +64,9 @@ const app = [
     rest.post('/login', (req, res, ctx) => {
         // Persist user's authentication in the session
         console.log('...............msw mock login.......')
-        const {username, password} = req.body as UserInfo
+        const { userName, password } = req.body as UserInfo
         const user = userRes.find(
-            (item) => item.username === username && item.password === password
+            (item) => item.userName === userName && item.password === password
         )
         if (user) {
             sessionStorage.setItem('mock-authenticated-token', user.token)

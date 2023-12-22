@@ -1,17 +1,17 @@
-import React, {FC, useCallback, useEffect, useState} from 'react'
-import {Link, useLocation} from 'react-router-dom'
-import {Layout, Menu} from 'antd'
+import React, { FC, useCallback, useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { Layout, Menu } from 'antd'
 import MyIconFont from '@/components/common/myIconfont'
-import {flattenRoutes, getAppMenus, getKeyName} from '@/assets/js/publicFunc'
+import { flattenRoutes, getAppMenus, getKeyName } from '@/assets/js/publicFunc'
 import logo from '@/assets/img/logo.jpg'
-import {useAppSelector} from '@/store/redux-hooks'
-import {selectUserInfo} from '@/store/slicers/userSlice'
-import {selectCollapsed, selectTheme} from '@/store/slicers/appSlice'
+import { useAppSelector } from '@/store/redux-hooks'
+import { selectUserInfo } from '@/store/slicers/userSlice'
+import { selectCollapsed, selectTheme } from '@/store/slicers/appSlice'
 import styles from './Menu.module.less'
 
-const {Header} = Layout
+const { Header } = Layout
 
-const {SubMenu} = Menu
+const { SubMenu } = Menu
 const Allmenus = getAppMenus()
 const flatMenu = flattenRoutes(Allmenus)
 
@@ -21,14 +21,14 @@ interface MenuProps {
     menuMode: 'horizontal' | 'vertical'
 }
 
-const MenuView: FC<MenuProps> = ({menuMode}) => {
+const MenuView: FC<MenuProps> = ({ menuMode }) => {
     const userInfo = useAppSelector(selectUserInfo)
     const collapsed = useAppSelector(selectCollapsed)
     const theme = useAppSelector(selectTheme)
-    const {pathname} = useLocation()
-    const {tabKey: curKey = 'home'} = getKeyName(pathname)
+    const { pathname } = useLocation()
+    const { tabKey: curKey = 'home' } = getKeyName(pathname)
     const [current, setCurrent] = useState(curKey)
-    const {menus = []} = userInfo
+    const { menus = [] } = userInfo
 
     // 递归逐级向上获取最近一级的菜单，并高亮
     const higherMenuKey = useCallback(
@@ -40,29 +40,29 @@ const MenuView: FC<MenuProps> = ({menuMode}) => {
                 return checkKey
             }
             const higherPath = path.match(/(.*)\//g)[0].replace(/(.*)\//, '$1')
-            const {tabKey} = getKeyName(higherPath)
+            const { tabKey } = getKeyName(higherPath)
             return higherMenuKey(tabKey, higherPath)
         },
         [pathname]
     )
 
     useEffect(() => {
-        const {tabKey} = getKeyName(pathname)
+        const { tabKey } = getKeyName(pathname)
         const higherKey = higherMenuKey(tabKey)
         setCurrent(higherKey)
     }, [higherMenuKey, pathname])
 
     // 菜单点击事件
-    const handleClick = ({key}): void => {
+    const handleClick = ({ key }): void => {
         setCurrent(key)
     }
 
     // 子菜单的标题
     const subMenuTitle = (data: MenuType): JSX.Element => {
-        const {icon: MenuIcon, iconfont} = data
+        const { icon: MenuIcon, iconfont } = data
         return (
             <div className="flex items-center">
-                {iconfont ? <MyIconFont type={iconfont}/> : !!MenuIcon && <MenuIcon/>}
+                {iconfont ? <MyIconFont type={iconfont} /> : !!MenuIcon && <MenuIcon />}
                 <span className={styles.noselect}>{data.name}</span>
             </div>
         )
@@ -107,9 +107,9 @@ const MenuView: FC<MenuProps> = ({menuMode}) => {
     const showKeys = collapsed ? [] : setDefaultKey
     console.info(showKeys)
     const LogLink = () => (
-        <Link to={{pathname: '/'}}>
+        <Link to={{ pathname: '/' }}>
             <div className="flex items-center logo">
-                <img alt="logo" src={logo} width="32"/>
+                <img alt="logo" src={logo} width="32" />
                 {!collapsed && <h1>后台管理系统</h1>}
             </div>
         </Link>
@@ -117,7 +117,7 @@ const MenuView: FC<MenuProps> = ({menuMode}) => {
     if (menuMode === 'horizontal')
         return (
             <Header className="flex header">
-                <LogLink/>
+                <LogLink />
                 <div className={styles.autoWidthMenu}>
                     <Menu
                         mode="horizontal"
@@ -142,9 +142,9 @@ const MenuView: FC<MenuProps> = ({menuMode}) => {
             }}
             width={220}
         >
-            <LogLink/>
+            <LogLink />
             <Menu
-                defaultOpenKeys={showKeys}
+                defaultOpenKeys={[]}
                 mode="inline"
                 onClick={handleClick}
                 selectedKeys={[current]}

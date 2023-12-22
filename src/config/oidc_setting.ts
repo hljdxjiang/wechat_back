@@ -1,5 +1,5 @@
-import {Profile, User, UserManager, UserManagerSettings, WebStorageStateStore} from 'oidc-client'
-import {UserInfo} from '@/app_models/user'
+import { Profile, User, UserManager, UserManagerSettings, WebStorageStateStore } from 'oidc-client'
+import { UserInfo } from '@/app_models/user'
 
 class Constants {
     public static stsAuthority = process.env.REACT_APP_STS_URI as string // sts服务器
@@ -38,7 +38,7 @@ export const oidcSettings: UserManagerSettings = {
     // X-FRAME-OPTION更新.F:\IdentityServer4.Admin-release-1.1.0\src\Skoruba.IdentityServer4.STS.Identity\Skoruba.IdentityServer4.STS.Identity.csproj Commit f50140ad
     // ! BUG 前端iframe超时应在renew令牌的时候不包含idToken (includeIdTokenInSilentRenew) https://github.com/IdentityModel/oidc-client-js/issues/172
     includeIdTokenInSilentRenew: false, // (boolean, default: true): Flag to indicate if the id_token should be included in the silent renew process.
-    userStore: new WebStorageStateStore({store: window.localStorage}) // default: sessionStorage:
+    userStore: new WebStorageStateStore({ store: window.localStorage }) // default: sessionStorage:
 }
 
 export const parseJwt = (token) => {
@@ -78,7 +78,7 @@ async function defaultAdaptingUser<TUser extends OidcUser>(
 ): Promise<TUser> {
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     const targetUser = <TUser>{
-        username: user.profile.given_name || user.profile.name,
+        userName: user.profile.given_name || user.profile.name,
         displayName: user.profile.preferred_username || user.profile.given_name,
         token: user.access_token,
         is_oidc_user: true,

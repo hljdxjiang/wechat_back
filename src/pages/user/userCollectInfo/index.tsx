@@ -10,7 +10,7 @@ const UserCollectInfo: FC = () => {
     const searchConfigList = [
         {
             key: 'userId',
-            slot: <Input placeholder="" allowClear />,
+            slot: <Input placeholder="用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -55,7 +55,7 @@ const UserCollectInfo: FC = () => {
 
 
         {
-            title: '',
+            title: '用户ID',
             key: 'userId',
             dataIndex: 'userId',
         }

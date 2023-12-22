@@ -15,7 +15,7 @@ export interface Menu {
 
 export interface UserInfo {
     roleId?: String
-    username: string
+    userName: string
     displayName?: string
     password?: string
     token: string

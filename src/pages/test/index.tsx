@@ -1,16 +1,16 @@
-import React, {FC} from 'react'
-import {useHistory} from 'react-router-dom'
-import {Button, List, Typography} from 'antd'
-import {KeyOutlined} from '@ant-design/icons'
-import {selectUserInfo, setUserInfo} from '@/store/slicers/userSlice'
-import {useAppDispatch, useAppSelector} from '@/store/redux-hooks'
+import React, { FC } from 'react'
+import { useHistory } from 'react-router-dom'
+import { Button, List, Typography } from 'antd'
+import { KeyOutlined } from '@ant-design/icons'
+import { selectUserInfo, setUserInfo } from '@/store/slicers/userSlice'
+import { useAppDispatch, useAppSelector } from '@/store/redux-hooks'
 
-const {Text} = Typography
+const { Text } = Typography
 
 const AuthTest: FC = () => {
     const userInfo = useAppSelector(selectUserInfo)
     const history = useHistory()
-    const {username, permission} = userInfo
+    const { userName, permission } = userInfo
     const dispatch = useAppDispatch()
 
     // 切换权限
@@ -62,13 +62,13 @@ const AuthTest: FC = () => {
 
     return (
         <>
-            <Text style={{margin: 20}}>
-                当前用户：<Text code>{username}</Text>
+            <Text style={{ margin: 20 }}>
+                当前用户：<Text code>{userName}</Text>
             </Text>
-            <br/>
-            <Text style={{margin: 20}}>
+            <br />
+            <Text style={{ margin: 20 }}>
                 当前权限：
-                <KeyOutlined/>
+                <KeyOutlined />
             </Text>
             <List
                 size="large"
@@ -84,9 +84,9 @@ const AuthTest: FC = () => {
                         {item.name} - {item.path}
                     </List.Item>
                 )}
-                style={{margin: 20}}
+                style={{ margin: 20 }}
             />
-            <Button onClick={() => history.push('/role/list')} style={{margin: 20}}>
+            <Button onClick={() => history.push('/role/list')} style={{ margin: 20 }}>
                 切换权限后，点击这里，访问【角色列表】试试
             </Button>
         </>

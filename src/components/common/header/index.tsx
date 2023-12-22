@@ -1,13 +1,13 @@
-import React, {FC, useEffect, useState} from 'react'
-import {useHistory} from 'react-router-dom'
-import {Dropdown, Layout, Menu} from 'antd'
-import {CheckOutlined, LoadingOutlined, MenuFoldOutlined, MenuUnfoldOutlined} from '@ant-design/icons'
+import React, { FC, useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { Dropdown, Layout, Menu } from 'antd'
+import { CheckOutlined, LoadingOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import Breadcrumb from '@/components/common/breadcrumb'
-import {Icon} from '@iconify/react'
-import {oidcLogout} from '@/config/oidc_setting'
-import {useAppDispatch, useAppSelector} from '@/store/redux-hooks'
-import {selectUserInfo, setUserInfo} from '@/store/slicers/userSlice'
-import {selectTheme, setCollapsed as setCollapsedGlobal, setMenuMode, setTheme} from '@/store/slicers/appSlice'
+import { Icon } from '@iconify/react'
+import { oidcLogout } from '@/config/oidc_setting'
+import { useAppDispatch, useAppSelector } from '@/store/redux-hooks'
+import { selectUserInfo, setUserInfo } from '@/store/slicers/userSlice'
+import { selectTheme, setCollapsed as setCollapsedGlobal, setMenuMode, setTheme } from '@/store/slicers/appSlice'
 
 import classNames from 'classnames'
 import style from './Header.module.less'
@@ -19,8 +19,8 @@ const Header: FC = () => {
     const userInfo = useAppSelector(selectUserInfo)
     const menuMode = useAppSelector((state) => state.app.menuMode)
     const history = useHistory()
-    const {username = '-'} = userInfo
-    const firstWord = username.slice(0, 1)
+    const { userName = '-' } = userInfo
+    const firstWord = userName.slice(0, 1)
     const [collapsed, setCollapsed] = useState(false)
     const [loading, setLoading] = useState(false)
     const [visible, setVisible] = useState(false);
@@ -32,7 +32,7 @@ const Header: FC = () => {
             dispatch(setUserInfo({})) // 清除用户信息 下同
         } else {
             dispatch(setUserInfo({}))
-            history.replace({pathname: '/login'})
+            history.replace({ pathname: '/login' })
         }
     }
 
@@ -51,11 +51,11 @@ const Header: FC = () => {
         <Menu>
             <Menu.Item onClick={changePwd}>
                 <span className="ant-btn-link">修改密码</span>
-                {loading && <LoadingOutlined/>}
+                {loading && <LoadingOutlined />}
             </Menu.Item>
             <Menu.Item onClick={logout}>
                 <span className="ant-btn-link">退出登录</span>
-                {loading && <LoadingOutlined/>}
+                {loading && <LoadingOutlined />}
             </Menu.Item>
         </Menu>
     )
@@ -133,38 +133,38 @@ const Header: FC = () => {
                     <>
                         <div className={style.toggleMenu} onClick={toggle}>
                             {collapsed ? (
-                                <MenuUnfoldOutlined className={style.trigger}/>
+                                <MenuUnfoldOutlined className={style.trigger} />
                             ) : (
-                                <MenuFoldOutlined className={style.trigger}/>
+                                <MenuFoldOutlined className={style.trigger} />
                             )}
                         </div>
                         {/* 面包屑 */}
-                        <Breadcrumb/>
+                        <Breadcrumb />
                     </>
                 )}
 
                 {/* 右上角 */}
                 <Dropdown className={`fr ${style.content}`} overlay={menu}>
-          <span className={style.user}>
-            <span className="avart">{firstWord}</span>
-            <span>{username}</span>
-          </span>
+                    <span className={style.user}>
+                        <span className="avart">{firstWord}</span>
+                        <span>{userName}</span>
+                    </span>
                 </Dropdown>
                 <Dropdown className={`fr ${style.content}`} overlay={setting}>
-          <span className={style.preference}>
-            <Icon icon="emojione:gear" color="blue"/>
-          </span>
+                    <span className={style.preference}>
+                        <Icon icon="emojione:gear" color="blue" />
+                    </span>
                 </Dropdown>
                 <div className={`fr ${style.themeSwitchWrapper}`}>
                     <div
                         className={`${style.themeSwitch} ${theme === 'default' ? '' : style.themeSwitchDark
-                        }`}
+                            }`}
                         title="更换主题"
                         onClick={() => changeTheme(theme === 'default' ? 'dark' : 'default')}
                     >
-                        <div className={style.themeSwitchInner}/>
-                        <Icon icon="emojione:sun"/>
-                        <Icon icon="bi:moon-stars-fill" color="#ffe62e"/>
+                        <div className={style.themeSwitchInner} />
+                        <Icon icon="emojione:sun" />
+                        <Icon icon="bi:moon-stars-fill" color="#ffe62e" />
                     </div>
                 </div>
                 {/* <div className={`fr ${style.content}`}>
