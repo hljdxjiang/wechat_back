@@ -11,7 +11,6 @@ import {
 import Home from '@/pages/home'
 import { MenuRoute } from '@/route/types'
 import TParamConfig from '@/pages/param/tParamConfig'
-import TUserInfo from '@/pages/user/tUserInfo'
 import CrmProdInfo from '@/pages/crm/crmProdInfo'
 import SysFlowItems from '@/pages/sys/sysFlowItems'
 import BackImgInfo from '@/pages/back/backImgInfo'
