@@ -6,7 +6,7 @@ import {
     SketchCircleFilled,
     UserOutlined,
     VideoCameraFilled,
-    WechatFilled
+    WechatFilled, TeamOutlined, ShoppingCartOutlined
 } from '@ant-design/icons'
 import Home from '@/pages/home'
 import { MenuRoute } from '@/route/types'
@@ -101,94 +101,39 @@ const preDefinedRoutes: MenuRoute[] = [
         icon: UserOutlined,
         routes: [
             {
-                path: '/user/list',
-                name: '用户列表',
+                path: '/back/sysuser',
+                name: '后管用户表',
                 exact: true,
-                key: 'user:list',
-                component: TUserInfo
+                key: 'back:sysuser',
+                component: BackSysUser
+            }, {
+                path: '/back/userlogin',
+                name: '用户登录历史表',
+                exact: true,
+                key: 'back:userlogin',
+                component: BackUserLoginRecord
             }, {
                 path: '/user/sysroles',
                 name: '角色信息表',
                 exact: true,
                 key: 'back:sysroles',
                 component: BackSysRoles
+            }, {
+                path: '/back/operarecord',
+                name: '后管操作记录表',
+                exact: true,
+                key: 'back:operarecord',
+                component: BackOperaRecord
             },
         ]
-    },
-    // {
-    //   path: '/workspace',
-    //   name: '工作台',
-    //   exact: true,
-    //   key: 'workspace',
-    //   component: Workspace,
-    //   icon: DashboardOutlined
-    //   // icon: () =>
-    //   //   React.createElement(Icon, { icon: 'arcticons:syska-smart-home' })
-    // },
-    {
-        path: '/others',
-        name: '参数',
-        key: 'hotel',
+    }, {
+        path: '/cust',
+        name: '客户管理',
+        key: 'user',
         type: 'subMenu',
-        icon: UserOutlined,
+        icon: TeamOutlined,
         routes: [
-            {
-                path: '/sys/blacklist',
-                name: '黑名单表',
-                exact: true,
-                key: 'sys:blacklist',
-                component: SysBlacklist
-            },
-            {
-                path: '/user/collectinfo',
-                name: '用户收藏表',
-                exact: true,
-                key: 'user:collectinfo',
-                component: UserCollectInfo
-            },
-            {
-                path: '/user/feedbackinfo',
-                name: '用户反馈信息表',
-                exact: true,
-                key: 'user:feedbackinfo',
-                component: UserFeedbackInfo
-            },
-            {
-                path: '/user/commentinfo',
-                name: '客户信息表',
-                exact: true,
-                key: 'user:commentinfo',
-                component: UserCommentInfo
-            },
-            {
-                path: '/sys/tenanttoken',
-                name: '企业token信息表',
-                exact: true,
-                key: 'sys:tenanttoken',
-                component: SysTenantToken
-            },
-            {
-                path: '/sys/tenantinfo',
-                name: '租户信息表',
-                exact: true,
-                key: 'sys:tenantinfo',
-                component: SysTenantInfo
-            },
 
-            {
-                path: '/user/addrinfo',
-                name: '客户信息表',
-                exact: true,
-                key: 'user:addrinfo',
-                component: UserAddrInfo
-            },
-            {
-                path: '/mall/saleaddr',
-                name: '订单地址信息表',
-                exact: true,
-                key: 'mall:saleaddr',
-                component: MallSaleAddr
-            },
             {
                 path: '/user/propertydetail',
                 name: '用户资产记录表',
@@ -223,6 +168,12 @@ const preDefinedRoutes: MenuRoute[] = [
                 exact: true,
                 key: 'user:reginfo',
                 component: UserRegInfo
+            }, {
+                path: '/user/addrinfo',
+                name: '客户地址表',
+                exact: true,
+                key: 'user:addrinfo',
+                component: UserAddrInfo
             },
             {
                 path: '/user/operarecord',
@@ -230,65 +181,48 @@ const preDefinedRoutes: MenuRoute[] = [
                 exact: true,
                 key: 'user:operarecord',
                 component: UserOperaRecord
+            }, {
+                path: '/user/collectinfo',
+                name: '用户收藏表',
+                exact: true,
+                key: 'user:collectinfo',
+                component: UserCollectInfo
             },
 
             {
-                path: '/crm/referrerinfo',
-                name: '推荐人信息表',
+                path: '/user/commentinfo',
+                name: '客户信息表',
                 exact: true,
-                key: 'crm:referrerinfo',
-                component: CrmReferrerInfo
+                key: 'user:commentinfo',
+                component: UserCommentInfo
             },
+        ]
+    },
+    // {
+    //   path: '/workspace',
+    //   name: '工作台',
+    //   exact: true,
+    //   key: 'workspace',
+    //   component: Workspace,
+    //   icon: DashboardOutlined
+    //   // icon: () =>
+    //   //   React.createElement(Icon, { icon: 'arcticons:syska-smart-home' })
+    // },
+    {
+        path: '/shop',
+        name: '订单管理',
+        key: 'shop',
+        type: 'subMenu',
+        icon: ShoppingCartOutlined,
+        routes: [
             {
-                path: '/back/sysuser',
-                name: '后管用户表',
+                path: '/crm/salerecord',
+                name: '销售记录表',
                 exact: true,
-                key: 'back:sysuser',
-                component: BackSysUser
-            },
-            {
-                path: '/back/operarecord',
-                name: '后管操作记录表',
-                exact: true,
-                key: 'back:operarecord',
-                component: BackOperaRecord
-            },
-            {
-                path: '/bbs/articleinfo',
-                name: '文章记录表',
-                exact: true,
-                key: 'bbs:articleinfo',
-                component: BbsArticleInfo
-            },
-            {
-                path: '/bbs/columninfo',
-                name: '文章栏目信息表',
-                exact: true,
-                key: 'bbs:columninfo',
-                component: BbsColumnInfo
+                key: 'crm:salerecord',
+                component: CrmSaleRecord
             },
 
-            {
-                path: '/sys/pagetype',
-                name: '类型配置表',
-                exact: true,
-                key: 'sys:pagetype',
-                component: SysPageTypeInfo
-            },
-            {
-                path: '/back/userlogin',
-                name: '用户登录历史表',
-                exact: true,
-                key: 'back:userlogin',
-                component: BackUserLoginRecord
-            },
-            {
-                path: '/wechat/subscribeinfo',
-                name: '用户订阅信息表',
-                exact: true,
-                key: 'wechat:subscribeinfo',
-                component: WechatSubscribeInfo
-            },
         ]
     }
     , {
@@ -299,6 +233,18 @@ const preDefinedRoutes: MenuRoute[] = [
         icon: SettingFilled,
         routes: [
             {
+                path: '/sys/blacklist',
+                name: '黑名单表',
+                exact: true,
+                key: 'sys:blacklist',
+                component: SysBlacklist
+            }, {
+                path: '/user/feedbackinfo',
+                name: '用户反馈信息表',
+                exact: true,
+                key: 'user:feedbackinfo',
+                component: UserFeedbackInfo
+            }, {
                 path: '/config/imginfo',
                 name: '系统图片配置表',
                 exact: true,
@@ -330,6 +276,19 @@ const preDefinedRoutes: MenuRoute[] = [
                 exact: true,
                 key: 'sys:resourceinfo',
                 component: SysResourceInfo
+            }, {
+                path: '/sys/tenanttoken',
+                name: '企业token信息表',
+                exact: true,
+                key: 'sys:tenanttoken',
+                component: SysTenantToken
+            },
+            {
+                path: '/sys/tenantinfo',
+                name: '租户信息表',
+                exact: true,
+                key: 'sys:tenantinfo',
+                component: SysTenantInfo
             },
         ]
     },
@@ -353,6 +312,12 @@ const preDefinedRoutes: MenuRoute[] = [
                 exact: true,
                 key: 'sys:pageflow',
                 component: SysPageFlowInfo
+            }, {
+                path: '/sys/pagetype',
+                name: '类型配置表',
+                exact: true,
+                key: 'sys:pagetype',
+                component: SysPageTypeInfo
             },
             {
                 path: '/sys/flowinfo',
@@ -384,6 +349,12 @@ const preDefinedRoutes: MenuRoute[] = [
         icon: FireFilled,
         routes: [
             {
+                path: '/crm/referrerinfo',
+                name: '推荐人信息表',
+                exact: true,
+                key: 'crm:referrerinfo',
+                component: CrmReferrerInfo
+            }, {
                 path: '/user/winningrecord',
                 name: '抽奖获奖记录表',
                 exact: true,
@@ -490,12 +461,6 @@ const preDefinedRoutes: MenuRoute[] = [
                 component: CrmBrandInfo
             },
             {
-                path: '/crm/salerecord',
-                name: '销售记录表',
-                exact: true,
-                key: 'crm:salerecord',
-                component: CrmSaleRecord
-            }, {
                 path: '/crm/prodtype',
                 name: '产品类型配置表',
                 exact: true,
@@ -568,15 +533,14 @@ const preDefinedRoutes: MenuRoute[] = [
         iconfont: 'icon-xiaoshouzongjian',
         routes: [
             {
-                path: '/wechat/menusdetail',
-                name: '微信菜单详情',
+                path: '/wechat/menus',
+                name: '微信菜单表',
                 exact: true,
-                key: 'wechat:menusdetail',
-                component: WechatMenusDetail
-            },
-            {
+                key: 'wechat:menus',
+                component: WechatMenus
+            }, {
                 path: '/wechat/menusitem',
-                name: '微信菜单信息',
+                name: '微信菜单要素',
                 exact: true,
                 key: 'wechat:menusitem',
                 component: WechatMenusItem
@@ -586,20 +550,8 @@ const preDefinedRoutes: MenuRoute[] = [
                 exact: true,
                 key: 'wechat:templateinfo',
                 component: WechatTemplateInfo
-            }, {
-                path: '/wechat/menusmatchrule',
-                name: '微信个性化菜单匹配表',
-                exact: true,
-                key: 'wechat:menusmatchrule',
-                component: WechatMenusMatchrule
             },
-            {
-                path: '/wechat/menus',
-                name: '微信菜单表',
-                exact: true,
-                key: 'wechat:menus',
-                component: WechatMenus
-            },
+
             {
                 path: '/wechat/user',
                 name: '微信用户信息表',
@@ -613,6 +565,12 @@ const preDefinedRoutes: MenuRoute[] = [
                 exact: true,
                 key: 'wechat:minipuser',
                 component: WechatMinipUser
+            }, {
+                path: '/wechat/subscribeinfo',
+                name: '用户订阅信息表',
+                exact: true,
+                key: 'wechat:subscribeinfo',
+                component: WechatSubscribeInfo
             },
         ]
     },
@@ -643,6 +601,19 @@ const preDefinedRoutes: MenuRoute[] = [
                 exact: true,
                 key: 'bbs:courseinfo',
                 component: BbsCourseInfo
+            }, {
+                path: '/bbs/articleinfo',
+                name: '文章记录表',
+                exact: true,
+                key: 'bbs:articleinfo',
+                component: BbsArticleInfo
+            },
+            {
+                path: '/bbs/columninfo',
+                name: '文章栏目信息表',
+                exact: true,
+                key: 'bbs:columninfo',
+                component: BbsColumnInfo
             },
         ]
     }

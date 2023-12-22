@@ -82,7 +82,7 @@ const CrmSaleRecord: FC = () => {
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear />,
+            slot: <Input placeholder="订单状态" allowClear />,
             rules: [],
             initialValue: ''
         }
