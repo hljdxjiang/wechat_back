@@ -47,7 +47,6 @@ import UserLocationRecord from '@/pages/user/userLocationRecord'
 import UserProperty from '@/pages/user/userProperty'
 import SysUserLabels from '@/pages/sys/sysUserLabels'
 import UserRegInfo from '@/pages/user/userRegInfo'
-import WechatMenusOption from '@/pages/wechat/wechatMenusOption'
 import WechatMenusDetail from '@/pages/wechat/wechatMenusDetail'
 import WechatMenusItem from '@/pages/wechat/wechatMenusItem'
 import WechatMenusMatchrule from '@/pages/wechat/wechatMenusMatchrule'
@@ -569,13 +568,6 @@ const preDefinedRoutes: MenuRoute[] = [
         iconfont: 'icon-xiaoshouzongjian',
         routes: [
             {
-                path: '/wechat/menusoption',
-                name: '微信菜单类型',
-                exact: true,
-                key: 'wechat:menusoption',
-                component: WechatMenusOption
-            },
-            {
                 path: '/wechat/menusdetail',
                 name: '微信菜单详情',
                 exact: true,
@@ -584,7 +576,7 @@ const preDefinedRoutes: MenuRoute[] = [
             },
             {
                 path: '/wechat/menusitem',
-                name: '微信菜单详情',
+                name: '微信菜单信息',
                 exact: true,
                 key: 'wechat:menusitem',
                 component: WechatMenusItem
