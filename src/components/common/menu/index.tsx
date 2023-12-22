@@ -104,8 +104,6 @@ const MenuView: FC<MenuProps> = ({ menuMode }) => {
         .filter((item: MenuType) => item.type === 'subMenu')
         .reduce((prev: MenuType[], next: MenuType) => [...prev, next.key], [])
 
-    const showKeys = collapsed ? [] : setDefaultKey
-    console.info(showKeys)
     const LogLink = () => (
         <Link to={{ pathname: '/' }}>
             <div className="flex items-center logo">

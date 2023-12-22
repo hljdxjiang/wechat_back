@@ -16,13 +16,25 @@ const WechatMenusMatchrule: FC = () => {
         }
         , {
             key: 'ruleId',
-            slot: <Input placeholder="匹配字段" allowClear />,
+            slot: <Input placeholder="匹配字段ID" allowClear />,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'ruleName',
+            slot: <Input placeholder="匹配字段描述" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'ruleValue',
             slot: <Input placeholder="匹配字段值" allowClear />,
+            rules: [],
+            initialValue: ''
+        }
+        , {
+            key: 'remark',
+            slot: <Input placeholder="备注" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -37,9 +49,15 @@ const WechatMenusMatchrule: FC = () => {
         }
 
         , {
-            title: '匹配字段',
+            title: '匹配字段ID',
             key: 'ruleId',
             dataIndex: 'ruleId',
+        }
+
+        , {
+            title: '匹配字段描述',
+            key: 'ruleName',
+            dataIndex: 'ruleName',
         }
 
         , {
@@ -47,6 +65,13 @@ const WechatMenusMatchrule: FC = () => {
             key: 'ruleValue',
             dataIndex: 'ruleValue',
         }
+
+        , {
+            title: '备注',
+            key: 'remark',
+            dataIndex: 'remark',
+        }
+
 
 
     ]

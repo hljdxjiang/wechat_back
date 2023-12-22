@@ -9,26 +9,20 @@ const WechatMenusVersion: FC = () => {
     // 搜索栏配置项
     const searchConfigList = [
         {
-            key: 'optionId',
-            slot: <Input placeholder="选项ID" allowClear />,
+            key: 'menuId',
+            slot: <Input placeholder="菜单ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
-            key: 'optionKey',
-            slot: <Input placeholder="微信选项ID" allowClear />,
+            key: 'version',
+            slot: <Input placeholder="使用版本" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
-            key: 'optionDesc',
-            slot: <Input placeholder="选项中文描述" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'optionType',
-            slot: <Input placeholder="选项类型：text文本select下拉" allowClear />,
+            key: 'remark',
+            slot: <Input placeholder="菜单备注" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -37,28 +31,24 @@ const WechatMenusVersion: FC = () => {
 
 
         {
-            title: '选项ID',
-            key: 'optionId',
-            dataIndex: 'optionId',
+            title: '菜单ID',
+            key: 'menuId',
+            dataIndex: 'menuId',
         }
 
         , {
-            title: '微信选项ID',
-            key: 'optionKey',
-            dataIndex: 'optionKey',
+            title: '使用版本',
+            key: 'version',
+            dataIndex: 'version',
         }
 
         , {
-            title: '选项中文描述',
-            key: 'optionDesc',
-            dataIndex: 'optionDesc',
+            title: '菜单备注',
+            key: 'remark',
+            dataIndex: 'remark',
         }
 
-        , {
-            title: '选项类型：text文本select下拉',
-            key: 'optionType',
-            dataIndex: 'optionType',
-        }
+
 
     ]
     return (

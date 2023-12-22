@@ -1,5 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit'
-import type {RootState} from '@/store'
+import { createSlice } from '@reduxjs/toolkit'
+import type { RootState } from '@/store'
 
 export interface AppState {
     theme: string
@@ -8,7 +8,7 @@ export interface AppState {
 }
 
 const initialState: AppState = {
-    collapsed: true,
+    collapsed: false,
     theme: 'default',
     menuMode: 'vertical'
 }
@@ -30,7 +30,7 @@ export const appSlice = createSlice({
     }
 })
 
-export const {setCollapsed, setTheme, setMenuMode} = appSlice.actions
+export const { setCollapsed, setTheme, setMenuMode } = appSlice.actions
 
 export const selectTheme = (state: RootState) => state.app.theme
 export const selectCollapsed = (state: RootState) => state.app.collapsed

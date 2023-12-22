@@ -52,13 +52,13 @@ const WechatMenusItem: FC = () => {
         }
         , {
             key: 'articleId',
-            slot: <Input placeholder="图文消息ID" allowClear />,
+            slot: <Input placeholder="媒体文件ID" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
             key: 'articleViewLimited',
-            slot: <Input placeholder="" allowClear />,
+            slot: <Input placeholder="图文消息ID" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -109,16 +109,17 @@ const WechatMenusItem: FC = () => {
         }
 
         , {
-            title: '图文消息ID',
+            title: '媒体文件ID',
             key: 'articleId',
             dataIndex: 'articleId',
         }
 
         , {
-            title: '',
+            title: '图文消息ID',
             key: 'articleViewLimited',
             dataIndex: 'articleViewLimited',
         }
+
 
 
     ]
