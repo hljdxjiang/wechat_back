@@ -217,7 +217,7 @@ const preDefinedRoutes: MenuRoute[] = [
         routes: [
             {
                 path: '/crm/salerecord',
-                name: '销售记录表',
+                name: '订单管理',
                 exact: true,
                 key: 'crm:salerecord',
                 component: CrmSaleRecord
