@@ -82,12 +82,16 @@ const BackImgInfo: FC = () => {
         }
     ]
     const columns = [
-
-
         {
             title: '图片本地路径',
             key: 'imgPath',
             dataIndex: 'imgPath',
+            editType: "upload",
+            render: (picture: CommonObjectType<string>) => (
+                <span onClick={() => { }}>
+                    <img src={picture.thumbnail} width="40" alt="" />
+                </span>
+            ),
         }
 
         , {

@@ -78,6 +78,7 @@ import CrmPurchesDetail from '@/pages/crm/crmPurchesDetail'
 import BackSysRoles from '@/pages/back/backSysRoles'
 import BackSysDict from '@/pages/back/backSysDict'
 import BackRuleControl from '@/pages/back/backRuleControl'
+import NewUserList from '@/pages/user/newList'
 
 /**
  * path 跳转的路径
@@ -99,6 +100,13 @@ const preDefinedRoutes: MenuRoute[] = [
         type: 'subMenu',
         icon: UserOutlined,
         routes: [
+            {
+                path: '/back/userList',
+                name: 'NewUserList',
+                exact: true,
+                key: 'back:userList',
+                component: NewUserList
+            },
             {
                 path: '/back/sysuser',
                 name: '后管用户表',
