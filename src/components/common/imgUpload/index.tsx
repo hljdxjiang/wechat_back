@@ -1,5 +1,5 @@
 import React, { FC, useRef, useState } from 'react'
-import {  Modal, Slider, Upload } from 'antd'
+import { Modal, Slider, Upload, message } from 'antd'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 import $axios from '@/utils/axios'
 import AvatarEditor from 'react-avatar-editor';
@@ -8,6 +8,8 @@ interface Props {
     onChange?: (arg0: string) => void;
     value?: string;
     accept?: string[];
+    width?: string | number;
+    height?: string | number;
     size?: number;
     action?: string;
 }
@@ -24,8 +26,10 @@ const ImgUpload: FC<Props> = (props) => {
     const {
         onChange,
         value,
+        width,
+        height,
         accept = ['jpg', 'jpeg', 'png', 'gif'],
-        size = 15,
+        size = 5,
         action = 'fileUpload/uploadFile'
     } = props
 
@@ -92,6 +96,13 @@ const ImgUpload: FC<Props> = (props) => {
 
 
     const beforUpload = (file) => {
+        const isType = accept.some((item: string) => file.type.includes(item))
+        const isSize = file.size / 1024 / 1024 < size
+        if (!isType || !isSize) {
+            message.error('请上传正确文件')
+            return false
+        }
+
         if (!file.url && !file.preview) {
             getBase64(file);
         }
@@ -100,7 +111,6 @@ const ImgUpload: FC<Props> = (props) => {
 
     return (
         <>
-
             <Upload
                 className="avatar-uploader"
                 listType="picture-card"
@@ -116,26 +126,47 @@ const ImgUpload: FC<Props> = (props) => {
             </Upload>
             <Modal
                 visible={visible}
-                title="Crop Image"
+                title="选择图片"
                 onCancel={handleCancel}
                 onOk={handleUpload}
             >
                 <AvatarEditor
+                    style={{ width: '100%',height:'100%'}}
                     ref={editorRef}
                     image={previewImage}
-                    border={50}
+                    border={10}
+                    width={width}
+                    height={height}
                     rotate={rotate}
                     scale={scale}
                     position={position}
                     onPositionChange={handlePositionChange}
                 />
                 <div>
-                    <label>旋转：</label>
-                    <Slider min={0} max={360} value={rotate} onChange={handleRotateChange} />
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <label style={{ marginRight: '5px' }}>旋转：</label>
+                        <Slider
+                            min={0}
+                            max={360}
+                            value={rotate}
+                            onChange={handleRotateChange}
+                            style={{ flex: 1, width: '100%' }}
+                        />
+                    </div>
                 </div>
                 <div>
-                    <label>缩放：</label>
-                    <Slider min={1} max={2} step={0.01} value={scale} onChange={handleScaleChange} />
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <label style={{ marginRight: '5px' }}>缩放：</label>
+                        <Slider
+                            min={0.5}
+                            defaultValue={1}
+                            max={3}
+                            step={0.01}
+                            value={scale}
+                            onChange={handleScaleChange}
+                            style={{ flex: 1, width: '100%' }}
+                        />
+                    </div>
                 </div>
             </Modal>
         </>

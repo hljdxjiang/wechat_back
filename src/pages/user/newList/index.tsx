@@ -33,6 +33,8 @@ const NewUserList: FC = () => {
             title: 'avatar',
             dataIndex: 'picture',
             editType: "upload",
+            picWidth:50,
+            picHeight:250,
             editFlag: true,
             render: (picture: CommonObjectType<string>) => (
                 <span onClick={() => preview(picture.thumbnail)}>

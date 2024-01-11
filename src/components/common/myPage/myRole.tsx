@@ -148,7 +148,10 @@ const MyRole: FC<ModalProps> = (
             }
             if (type === "upload") {
                 if (canEdit) {
-                    return <ImgUpload value={row[item["dataIndex"]]}
+                    debugger
+                    return <ImgUpload value={row[item["dataIndex"]] }
+                        width={row[item["picWidth"]]!=undefined?row[item["picWidth"]]:undefined}
+                        height={row[item["picHeight"]]!=undefined?row[item["picHeight"]]:undefined}
                         onChange={handChange.bind(this, idx, "upload")}></ImgUpload>
                 } else {
                     return <img src={row[item["dataIndex"]]} width="40" alt="" />
