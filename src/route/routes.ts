@@ -263,7 +263,7 @@ const preDefinedRoutes: MenuRoute[] = [
                 exact: true,
                 key: 'config.param',
                 //hideInMenu: true,
-                component: TParamConfig
+                component: SysParamConfig
             },
             {
                 path: '/back/sysdict',

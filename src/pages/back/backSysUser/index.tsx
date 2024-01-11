@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backSysUserApi from '@/api/back/backSysUser'
 import MyPage from '@/components/common/myPage';
+import MySelect from '@/components/common/mySelect';
 
 const BackSysUser: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -45,38 +46,15 @@ const BackSysUser: FC = () => {
             initialValue: ''
         }
         , {
-            key: 'email',
-            slot: <Input placeholder="邮箱地址" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
             key: 'idNo',
             slot: <Input placeholder="证件号" allowClear />,
             rules: [],
             initialValue: ''
         }
         , {
-            key: 'idType',
-            slot: <Input placeholder="证件类型" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'oauthCode',
-            slot: <Input placeholder="二次认证码" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'remark',
-            slot: <Input placeholder="用户备注" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear />,
+            slot: <MySelect
+                placeholder="gender" defaultValue="0" paramType="aaa" allowClear={true} />,
             rules: [],
             initialValue: ''
         }

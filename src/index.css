@@ -7,3 +7,7 @@
 iframe {
     pointer-events: none;
 }
+
+.ant-select-selector {
+    min-width: 120px;
+}

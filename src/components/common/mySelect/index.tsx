@@ -1,10 +1,13 @@
-import React, {FC, useEffect} from 'react'
+import React, {FC, useEffect, useState} from 'react'
 import {Select} from 'antd'
+
+import sysParamConfigApi from '@/api/sys/sysParamConfig'
 
 const {Option} = Select
 
 interface Props {
-    data: CommonObjectType<string>[];
+    data?: CommonObjectType<string>[];
+    paramType?:string;
     placeholder?: string;
     allowClear?: boolean;
     rules?: Object[];
@@ -19,6 +22,7 @@ interface Props {
 const MySelect: FC<Props> = (props) => {
     const {
         data,
+        paramType,
         allowClear = false,
         rules,
         placeholder = '请输入搜索条件',
@@ -30,10 +34,28 @@ const MySelect: FC<Props> = (props) => {
         onSearch,
         defaultValue
     } = props
-
+    
+    const [selectData, setSelectData] = useState<CommonObjectType<string>[]>([]);
+    
     const handerChange = (val: string | number): void => {
         onChange(val)
     }
+
+    useEffect(()=>{
+        if((data==undefined||data.length==0)&& paramType!='' &&paramType!=undefined){
+            sysParamConfigApi.queryByPage({configKey:paramType}).then(res=>{
+                var list=res.list;
+                if(Array.isArray(list)){
+                    setSelectData(list.map((obj: any) => ({
+                        name: obj.configName,
+                        value: obj.configValue
+                    })));
+                }
+            })
+        }else{
+            setSelectData(data);
+        }
+    })
 
     useEffect(() => {
         //TODO 增加规则解析器
@@ -52,7 +74,7 @@ const MySelect: FC<Props> = (props) => {
             onSearch={onSearch}
             defaultValue={defaultValue}
         >
-            {data.map((item) => (
+            {selectData.map((item) => (
                 <Option key={item.key} title={item.name} value={item.key}>
                     {item.name}
                 </Option>
