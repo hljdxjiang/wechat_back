@@ -4,7 +4,7 @@ import {Button, Form, Input, message, Spin, Switch} from 'antd'
 import {formItemLayout, wrapperCol} from '@/config/layout'
 import {closeTabAction, getQuery} from '@/assets/js/publicFunc'
 import MySelect from '@/components/common/mySelect'
-import MyUpload from '@/components/common/myUpload'
+import ImgUpload from '@/components/common/imgUpload'
 import Editor from '@/components/common/editor'
 
 const FormView: FC = () => {
@@ -85,7 +85,7 @@ const FormView: FC = () => {
             </span>
                     }
                 >
-                    <MyUpload/>
+                    <ImgUpload/>
                 </Form.Item>
                 <Form.Item
                     label="描述"

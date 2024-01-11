@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import {DatePicker, Descriptions, Input, Modal, TimePicker} from 'antd'
 import MySelect from '@/components/common/mySelect'
-import MyUpload from '../myUpload';
+import ImgUpload from '../imgUpload';
 import Editor from '../editor';
 
 /**
@@ -110,8 +110,8 @@ const MyModal: FC<ModalProps> = (
             }
             if (type === "upload") {
                 if (canEdit) {
-                    return <MyUpload value={row[item["dataIndex"]]}
-                                     onChange={handChange.bind(this, idx, "upload")}></MyUpload>
+                    return <ImgUpload value={row[item["dataIndex"]]}
+                                     onChange={handChange.bind(this, idx, "upload")}></ImgUpload>
                 } else {
                     return <img src={row[item["dataIndex"]]} width="40" alt=""/>
                 }

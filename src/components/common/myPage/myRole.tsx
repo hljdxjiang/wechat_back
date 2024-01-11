@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Col, DatePicker, Descriptions, Input, Modal, Row, TimePicker, Tree } from 'antd'
 import MySelect from '@/components/common/mySelect'
-import MyUpload from '../../../components/common/myUpload';
+import ImgUpload from '../imgUpload';
 import Editor from '../../../components/common/editor';
 import type { DataNode } from 'rc-tree/lib/interface';
 import { Key } from 'antd/es/table/interface';
@@ -148,8 +148,8 @@ const MyRole: FC<ModalProps> = (
             }
             if (type === "upload") {
                 if (canEdit) {
-                    return <MyUpload value={row[item["dataIndex"]]}
-                        onChange={handChange.bind(this, idx, "upload")}></MyUpload>
+                    return <ImgUpload value={row[item["dataIndex"]]}
+                        onChange={handChange.bind(this, idx, "upload")}></ImgUpload>
                 } else {
                     return <img src={row[item["dataIndex"]]} width="40" alt="" />
                 }
