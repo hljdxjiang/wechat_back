@@ -7,6 +7,7 @@ import type { DataNode } from 'rc-tree/lib/interface';
 import { Key } from 'antd/es/table/interface';
 import { getAllRevokes, getAppMenus } from '@/assets/js/publicFunc';
 import { MenuRoute } from '@/route/types';
+import FileUpload from '../fileUpload';
 
 /**
  * 封装对话框，展示修改内容
@@ -153,6 +154,16 @@ const MyRole: FC<ModalProps> = (
                         width={item["picWidth"]}
                         height={item["picHeight"]}
                         onChange={handChange.bind(this, idx, "upload")}></ImgUpload>
+                } else {
+                    return <img src={row[item["dataIndex"]]} width="40" alt="" />
+                }
+            }
+
+            if (type === "file") {
+                if (canEdit) {
+                    console.log(row[item["picWidth"]],row[item["picHeight"]])
+                    return <FileUpload value={row[item["dataIndex"]]}
+                        onChange={handChange.bind(this, idx, "upload")}></FileUpload>
                 } else {
                     return <img src={row[item["dataIndex"]]} width="40" alt="" />
                 }

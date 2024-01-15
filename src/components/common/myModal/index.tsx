@@ -3,6 +3,7 @@ import { DatePicker, Descriptions, Input, Modal, TimePicker } from 'antd'
 import MySelect from '@/components/common/mySelect'
 import ImgUpload from '../imgUpload';
 import Editor from '../editor';
+import FileUpload from '../fileUpload';
 
 /**
  * 封装对话框，展示修改内容
@@ -109,13 +110,22 @@ const MyModal: FC<ModalProps> = (
                     disabled={!canEdit}></TimePicker>
             }
             if (type === "upload") {
-                debugger
                 if (canEdit) {
                     console.log(row[item["picWidth"]],row[item["picHeight"]])
                     return <ImgUpload value={row[item["dataIndex"]]}
                         width={item["picWidth"]}
                         height={item["picHeight"]}
                         onChange={handChange.bind(this, idx, "upload")}></ImgUpload>
+                } else {
+                    return <img src={row[item["dataIndex"]]} width="40" alt="" />
+                }
+            }
+
+            if (type === "file") {
+                if (canEdit) {
+                    console.log(row[item["picWidth"]],row[item["picHeight"]])
+                    return <FileUpload value={row[item["dataIndex"]]}
+                        onChange={handChange.bind(this, idx, "upload")}></FileUpload>
                 } else {
                     return <img src={row[item["dataIndex"]]} width="40" alt="" />
                 }
