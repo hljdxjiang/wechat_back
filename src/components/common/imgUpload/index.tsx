@@ -42,6 +42,9 @@ const ImgUpload: FC<Props> = (props) => {
     };
 
     const numericWidth = typeof width === 'string' ? parseInt(width, 10) : width;
+
+    const numericHeight = typeof height === 'string' ? parseInt(height, 10) : height;
+
     const optimizedWidth = (numericWidth || 200) + 48;
 
     const getBase64 = file => {
@@ -139,8 +142,8 @@ const ImgUpload: FC<Props> = (props) => {
                     ref={editorRef}
                     image={previewImage}
                     border={1}
-                    width={width}
-                    height={height}
+                    width={(numericWidth || 200)}
+                    height={(numericHeight||300)}
                     rotate={rotate}
                     scale={scale}
                     position={position}
