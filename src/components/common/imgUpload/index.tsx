@@ -42,7 +42,7 @@ const ImgUpload: FC<Props> = (props) => {
     };
 
     const numericWidth = typeof width === 'string' ? parseInt(width, 10) : width;
-    const optimizedWidth = numericWidth + 48;
+    const optimizedWidth = (numericWidth || 200) + 48;
 
     const getBase64 = file => {
         return new Promise((resolve, reject) => {
