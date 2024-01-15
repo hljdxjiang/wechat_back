@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {DatePicker, Descriptions, Input, Modal, TimePicker} from 'antd'
+import React, { FC } from 'react'
+import { DatePicker, Descriptions, Input, Modal, TimePicker } from 'antd'
 import MySelect from '@/components/common/mySelect'
 import ImgUpload from '../imgUpload';
 import Editor from '../editor';
@@ -94,26 +94,30 @@ const MyModal: FC<ModalProps> = (
             var idx = item["dataIndex"];
             if (type === "select") {
                 return (<MySelect data={item["data"]} defaultValue={row[item["dataIndex"]]}
-                                  onChange={handChange.bind(this, idx, "select")} disabled={!canEdit}/>)
+                    onChange={handChange.bind(this, idx, "select")} disabled={!canEdit} />)
             }
             if (type === "date") {
                 return <DatePicker value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "date")}
-                                   disabled={!canEdit}></DatePicker>
+                    disabled={!canEdit}></DatePicker>
             }
             if (type === "datetime") {
                 return <DatePicker showTime={true} value={row[item["dataIndex"]]}
-                                   onChange={handChange.bind(this, idx, "datetime")} disabled={!canEdit}></DatePicker>
+                    onChange={handChange.bind(this, idx, "datetime")} disabled={!canEdit}></DatePicker>
             }
             if (type === "time") {
                 return <TimePicker value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "time")}
-                                   disabled={!canEdit}></TimePicker>
+                    disabled={!canEdit}></TimePicker>
             }
             if (type === "upload") {
+                debugger
                 if (canEdit) {
+                    console.log(row[item["picWidth"]],row[item["picHeight"]])
                     return <ImgUpload value={row[item["dataIndex"]]}
-                                     onChange={handChange.bind(this, idx, "upload")}></ImgUpload>
+                        width={item["picWidth"]}
+                        height={item["picHeight"]}
+                        onChange={handChange.bind(this, idx, "upload")}></ImgUpload>
                 } else {
-                    return <img src={row[item["dataIndex"]]} width="40" alt=""/>
+                    return <img src={row[item["dataIndex"]]} width="40" alt="" />
                 }
             }
             if (type === "edit") {
@@ -121,10 +125,10 @@ const MyModal: FC<ModalProps> = (
             }
             if (type === "textarea") {
                 return <Input.TextArea value={row[item["dataIndex"]]} disabled={!canEdit} id={item["dataIndex"]}
-                                       onChange={handChange}></Input.TextArea>
+                    onChange={handChange}></Input.TextArea>
             }
             return <Input placeholder={item["title"]} id={item["dataIndex"]} onChange={handChange} allowClear
-                          value={row[item["dataIndex"]]} disabled={!canEdit}/>
+                value={row[item["dataIndex"]]} disabled={!canEdit} />
         }
 
         return (

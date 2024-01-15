@@ -41,6 +41,9 @@ const ImgUpload: FC<Props> = (props) => {
         }
     };
 
+    const numericWidth = typeof width === 'string' ? parseInt(width, 10) : width;
+    const optimizedWidth = numericWidth + 48;
+
     const getBase64 = file => {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -62,6 +65,7 @@ const ImgUpload: FC<Props> = (props) => {
     const handleCancel = () => setVisible(false);
 
     const handlePositionChange = position => {
+        console.log(width,height,position);
         setPosition(position);
     };
 
@@ -126,15 +130,15 @@ const ImgUpload: FC<Props> = (props) => {
             </Upload>
             <Modal
                 visible={visible}
+                width={optimizedWidth}
                 title="选择图片"
                 onCancel={handleCancel}
                 onOk={handleUpload}
             >
                 <AvatarEditor
-                    style={{ width: '100%',height:'100%'}}
                     ref={editorRef}
                     image={previewImage}
-                    border={10}
+                    border={1}
                     width={width}
                     height={height}
                     rotate={rotate}
