@@ -10,7 +10,6 @@ import {
 } from '@ant-design/icons'
 import Home from '@/pages/home'
 import { MenuRoute } from '@/route/types'
-import TParamConfig from '@/pages/param/tParamConfig'
 import CrmProdInfo from '@/pages/crm/crmProdInfo'
 import SysFlowItems from '@/pages/sys/sysFlowItems'
 import BackImgInfo from '@/pages/back/backImgInfo'
@@ -78,7 +77,6 @@ import CrmPurchesDetail from '@/pages/crm/crmPurchesDetail'
 import BackSysRoles from '@/pages/back/backSysRoles'
 import BackSysDict from '@/pages/back/backSysDict'
 import BackRuleControl from '@/pages/back/backRuleControl'
-import NewUserList from '@/pages/user/newList'
 
 /**
  * path 跳转的路径
@@ -100,13 +98,6 @@ const preDefinedRoutes: MenuRoute[] = [
         type: 'subMenu',
         icon: UserOutlined,
         routes: [
-            {
-                path: '/back/userList',
-                name: 'NewUserList',
-                exact: true,
-                key: 'back:userList',
-                component: NewUserList
-            },
             {
                 path: '/back/sysuser',
                 name: '后管用户表',
