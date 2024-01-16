@@ -8,6 +8,7 @@ import AvatarEditor from 'react-avatar-editor';
 interface Props {
     onChange?: (arg0: string) => void;
     value?: string;
+    fileType:String;
     accept?: string[];
     size?: number;
     action?: string;
@@ -19,6 +20,7 @@ const FileUpload: FC<Props> = (props) => {
     const {
         onChange,
         value,
+        fileType='',
         accept = ['*'],
         size = 15,
         action = 'fileUpload/uploadFile'
@@ -68,7 +70,7 @@ const FileUpload: FC<Props> = (props) => {
                 const imageBase64 = event.target.result;
 
                 var param = {}
-                param["fileType"] = "aaa";
+                param["fileType"] = fileType;
                 param["fileValue"] = imageBase64;
 
                 $axios

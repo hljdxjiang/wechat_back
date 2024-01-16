@@ -1,12 +1,30 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { Input, } from 'antd'
 import backSysUserApi from '@/api/back/backSysUser'
 import MyPage from '@/components/common/myPage';
 import MySelect from '@/components/common/mySelect';
+import BackSysRoles from "@/api/back/backSysRoles";
+import { error } from 'console';
 
 const BackSysUser: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
+    const [dataLoaded, setDataLoaded] = useState(false);
+    const [selectData, setSelectData] = useState<CommonObjectType<string>[]>([]);
+    useEffect(() => {
+        BackSysRoles.queryByPage({}).then((res) => {
+            var list = res.list;
+            if (Array.isArray(list)) {
+                setSelectData(list.map((obj: any) => ({
+                    name: obj.roleName,
+                    value: obj.roleId
+                })));
+            }
+            setDataLoaded(true); // 数据加载完成时设置dataLoaded为true
+        }).catch(err => {
+            console.log(err);
+        })
+    }, [])
     // 搜索栏配置项
     const searchConfigList = [
         {
@@ -16,20 +34,15 @@ const BackSysUser: FC = () => {
             initialValue: ''
         }
         , {
-            key: 'passwd',
-            slot: <Input placeholder="密码" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'groupId',
-            slot: <Input placeholder="用户分组ID" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
             key: 'roleId',
-            slot: <Input placeholder="角色ID" allowClear />,
+            slot: dataLoaded ? ( // 当数据加载完成时有条件地渲染MySelect
+                <MySelect
+                    placeholder="角色"
+                    data={selectData}
+                    defaultValue={selectData[0].roleId}
+                    allowClear={true}
+                />
+            ) : null,
             rules: [],
             initialValue: ''
         }
@@ -54,7 +67,7 @@ const BackSysUser: FC = () => {
         , {
             key: 'status',
             slot: <MySelect
-                placeholder="gender" defaultValue="0" paramType="aaa" allowClear={true} />,
+                placeholder="状态" defaultValue="0" paramType="aaa" allowClear={true} />,
             rules: [],
             initialValue: ''
         }
@@ -78,13 +91,13 @@ const BackSysUser: FC = () => {
             title: '用户分组ID',
             key: 'groupId',
             dataIndex: 'groupId',
-        }
-
-        , {
+        },
+        {
             title: '角色ID',
-            key: 'roleId',
             dataIndex: 'roleId',
-        }
+            editType: "select",
+            data: selectData,
+        },
 
         , {
             title: '姓名',
@@ -133,8 +146,6 @@ const BackSysUser: FC = () => {
             key: 'status',
             dataIndex: 'status',
         }
-
-
     ]
     return (
         <>

@@ -124,7 +124,7 @@ const MyModal: FC<ModalProps> = (
             if (type === "file") {
                 if (canEdit) {
                     console.log(row[item["picWidth"]],row[item["picHeight"]])
-                    return <FileUpload value={row[item["dataIndex"]]}
+                    return <FileUpload value={row[item["dataIndex"]]} fileType={row[item["fileType"]]}
                         onChange={handChange.bind(this, idx, "upload")}></FileUpload>
                 } else {
                     return <img src={row[item["dataIndex"]]} width="40" alt="" />

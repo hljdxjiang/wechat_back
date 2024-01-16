@@ -132,7 +132,7 @@ const MyRole: FC<ModalProps> = (
             var type = item["editType"]
             var idx = item["dataIndex"];
             if (type === "select") {
-                return (<MySelect data={item["data"]} defaultValue={row[item["dataIndex"]]}
+                return (<MySelect data={item["data"]} defaultValue={row[item["dataIndex"]]} paramType={row[item["paramType"]]}
                     onChange={handChange.bind(this, idx, "select")} disabled={!canEdit} />)
             }
             if (type === "date") {
@@ -162,7 +162,7 @@ const MyRole: FC<ModalProps> = (
             if (type === "file") {
                 if (canEdit) {
                     console.log(row[item["picWidth"]],row[item["picHeight"]])
-                    return <FileUpload value={row[item["dataIndex"]]}
+                    return <FileUpload value={row[item["dataIndex"]]} fileType={row[item["fileType"]]}
                         onChange={handChange.bind(this, idx, "upload")}></FileUpload>
                 } else {
                     return <img src={row[item["dataIndex"]]} width="40" alt="" />

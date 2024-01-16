@@ -36,7 +36,7 @@ const MySelect: FC<Props> = (props) => {
     } = props
     
     const [selectData, setSelectData] = useState<CommonObjectType<string>[]>([]);
-    
+    const [selectDefaultValue, setSelectDefaultValue] = useState<string | number>()
     const handerChange = (val: string | number): void => {
         onChange(val)
     }
@@ -50,12 +50,14 @@ const MySelect: FC<Props> = (props) => {
                         name: obj.configName,
                         value: obj.configValue
                     })));
+                    setSelectDefaultValue(list[0].configValue)
                 }
             })
         }else{
             setSelectData(data);
+            setSelectDefaultValue(defaultValue);
         }
-    })
+    },[])
 
     useEffect(() => {
         //TODO 增加规则解析器
@@ -72,7 +74,7 @@ const MySelect: FC<Props> = (props) => {
             style={{width}}
             value={value ? `${value}` : value}
             onSearch={onSearch}
-            defaultValue={defaultValue}
+            defaultValue={selectDefaultValue}
         >
             {selectData.map((item) => (
                 <Option key={item.key} title={item.name} value={item.key}>
