@@ -4,7 +4,6 @@ import MyTable from "@/components/common/table";
 import { isAuthorized } from "@/assets/js/publicFunc";
 import MyModal from "@/components/common/myModal";
 import { onItemChange } from "@/utils/tableCommon";
-import ShowPage from "./showPage";
 import FormPage from "./formPage";
 
 interface PageProps {
