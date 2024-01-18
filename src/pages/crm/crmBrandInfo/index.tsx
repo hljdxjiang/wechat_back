@@ -151,7 +151,7 @@ const CrmBrandInfo: FC = () => {
             key: 'brandCommonDesc',
             dataIndex: 'brandCommonDesc',
             tableShow:false,
-            // editType:"edit",
+            editType:"edit",
         }
 
     ]

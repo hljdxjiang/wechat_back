@@ -5,6 +5,7 @@ import { isAuthorized } from "@/assets/js/publicFunc";
 import MyModal from "@/components/common/myModal";
 import { onItemChange } from "@/utils/tableCommon";
 import ShowPage from "./showPage";
+import FormPage from "./formPage";
 
 interface PageProps {
     columns?: Object[];
@@ -164,9 +165,14 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
         setSelectKeys(rowKeys);
     };
 
-    const handleOk = () => {
-        var row = beforeOk();
-
+    const handleOk = (e) => {
+        debugger
+        var row;
+        if(!e){
+            row = beforeOk();
+        }else{
+            row=e;
+        }
         if (row["id"] === undefined) {
             addApiFun(row).then((res)=>{
                 message.success("添加成功");
@@ -195,7 +201,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
         setOpen(false);
     };
     return (
-        open ? <ShowPage
+        open ? <FormPage
             title={title}
             visible={open}
             onBack={doBack}
@@ -204,7 +210,6 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
             columns={columns}
             canEdit={canEdit}
             row={selectRow}
-            onChange={onChange}
         />
             :
             <>

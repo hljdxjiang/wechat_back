@@ -77,6 +77,7 @@ import CrmPurchesDetail from '@/pages/crm/crmPurchesDetail'
 import BackSysRoles from '@/pages/back/backSysRoles'
 import BackSysDict from '@/pages/back/backSysDict'
 import BackRuleControl from '@/pages/back/backRuleControl'
+import FormView from '@/pages/user/edit'
 
 /**
  * path 跳转的路径
@@ -109,7 +110,7 @@ const preDefinedRoutes: MenuRoute[] = [
                 name: '用户登录历史表',
                 exact: true,
                 key: 'back:userlogin',
-                component: BackUserLoginRecord
+                component: FormView
             }, {
                 path: '/user/sysroles',
                 name: '角色信息表',

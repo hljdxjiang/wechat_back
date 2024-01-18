@@ -170,6 +170,7 @@ const Editor: FC<Props> = (props) => {
             value={BraftEditor.createEditorState(value)}
             onChange={onChange}
             extendControls={extendControls}
+            contentStyle={{ height: 'auto' }} // 设置内容区域自适应高度
             style={{border: 'solid 1px rgba(0,0,0,.2)'}}
         />
     )
