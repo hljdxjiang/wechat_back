@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import sysBlacklistApi from '@/api/sys/sysBlacklist'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const SysBlacklist: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -76,7 +76,7 @@ const SysBlacklist: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={sysBlacklistApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

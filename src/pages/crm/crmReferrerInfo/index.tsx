@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import crmReferrerInfoApi from '@/api/crm/crmReferrerInfo'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const CrmReferrerInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -170,7 +170,7 @@ const CrmReferrerInfo: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={crmReferrerInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

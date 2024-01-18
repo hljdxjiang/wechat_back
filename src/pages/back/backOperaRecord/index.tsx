@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Input } from "antd";
 import backOperaRecordApi from "@/api/back/backOperaRecord";
-import MyPage from "@/components/common/myPage";
+import ModelPage from "@/components/common/modelPage";
 
 const BackOperaRecord: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -168,7 +168,7 @@ const BackOperaRecord: FC = () => {
     ];
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={backOperaRecordApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

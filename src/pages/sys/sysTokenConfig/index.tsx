@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import sysTokenConfigApi from '@/api/sys/sysTokenConfig'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const SysTokenConfig: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -100,7 +100,7 @@ const SysTokenConfig: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={sysTokenConfigApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backImgInfoApi from '@/api/back/backImgInfo'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const BackImgInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -164,7 +164,7 @@ const BackImgInfo: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={backImgInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

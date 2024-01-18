@@ -94,7 +94,7 @@ const MyModal: FC<ModalProps> = (
             var type = item["editType"]
             var idx = item["dataIndex"];
             if (type === "select") {
-                return (<MySelect data={item["data"]} defaultValue={row[item["dataIndex"]]}
+                return (<MySelect data={item["data"]} value={row[item["dataIndex"]]}
                     onChange={handChange.bind(this, idx, "select")} disabled={!canEdit} />)
             }
             if (type === "date") {

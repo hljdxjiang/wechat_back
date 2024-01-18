@@ -1,5 +1,5 @@
 import React, { FC, useRef, useState } from 'react'
-import { Modal, Slider, Upload, message } from 'antd'
+import { Modal, Slider, Upload, UploadProps, message } from 'antd'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 import $axios from '@/utils/axios'
 import AvatarEditor from 'react-avatar-editor';
@@ -41,11 +41,9 @@ const FileUpload: FC<Props> = (props) => {
     const onError = (): void => {
     }
 
-    const uploadProps = {
+    const uploadProps: UploadProps = {
         action,
-        onStart,
-        beforUpload(file) {
-            debugger
+        beforeUpload(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
 
@@ -56,32 +54,31 @@ const FileUpload: FC<Props> = (props) => {
                 };
             });
         },
-        customRequest({ file, filename }) {
-            debugger
-            const isType = accept.some((item: string) => file.type.includes(item)||item.includes("*"))
-            const isSize = file.size / 1024 / 1024 < size
-            if (!isType || !isSize) {
-                message.error('请上传正确文件')
-                return false
-            }
-            const reader = new FileReader();
+        // customRequest({ file, filename }) {
+        //     const isType = accept.some((item: string) => file.type.includes(item)||item.includes("*"))
+        //     const isSize = file.size / 1024 / 1024 < size
+        //     if (!isType || !isSize) {
+        //         message.error('请上传正确文件')
+        //         return false
+        //     }
+        //     const reader = new FileReader();
 
-            reader.onload = function (event) {
-                const imageBase64 = event.target.result;
+        //     reader.onload = function (event) {
+        //         const imageBase64 = event.target.result;
 
-                var param = {}
-                param["fileType"] = fileType;
-                param["fileValue"] = imageBase64;
+        //         var param = {}
+        //         param["fileType"] = fileType;
+        //         param["fileValue"] = imageBase64;
 
-                $axios
-                    .post(action, param)
-                    .then((res) => {
-                        onSuccess(res)
-                    })
-                    .catch(onError)
-            };
-            reader.readAsDataURL(file);
-        }
+        //         $axios
+        //             .post(action, param)
+        //             .then((res) => {
+        //                 onSuccess(res)
+        //             })
+        //             .catch(onError)
+        //     };
+        //     reader.readAsDataURL(file);
+        // }
     }
 
     return (

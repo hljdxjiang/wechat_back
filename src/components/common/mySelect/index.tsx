@@ -25,7 +25,7 @@ const MySelect: FC<Props> = (props) => {
         paramType,
         allowClear = false,
         rules,
-        placeholder = '请输入搜索条件',
+        placeholder = '请选择',
         value,
         onChange = () => {
         },
@@ -38,6 +38,7 @@ const MySelect: FC<Props> = (props) => {
     const [selectData, setSelectData] = useState<CommonObjectType<string>[]>([]);
     const [selectDefaultValue, setSelectDefaultValue] = useState<string | number>()
     const handerChange = (val: string | number): void => {
+        setSelectDefaultValue(val)
         onChange(val)
     }
 
@@ -48,14 +49,16 @@ const MySelect: FC<Props> = (props) => {
                 if(Array.isArray(list)){
                     setSelectData(list.map((obj: any) => ({
                         name: obj.configName,
-                        value: obj.configValue
+                        key: obj.configValue
                     })));
-                    setSelectDefaultValue(list[0].configValue)
+                    // const defaultKey = value || defaultValue //|| list[0].configValue;
+                    // setSelectDefaultValue(defaultKey);
                 }
             })
         }else{
             setSelectData(data);
-            setSelectDefaultValue(defaultValue);
+            // var key=value || defaultValue //|| (data.length > 0 && data[0].key) || null;
+            // setSelectDefaultValue(key);
         }
     },[])
 
@@ -72,7 +75,7 @@ const MySelect: FC<Props> = (props) => {
             placeholder={placeholder}
             showSearch
             style={{width}}
-            value={value ? `${value}` : value}
+            value={value}
             onSearch={onSearch}
             defaultValue={selectDefaultValue}
         >

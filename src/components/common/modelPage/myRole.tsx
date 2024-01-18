@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Col, DatePicker, Descriptions, Input, Modal, Row, TimePicker, Tree } from 'antd'
 import MySelect from '@/components/common/mySelect'
 import ImgUpload from '../imgUpload';
-import Editor from '../../../components/common/editor';
+import Editor from '../editor';
 import type { DataNode } from 'rc-tree/lib/interface';
 import { Key } from 'antd/es/table/interface';
 import { getAllRevokes, getAppMenus } from '@/assets/js/publicFunc';

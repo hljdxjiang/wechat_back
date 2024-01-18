@@ -1,10 +1,11 @@
 import React, { FC, useEffect, useState } from 'react'
 import { Input, } from 'antd'
 import backSysUserApi from '@/api/back/backSysUser'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 import MySelect from '@/components/common/mySelect';
 import BackSysRoles from "@/api/back/backSysRoles";
 import { error } from 'console';
+import ViewPage from '@/components/common/viewPage';
 
 const BackSysUser: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -17,7 +18,7 @@ const BackSysUser: FC = () => {
             if (Array.isArray(list)) {
                 setSelectData(list.map((obj: any) => ({
                     name: obj.roleName,
-                    value: obj.roleId
+                    key: obj.roleId
                 })));
             }
             setDataLoaded(true); // 数据加载完成时设置dataLoaded为true
@@ -67,35 +68,22 @@ const BackSysUser: FC = () => {
         , {
             key: 'status',
             slot: <MySelect
-                placeholder="状态" defaultValue="0" paramType="aaa" allowClear={true} />,
+            placeholder="状态" defaultValue="0" paramType="aaa" allowClear={true} />,
             rules: [],
             initialValue: ''
         }
     ]
     const columns = [
-
-
         {
             title: '用户ID',
             key: 'userId',
             dataIndex: 'userId',
-        }
-
-        , {
-            title: '密码',
-            key: 'passwd',
-            dataIndex: 'passwd',
-        }
-
-        , {
-            title: '用户分组ID',
-            key: 'groupId',
-            dataIndex: 'groupId',
         },
         {
             title: '角色ID',
             dataIndex: 'roleId',
             editType: "select",
+            render:selectData.find(item => item.name === item.value)?.name,        
             data: selectData,
         },
 
@@ -121,18 +109,14 @@ const BackSysUser: FC = () => {
             title: '证件号',
             key: 'idNo',
             dataIndex: 'idNo',
+            tableShow:false,
         }
 
         , {
             title: '证件类型',
             key: 'idType',
             dataIndex: 'idType',
-        }
-
-        , {
-            title: '二次认证码',
-            key: 'oauthCode',
-            dataIndex: 'oauthCode',
+            tableShow:false,
         }
 
         , {
@@ -149,7 +133,7 @@ const BackSysUser: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ViewPage
                 apiFun={backSysUserApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

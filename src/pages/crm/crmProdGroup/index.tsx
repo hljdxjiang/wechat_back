@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import crmProdGroupApi from '@/api/crm/crmProdGroup'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const CrmProdGroup: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -76,7 +76,7 @@ const CrmProdGroup: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={crmProdGroupApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import userFeedbackInfoApi from '@/api/user/userFeedbackInfo'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const UserFeedbackInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -100,7 +100,7 @@ const UserFeedbackInfo: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={userFeedbackInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backSysRoleDetailApi from '@/api/back/backSysRoleDetail'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const BackSysRoleDetail: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -75,7 +75,7 @@ const BackSysRoleDetail: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={backSysRoleDetailApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

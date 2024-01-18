@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backSysDictApi from '@/api/back/backSysDict'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const BackSysDict: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -87,7 +87,7 @@ const BackSysDict: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={backSysDictApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

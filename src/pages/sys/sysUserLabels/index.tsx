@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import sysUserLabelsApi from '@/api/sys/sysUserLabels'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const SysUserLabels: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -64,7 +64,7 @@ const SysUserLabels: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={sysUserLabelsApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import mallActivityUserApi from '@/api/mall/mallActivityUser'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const MallActivityUser: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -64,7 +64,7 @@ const MallActivityUser: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={mallActivityUserApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

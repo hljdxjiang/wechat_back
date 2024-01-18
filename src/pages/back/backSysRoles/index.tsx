@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import {Input,} from 'antd'
 import backSysRolesApi from '@/api/back/backSysRoles'
-import RolePage from '@/components/common/myPage/roleModel'
+import RolePage from '@/components/common/modelPage/roleModel'
 
 const BackSysRoles: FC = () => {
     // 搜索栏配置项

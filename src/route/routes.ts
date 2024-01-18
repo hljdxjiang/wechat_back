@@ -127,7 +127,7 @@ const preDefinedRoutes: MenuRoute[] = [
     }, {
         path: '/cust',
         name: '客户管理',
-        key: 'user',
+        key: 'cust',
         type: 'subMenu',
         icon: TeamOutlined,
         routes: [
@@ -214,7 +214,7 @@ const preDefinedRoutes: MenuRoute[] = [
         icon: ShoppingCartOutlined,
         routes: [
             {
-                path: '/crm/salerecord',
+                path: '/shop/salerecord',
                 name: '订单管理',
                 exact: true,
                 key: 'crm:salerecord',

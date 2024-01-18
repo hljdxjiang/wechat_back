@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backRuleDetailApi from '@/api/back/backRuleDetail'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const BackRuleDetail: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -51,7 +51,7 @@ const BackRuleDetail: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={backRuleDetailApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

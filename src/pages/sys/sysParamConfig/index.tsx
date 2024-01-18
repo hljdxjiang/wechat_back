@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import sysParamConfigApi from '@/api/sys/sysParamConfig'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const SysParamConfig: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -76,7 +76,7 @@ const SysParamConfig: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={sysParamConfigApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

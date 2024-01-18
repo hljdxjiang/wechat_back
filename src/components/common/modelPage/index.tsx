@@ -18,7 +18,7 @@ interface PageProps {
     editApiFun?: (arg0?: unknown[]) => Promise<{}>;
 }
 
-const MyPage: FC<PageProps> = (props: PageProps) => {
+const ModelPage: FC<PageProps> = (props: PageProps) => {
     const {
         columns,
         apiFun,
@@ -198,7 +198,7 @@ const MyPage: FC<PageProps> = (props: PageProps) => {
         </>
     );
 };
-MyPage.defaultProps = {
+ModelPage.defaultProps = {
     columns: [],
     searchConfigList: [],
     showAddBtn: true,
@@ -206,4 +206,4 @@ MyPage.defaultProps = {
     showOpeation: false,
     permissionPrefix: "",
 };
-export default MyPage;
+export default ModelPage;

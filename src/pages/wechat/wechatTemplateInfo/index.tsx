@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import wechatTemplateInfoApi from '@/api/wechat/wechatTemplateInfo'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const WechatTemplateInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -112,7 +112,7 @@ const WechatTemplateInfo: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={wechatTemplateInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

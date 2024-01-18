@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import crmBrandInfoApi from '@/api/crm/crmBrandInfo'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const CrmBrandInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -21,111 +21,13 @@ const CrmBrandInfo: FC = () => {
             initialValue: ''
         }
         , {
-            key: 'brandLogo',
-            slot: <Input placeholder="品牌logo路径" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
             key: 'companyName',
             slot: <Input placeholder="企业名称" allowClear />,
             rules: [],
             initialValue: ''
         }
-        , {
-            key: 'brandUscc',
-            slot: <Input placeholder="企业社会信用代码" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'connectUname',
-            slot: <Input placeholder="联系人姓名" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'connectMobileNo',
-            slot: <Input placeholder="联系人电话" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'connectWechatId',
-            slot: <Input placeholder="联系人微信ID" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'brandDesc',
-            slot: <Input placeholder="品牌简介" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'companyDesc',
-            slot: <Input placeholder="企业简介" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'brandDetail',
-            slot: <Input placeholder="品牌详情" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'companyDetail',
-            slot: <Input placeholder="企业详情" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'vaildDate',
-            slot: <Input placeholder="合约生效日" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'expiredDate',
-            slot: <Input placeholder="合约失效日期" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'brandFee',
-            slot: <Input placeholder="品牌加盟费" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'brandMargin',
-            slot: <Input placeholder="押金/保证金" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'remark',
-            slot: <Input placeholder="备注" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'status',
-            slot: <Input placeholder="用户状态" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'brandCommonDesc',
-            slot: <Input placeholder="产品公共展示信息" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
     ]
     const columns = [
-
-
         {
             title: '品牌编号',
             key: 'brandId',
@@ -172,18 +74,23 @@ const CrmBrandInfo: FC = () => {
             title: '联系人微信ID',
             key: 'connectWechatId',
             dataIndex: 'connectWechatId',
+            tableShow:false,
         }
 
         , {
             title: '品牌简介',
             key: 'brandDesc',
             dataIndex: 'brandDesc',
+            editType:"textarea",
+            tableShow:false,
         }
 
         , {
             title: '企业简介',
             key: 'companyDesc',
             dataIndex: 'companyDesc',
+            editType:"textarea",
+            tableShow:false,
         }
 
         , {
@@ -191,60 +98,66 @@ const CrmBrandInfo: FC = () => {
             key: 'brandDetail',
             dataIndex: 'brandDetail',
         }
-
         , {
             title: '企业详情',
             key: 'companyDetail',
             dataIndex: 'companyDetail',
+            tableShow:false,
         }
 
         , {
             title: '合约生效日',
             key: 'vaildDate',
             dataIndex: 'vaildDate',
+            editType:"datetime"
         }
 
         , {
             title: '合约失效日期',
             key: 'expiredDate',
             dataIndex: 'expiredDate',
+            // editType:"datetime"
         }
 
         , {
             title: '品牌加盟费',
             key: 'brandFee',
             dataIndex: 'brandFee',
+            tableShow:false,
         }
 
         , {
             title: '押金/保证金',
             key: 'brandMargin',
             dataIndex: 'brandMargin',
+            tableShow:false,
         }
 
         , {
             title: '备注',
             key: 'remark',
             dataIndex: 'remark',
+            tableShow:false,
         }
 
         , {
-            title: '用户状态',
+            title: '企业状态',
             key: 'status',
             dataIndex: 'status',
+            tableShow:false,
         }
-
-
         , {
             title: '产品公共展示信息',
             key: 'brandCommonDesc',
             dataIndex: 'brandCommonDesc',
+            tableShow:false,
+            // editType:"edit",
         }
 
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={crmBrandInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

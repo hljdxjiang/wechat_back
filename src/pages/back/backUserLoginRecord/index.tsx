@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backUserLoginRecordApi from '@/api/back/backUserLoginRecord'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const BackUserLoginRecord: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -135,7 +135,7 @@ const BackUserLoginRecord: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={backUserLoginRecordApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

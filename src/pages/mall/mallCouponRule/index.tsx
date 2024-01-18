@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import mallCouponRuleApi from '@/api/mall/mallCouponRule'
-import MyPage from '@/components/common/myPage';
+import ModelPage from '@/components/common/modelPage';
 
 const MallCouponRule: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -52,7 +52,7 @@ const MallCouponRule: FC = () => {
     ]
     return (
         <>
-            <MyPage
+            <ModelPage
                 apiFun={mallCouponRuleApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}
