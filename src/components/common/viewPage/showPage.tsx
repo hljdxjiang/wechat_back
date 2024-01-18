@@ -1,9 +1,10 @@
-import { Button, DatePicker, Descriptions, Input, TimePicker } from "antd"
+import { Button, DatePicker, DatePickerProps, Descriptions, Input, TimePicker } from "antd"
 import Editor from "../editor"
+import moment from 'moment';
 import FileUpload from "../fileUpload"
 import MySelect from "../mySelect"
 import ImgUpload from "../imgUpload"
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 
 interface PageProps {
     row?: object
@@ -45,6 +46,34 @@ const ShowPage: FC<PageProps> = (props: PageProps) => {
         title
     } = props
 
+    useEffect(() => {
+        const dataColumns = columns.filter(
+            (item) =>
+                item["editType"] === "date" ||
+                item["editType"] === "datetime" ||
+                item["editType"] === "time"
+        );
+
+        const handleDateChange = (dataIndex, type) => (date, dateString) => {
+            handChange(dataIndex, type, dateString);
+        };
+
+        dataColumns.forEach((item) => {
+            if (!row[item["dataIndex"]]) {
+                var format;
+                var stype = item["editType"];
+                if (stype === "datetime") {
+                    format = "YYYY-MM-DD hh:mm:ss";
+                } else if (stype === "time") {
+                    format = "hh:mm:ss";
+                } else {
+                    format = "YYYY-MM-DD";
+                }
+                handleDateChange(item["dataIndex"], stype)(null, moment().format(format));
+            }
+        });
+    }, [columns, row]);
+
 
     const handOk = (): void => {
         onOk()
@@ -52,6 +81,10 @@ const ShowPage: FC<PageProps> = (props: PageProps) => {
     const handCancle = (): void => {
         onCancel();
     }
+
+    const onDateChange = (dataIndex, type) => (date, dateString) => {
+        handChange(dataIndex, type, dateString)
+    };
 
 
     const handChange = (e, stype?, sid?) => {
@@ -87,15 +120,15 @@ const ShowPage: FC<PageProps> = (props: PageProps) => {
                 onChange={handChange.bind(this, idx, "select")} disabled={!canEdit} />)
         }
         if (type === "date") {
-            return <DatePicker value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "date")}
+            return <DatePicker value={row[item["dataIndex"]] ? moment(row[item["dataIndex"]]) : moment()} onChange={onDateChange(idx, "date")}
                 disabled={!canEdit}></DatePicker>
         }
         if (type === "datetime") {
-            return <DatePicker showTime={true} value={row[item["dataIndex"]]}
-                onChange={handChange.bind(this, idx, "datetime")} disabled={!canEdit}></DatePicker>
+            return <DatePicker showTime={true} value={row[item["dataIndex"]] ? moment(row[item["dataIndex"]]) : moment()}
+                onChange={onDateChange(idx, "datetime")} disabled={!canEdit}></DatePicker>
         }
         if (type === "time") {
-            return <TimePicker value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "time")}
+            return <TimePicker value={row[item["dataIndex"]] ? moment(row[item["dataIndex"]]) : moment()} onChange={onDateChange(idx, "datetime")}
                 disabled={!canEdit}></TimePicker>
         }
         if (type === "upload") {
@@ -139,7 +172,7 @@ const ShowPage: FC<PageProps> = (props: PageProps) => {
                 extra={
                     <>
                         {canEdit ? <Button type="primary" className="fr" onClick={handOk}>保存</Button> : null}
-                        <Button  type="primary" className="fr" onClick={handCancle} style={{margin:"0 5px"}}>取消</Button>
+                        <Button type="primary" className="fr" onClick={handCancle} style={{ margin: "0 5px" }}>取消</Button>
                     </>}
                 title={title}>
                 {createItems()}

@@ -1,7 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { Col, DatePicker, Descriptions, Input, Modal, Row, TimePicker, Tree } from 'antd'
 import MySelect from '@/components/common/mySelect'
 import ImgUpload from '../imgUpload';
+import moment from 'moment';
 import Editor from '../editor';
 import type { DataNode } from 'rc-tree/lib/interface';
 import { Key } from 'antd/es/table/interface';
@@ -65,6 +66,38 @@ const MyRole: FC<ModalProps> = (
             keyboard,
             title
         } = props
+
+        useEffect(() => {
+            const dataColumns = columns.filter(
+                (item) =>
+                    item["editType"] === "date" ||
+                    item["editType"] === "datetime" ||
+                    item["editType"] === "time"
+            );
+
+            const handleDateChange = (dataIndex, type) => (date, dateString) => {
+                handChange(dataIndex, type, dateString);
+            };
+
+            dataColumns.forEach((item) => {
+                if (!row[item["dataIndex"]]) {
+                    var format;
+                    var stype = item["editType"];
+                    if (stype === "datetime") {
+                        format = "YYYY-MM-DD hh:mm:ss";
+                    } else if (stype === "time") {
+                        format = "hh:mm:ss";
+                    } else {
+                        format = "YYYY-MM-DD";
+                    }
+                    handleDateChange(item["dataIndex"], stype)(null, moment().format(format));
+                }
+            });
+        }, [columns, row]);
+
+        const onDateChange = (dataIndex, type) => (date, dateString) => {
+            handChange(dataIndex, type, dateString)
+        };
 
         const handOk = (): void => {
             onOk()
@@ -132,24 +165,24 @@ const MyRole: FC<ModalProps> = (
             var type = item["editType"]
             var idx = item["dataIndex"];
             if (type === "select") {
-                return (<MySelect data={item["data"]} defaultValue={row[item["dataIndex"]]} paramType={row[item["paramType"]]}
+                return (<MySelect data={item["data"]} value={row[item["dataIndex"]]}
                     onChange={handChange.bind(this, idx, "select")} disabled={!canEdit} />)
             }
             if (type === "date") {
-                return <DatePicker value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "date")}
+                return <DatePicker value={row[item["dataIndex"]] ? moment(row[item["dataIndex"]]) : moment()} onChange={onDateChange(idx, "date")}
                     disabled={!canEdit}></DatePicker>
             }
             if (type === "datetime") {
-                return <DatePicker showTime={true} value={row[item["dataIndex"]]}
-                    onChange={handChange.bind(this, idx, "datetime")} disabled={!canEdit}></DatePicker>
+                return <DatePicker showTime={true} value={row[item["dataIndex"]] ? moment(row[item["dataIndex"]]) : moment()}
+                    onChange={onDateChange(idx, "datetime")} disabled={!canEdit}></DatePicker>
             }
             if (type === "time") {
-                return <TimePicker value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "time")}
+                return <TimePicker value={row[item["dataIndex"]] ? moment(row[item["dataIndex"]]) : moment()} onChange={onDateChange(idx, "datetime")}
                     disabled={!canEdit}></TimePicker>
             }
             if (type === "upload") {
                 if (canEdit) {
-                    console.log(row[item["picWidth"]],row[item["picHeight"]])
+                    console.log(row[item["picWidth"]], row[item["picHeight"]])
                     return <ImgUpload value={row[item["dataIndex"]]}
                         width={item["picWidth"]}
                         height={item["picHeight"]}
@@ -161,7 +194,7 @@ const MyRole: FC<ModalProps> = (
 
             if (type === "file") {
                 if (canEdit) {
-                    console.log(row[item["picWidth"]],row[item["picHeight"]])
+                    console.log(row[item["picWidth"]], row[item["picHeight"]])
                     return <FileUpload value={row[item["dataIndex"]]} fileType={row[item["fileType"]]}
                         onChange={handChange.bind(this, idx, "upload")}></FileUpload>
                 } else {
@@ -172,8 +205,8 @@ const MyRole: FC<ModalProps> = (
                 return <Editor value={row[item["dataIndex"]]} onChange={handChange.bind(this, idx, "edit")}></Editor>
             }
             if (type === "textarea") {
-                return <Input.TextArea value={row[item["dataIndex"]]} id={item["dataIndex"]}
-                    onChange={(e) => handChange(e)}></Input.TextArea>
+                return <Input.TextArea value={row[item["dataIndex"]]} disabled={!canEdit} id={item["dataIndex"]}
+                    onChange={handChange}></Input.TextArea>
             }
             return <Input placeholder={item["title"]} id={item["dataIndex"]} onChange={handChange} allowClear
                 value={row[item["dataIndex"]]} disabled={!canEdit} />

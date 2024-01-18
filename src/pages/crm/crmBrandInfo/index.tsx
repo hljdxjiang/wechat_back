@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import crmBrandInfoApi from '@/api/crm/crmBrandInfo'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const CrmBrandInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -109,14 +109,14 @@ const CrmBrandInfo: FC = () => {
             title: '合约生效日',
             key: 'vaildDate',
             dataIndex: 'vaildDate',
-            editType:"datetime"
+            editType:"date"
         }
 
         , {
             title: '合约失效日期',
             key: 'expiredDate',
             dataIndex: 'expiredDate',
-            // editType:"datetime"
+            editType:"date"
         }
 
         , {
@@ -157,7 +157,7 @@ const CrmBrandInfo: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={crmBrandInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}
