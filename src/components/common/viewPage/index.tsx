@@ -17,6 +17,7 @@ interface PageProps {
     addApiFun?: (arg0?: unknown[]) => Promise<{}>;
     delApiFun?: (arg0?: unknown[]) => Promise<{}>;
     editApiFun?: (arg0?: unknown[]) => Promise<{}>;
+    children?: React.ReactNode;
 }
 
 const ViewPage: FC<PageProps> = (props: PageProps) => {
@@ -24,6 +25,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
         columns,
         apiFun,
         searchConfigList,
+        children,
         showAddBtn,
         showBatchDelBtn,
         showOpeation,
@@ -40,6 +42,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
     const [selectKeys, setSelectKeys] = useState([]);
     const [key, setKey] = useState(String);
     const [tableColumns, setTabColumns] = useState([]);
+    const [title, setTitle] = useState('');
 
     useEffect(() => {
         var tableColums = [];
@@ -101,18 +104,21 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
 
     // 添加
     const add = () => {
+        setTitle("新增");
         setOpen(true);
         setCanEdit(true);
         setSelectRow({ status: 0 });
     };
     // 编辑
     const doEdit = (record) => {
+        setTitle("编辑");
         setSelectRow(record);
         setOpen(true);
         setCanEdit(true);
     };
     // 查看
     const doView = (record) => {
+        setTitle("查看");
         setSelectRow(record);
         setOpen(true);
         setCanEdit(false);
@@ -181,7 +187,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
     };
     return (
         open ? <ShowPage
-            title="aaaa"
+            title={title}
             visible={open}
             onBack={doBack}
             onCancel={handCancle}
@@ -209,6 +215,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
 ViewPage.defaultProps = {
     columns: [],
     searchConfigList: [],
+    children:null,
     showAddBtn: true,
     showBatchDelBtn: false,
     showOpeation: false,

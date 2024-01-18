@@ -20,6 +20,7 @@ interface PageProps {
     okText?: String
     keyboard?: boolean
     title: String
+    children?: React.ReactNode;
 }
 
 const ShowPage: FC<PageProps> = (props: PageProps) => {
@@ -35,6 +36,7 @@ const ShowPage: FC<PageProps> = (props: PageProps) => {
         onCancel,
         onChange,
         onBack,
+        children,
         visible,
         width,
         cancelText,
@@ -130,18 +132,19 @@ const ShowPage: FC<PageProps> = (props: PageProps) => {
 
     return (
         <div>
-            <Button onClick={() => { onBack() }}>返回列表</Button>
+            <Button type="primary" className="btn" onClick={() => { onBack() }}>返回列表</Button>
             <Descriptions
                 bordered
                 size="small"
                 extra={
                     <>
-                        {canEdit ? <Button onClick={handOk}>保存</Button> : null}
-                        <Button onClick={handCancle}>取消</Button>
+                        {canEdit ? <Button type="primary" className="fr" onClick={handOk}>保存</Button> : null}
+                        <Button  type="primary" className="fr" onClick={handCancle} style={{margin:"0 5px"}}>取消</Button>
                     </>}
                 title={title}>
                 {createItems()}
             </Descriptions>
+            {children}
         </div>
     )
 }
