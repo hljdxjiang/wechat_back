@@ -124,8 +124,11 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
         setCanEdit(false);
     };
     const doDel = (record) => {
-        delApiFun(record);
-        message.success("删除成功");
+        delApiFun(record).then((res)=>{
+            message.success("删除成功");
+        }).catch((err)=>{
+            console.log(err);
+        });
         setTimeout(() => {
             setKey((Math.random() * 10).toString());
         }, 500);
@@ -148,7 +151,6 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
     const onChange = (e, stype?, sid?) => {
         var newRow = onItemChange(selectRow, e, stype, sid);
         setSelectRow(newRow);
-        doBack();
     };
 
     // 新增按钮
@@ -166,11 +168,18 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
         var row = beforeOk();
 
         if (row["id"] === undefined) {
-            addApiFun(row);
-            message.success("添加成功");
+            addApiFun(row).then((res)=>{
+                message.success("添加成功");
+            }).catch((err)=>{
+                console.log(err);
+            });
+            
         } else {
-            editApiFun(row);
-            message.success("修改成功");
+            editApiFun(row).then((res)=>{
+                message.success("修改成功");
+            }).catch((err)=>{
+                console.log(err);
+            });
         }
         setTimeout(() => {
             setSelectRow({});
