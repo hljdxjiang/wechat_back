@@ -2,8 +2,6 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import { Button, Popconfirm, message } from "antd";
 import MyTable from "@/components/common/table";
 import { isAuthorized } from "@/assets/js/publicFunc";
-import MyModal from "@/components/common/myModal";
-import { onItemChange } from "@/utils/tableCommon";
 import FormPage from "./formPage";
 
 interface PageProps {
@@ -147,11 +145,6 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
     const doBack = () => {
         setOpen(false);
     }
-
-    const onChange = (e, stype?, sid?) => {
-        var newRow = onItemChange(selectRow, e, stype, sid);
-        setSelectRow(newRow);
-    };
 
     // 新增按钮
     const AddBtn = () => (
