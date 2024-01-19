@@ -10,12 +10,6 @@ const UserCollectInfo: FC = () => {
     // 搜索栏配置项
     const searchConfigList:SearchColumn[] = [
         {
-            key: 'userId',
-            slot: <Input placeholder="用户ID" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
             key: 'mobileNo',
             slot: <Input placeholder="客户手机号" allowClear />,
             rules: [],
@@ -23,7 +17,7 @@ const UserCollectInfo: FC = () => {
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear />,
+            slot: <Input placeholder="状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -39,22 +33,8 @@ const UserCollectInfo: FC = () => {
             rules: [],
             initialValue: ''
         }
-        , {
-            key: 'feedDetail',
-            slot: <Input placeholder="反馈详情" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'feedImg',
-            slot: <Input placeholder="反馈影像地址" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
     ]
     const columns:TableColumn[] = [
-
-
         {
             title: '用户ID',
             key: 'userId',

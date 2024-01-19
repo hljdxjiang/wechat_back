@@ -11,7 +11,7 @@ const UserFeedbackInfo: FC = () => {
     const searchConfigList:SearchColumn[] = [
         {
             key: 'userId',
-            slot: <Input placeholder="" allowClear />,
+            slot: <Input placeholder="反馈用户ID" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -23,7 +23,7 @@ const UserFeedbackInfo: FC = () => {
         }
         , {
             key: 'status',
-            slot: <Input placeholder="用户状态" allowClear />,
+            slot: <Input placeholder="状态" allowClear />,
             rules: [],
             initialValue: ''
         }
@@ -39,32 +39,21 @@ const UserFeedbackInfo: FC = () => {
             rules: [],
             initialValue: ''
         }
-        , {
-            key: 'feedDetail',
-            slot: <Input placeholder="反馈详情" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'feedImg',
-            slot: <Input placeholder="反馈影像地址" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
     ]
     const columns:TableColumn[] = [
-
-
         {
-            title: '',
+            title: '反馈用户ID',
             key: 'userId',
             dataIndex: 'userId',
+            requried:true,
+            rules: [{required: true, message: 'Please select time!' }]
         }
 
         , {
             title: '客户手机号',
             key: 'mobileNo',
             dataIndex: 'mobileNo',
+            requried:true
         }
 
         , {
@@ -78,12 +67,14 @@ const UserFeedbackInfo: FC = () => {
             title: '反馈类型',
             key: 'feedType',
             dataIndex: 'feedType',
+            requried:true
         }
 
         , {
             title: '反馈标题',
             key: 'feedTitle',
             dataIndex: 'feedTitle',
+            requried:true
         }
 
         , {

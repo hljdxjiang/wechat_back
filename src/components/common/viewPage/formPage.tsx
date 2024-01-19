@@ -73,10 +73,10 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
         }
 
     }, [])
-    const handOk = (data): void => {
+    const handOk = (data: any) => {
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
-                var item = columns.find((its) => its["dataIndex"] === key)
+                var item = columns.find((its) => its.dataIndex === key)
                 if (item) {
                     if (item.editType === "date" ||
                         item.editType === "datetime" ||
@@ -112,7 +112,7 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
                     <Form.Item
                         label={item.title}
                         name={item.dataIndex}
-                        rules={item.rules}
+                        rules={!item.rules&&item.requried?[{required: true, message: item.title+'必填' }]:item.rules}
                         required={item.requried}
                     >
                         {createInput(item)}
@@ -166,7 +166,7 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
 
     return (
         <div>
-            <Button type="primary" className="btn" onClick={() => { onBack() }}>返回列表</Button>
+            <Button style={{ margin: "0 10px 10px 10px" }} type="primary" className="btn" onClick={() => { onBack() }}>返回列表</Button>
             <Form onFinish={handOk} form={form}>
                 <Row gutter={24}>{createItems()}</Row>
                 <Row>
