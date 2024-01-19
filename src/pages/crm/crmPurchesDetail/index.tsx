@@ -2,12 +2,13 @@ import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import crmPurchesDetailApi from '@/api/crm/crmPurchesDetail'
 import ViewPage from '@/components/common/viewPage';
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const CrmPurchesDetail: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: 'brandId',
             slot: <Input placeholder="品牌" allowClear />,
@@ -45,7 +46,7 @@ const CrmPurchesDetail: FC = () => {
             initialValue: ''
         }
     ]
-    const columns = [
+    const columns:TableColumn[] = [
 
 
         {

@@ -2,12 +2,13 @@ import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backSysRoleDetailApi from '@/api/back/backSysRoleDetail'
 import ViewPage from '@/components/common/viewPage';
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const BackSysRoleDetail: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: 'roleid',
             slot: <Input placeholder="角色ID" allowClear />,
@@ -39,7 +40,7 @@ const BackSysRoleDetail: FC = () => {
             initialValue: ''
         }
     ]
-    const columns = [
+    const columns:TableColumn[] = [
 
 
         {

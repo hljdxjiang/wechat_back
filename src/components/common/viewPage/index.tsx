@@ -3,11 +3,11 @@ import { Button, Popconfirm, message } from "antd";
 import MyTable from "@/components/common/table";
 import { isAuthorized } from "@/assets/js/publicFunc";
 import FormPage from "./formPage";
-import { ButtonInfo } from "@/app_models/user";
+import { ButtonInfo, SearchColumn, TableColumn } from "@/app_models/user";
 
 interface PageProps {
-    columns?: Object[];
-    searchConfigList?: Object[];
+    columns?: TableColumn[];
+    searchConfigList?: SearchColumn[];
     rowBtns?: ButtonInfo[];
     headerBtns?: ButtonInfo[];
     showAddBtn?: boolean;
@@ -57,7 +57,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
         if (showOpeation === false) {
             setTabColumns(tableColums);
         } else {
-            const opera = {
+            const opera: TableColumn = {
                 title: "操作",
                 dataIndex: "operations",
                 align: "center",
@@ -67,7 +67,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
                         {Array.isArray(rowBtns) && (
                             rowBtns.map((item) => (
                                 <Button className="btn"
-                                    onClick={() => { item.func() }}
+                                    onClick={() => { item.func(); }}
                                     size="small">
                                     {item.title}
                                 </Button>
@@ -108,6 +108,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
                         )}
                     </>
                 ),
+                key: undefined
             };
             var newColumns = [...tableColums, opera];
             setTabColumns(newColumns);
@@ -149,8 +150,8 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
     const beforeOk = () => {
         var row = selectRow;
         columns.forEach((e) => {
-            if (e["editType"] === "edit") {
-                row[e["dataIndex"]] = selectRow[e["dataIndex"]].toHTML();
+            if (e.editType === "edit") {
+                row.e.dataIndex = selectRow.e.dataIndex.toHTML();
             }
         });
         return row;

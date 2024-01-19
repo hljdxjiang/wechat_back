@@ -5,10 +5,11 @@ import FileUpload from "../fileUpload"
 import MySelect from "../mySelect"
 import ImgUpload from "../imgUpload"
 import React, { FC, useEffect } from 'react'
+import { TableColumn } from "@/app_models/user";
 
 interface PageProps {
     row?: object
-    columns?: Object[]
+    columns?: TableColumn[]
     canEdit?: boolean
     onOk?: (arg0?: unknown) => void
     onBack?: (arg0?: unknown) => void
@@ -52,9 +53,9 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
             if (data.hasOwnProperty(key)) {
                 var item = columns.find((its) => its["dataIndex"] === key)
                 if (item) {
-                    if (item["editType"] === "date" ||
-                        item["editType"] === "datetime" ||
-                        item["editType"] === "time") {
+                    if (item.editType === "date" ||
+                        item.editType === "datetime" ||
+                        item.editType === "time") {
                         fieldsValue[key] = data[key] ? moment(data[key]) : null
                     } else {
                         fieldsValue[key] = data[key]
@@ -78,11 +79,11 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
             if (data.hasOwnProperty(key)) {
                 var item = columns.find((its) => its["dataIndex"] === key)
                 if (item) {
-                    if (item["editType"] === "date" ||
-                        item["editType"] === "datetime" ||
-                        item["editType"] === "time") {
+                    if (item.editType === "date" ||
+                        item.editType === "datetime" ||
+                        item.editType === "time") {
                         var format;
-                        var stype = item["editType"];
+                        var stype = item.editType;
                         if (stype === "datetime") {
                             format = "YYYY-MM-DD hh:mm:ss";
                         } else if (stype === "time") {
@@ -91,7 +92,7 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
                             format = "YYYY-MM-DD";
                         }
                         row[key] = moment().format(format);
-                    } else if (item["editType"] === "edit") {
+                    } else if (item.editType === "edit") {
                         row[key] = data[key].toHTML();
                     } else {
                         row[key] = data[key]
@@ -108,12 +109,12 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
     const createItems = () => {
         return columns.map((item, _) => {
             return (
-                <Col span={item["editType"] === "edit" ? 24 : 8} key={item["key"]}>
+                <Col span={item.editType === "edit" ? 24 : 8} key={item.key}>
                     <Form.Item
-                        label={item["title"]}
-                        name={item["dataIndex"]}
-                        rules={item["rules"]}
-                        required={item["required"]}
+                        label={item.title}
+                        name={item.dataIndex}
+                        rules={item.rules}
+                        required={item.requried}
                     >
                         {createInput(item)}
                     </Form.Item></Col>
@@ -122,7 +123,7 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
     }
 
     const createInput = (item) => {
-        var type = item["editType"]
+        var type = item.editType
         var idx = item["dataIndex"];
         if (type === "select") {
             return (<MySelect data={item["data"]} paramType={item["paramType"]} disabled={!canEdit} />)

@@ -2,12 +2,13 @@ import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import mallActivityUserApi from '@/api/mall/mallActivityUser'
 import ViewPage from '@/components/common/viewPage';
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const MallActivityUser: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: 'activityId',
             slot: <Input placeholder="活动ID" allowClear />,
@@ -33,7 +34,7 @@ const MallActivityUser: FC = () => {
             initialValue: ''
         }
     ]
-    const columns = [
+    const columns:TableColumn[] = [
 
 
         {

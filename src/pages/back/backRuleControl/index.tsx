@@ -2,12 +2,13 @@ import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backRuleControlApi from '@/api/back/backRuleControl'
 import ViewPage from '@/components/common/viewPage';
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const BackRuleControl: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: 'controlType',
             slot: <Input placeholder="产品类型" allowClear />,
@@ -39,7 +40,7 @@ const BackRuleControl: FC = () => {
             initialValue: ''
         }
     ]
-    const columns = [
+    const columns:TableColumn[] = [
 
 
         {

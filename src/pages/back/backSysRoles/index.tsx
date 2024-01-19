@@ -2,10 +2,11 @@ import React, {FC} from 'react'
 import {Input,} from 'antd'
 import backSysRolesApi from '@/api/back/backSysRoles'
 import RolePage from '@/components/common/modelPage/roleModel'
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const BackSysRoles: FC = () => {
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: 'roleId',
             slot: <Input placeholder="角色编号" allowClear/>,
@@ -25,7 +26,7 @@ const BackSysRoles: FC = () => {
             initialValue: ''
         }
     ]
-    const columns = [{
+    const columns:TableColumn[] = [{
         title: '角色编号',
         key: 'roleId',
         dataIndex: 'roleId',

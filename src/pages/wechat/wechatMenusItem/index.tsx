@@ -2,12 +2,13 @@ import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import wechatMenusItemApi from '@/api/wechat/wechatMenusItem'
 import ViewPage from '@/components/common/viewPage';
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const WechatMenusItem: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: 'itemId',
             slot: <Input placeholder="菜单ID" allowClear />,
@@ -63,7 +64,7 @@ const WechatMenusItem: FC = () => {
             initialValue: ''
         }
     ]
-    const columns = [
+    const columns:TableColumn[] = [
 
 
         {

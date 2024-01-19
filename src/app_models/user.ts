@@ -1,3 +1,5 @@
+import React from "react"
+
 export interface Permission {
     path: string
     name: string
@@ -5,16 +7,16 @@ export interface Permission {
 }
 
 export interface Menu {
-    menu_id?: String
-    path?: String
-    desc?: String
-    type?: String
-    key?: String
+    menu_id?: string
+    path?: string
+    desc?: string
+    type?: string
+    key?: string
     children?: Menu[]
 }
 
 export interface UserInfo {
-    roleId?: String
+    roleId?: string
     userName: string
     displayName?: string
     password?: string
@@ -24,11 +26,34 @@ export interface UserInfo {
 }
 
 export interface Revoke {
-    revokeid: String
+    revokeid: string
 }
 
-export interface ButtonInfo{
-    title:string,
-    key:String,
-    func:(arg0?: unknown[]) => Promise<{}>;
+export interface ButtonInfo {
+    title: string,
+    key: string,
+    func: (arg0?: unknown[]) => Promise<{}>;
+}
+
+export interface TableColumn {
+    title: string
+    key: string
+    dataIndex: string
+    editType?: string,
+    editFlag?:boolean,
+    requried?:boolean,
+    align?:string,
+    data?: Object[],
+    rules?:Object[],
+    tableShow?: boolean
+    render?:React.ReactNode
+}
+
+export interface SearchColumn {
+    key: string,
+    title?:string,
+    rules?:Object[],
+    slot?: React.ReactNode,
+    dataIndex?: string,
+    initialValue?:string
 }

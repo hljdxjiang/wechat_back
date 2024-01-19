@@ -2,12 +2,13 @@ import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backImgInfoApi from '@/api/back/backImgInfo'
 import ViewPage from '@/components/common/viewPage';
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const BackImgInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: 'imgPath',
             slot: <Input placeholder="图片本地路径" allowClear />,
@@ -81,7 +82,7 @@ const BackImgInfo: FC = () => {
             initialValue: ''
         }
     ]
-    const columns = [
+    const columns:TableColumn[] = [
         {
             title: '图片本地路径',
             key: 'imgPath',

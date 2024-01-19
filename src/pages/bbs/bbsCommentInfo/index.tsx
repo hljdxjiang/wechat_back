@@ -2,12 +2,13 @@ import React, { FC, useState } from "react";
 import { Input } from "antd";
 import bbsCommentInfoApi from "@/api/bbs/bbsCommentInfo";
 import ViewPage from "@/components/common/viewPage";
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const BbsCommentInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: "commentPid",
             slot: <Input placeholder="消息父ID" allowClear />,
@@ -53,7 +54,7 @@ const BbsCommentInfo: FC = () => {
             initialValue: "",
         },
     ];
-    const columns = [
+    const columns:TableColumn[] = [
         {
             title: "消息父ID",
             key: "commentPid",

@@ -2,12 +2,13 @@ import React, { FC, useState } from "react";
 import { Input } from "antd";
 import bbsCourseDetailApi from "@/api/bbs/bbsCourseDetail";
 import ViewPage from "@/components/common/viewPage";
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const BbsCourseDetail: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: "courseId",
             slot: <Input placeholder="教程ID" allowClear />,
@@ -83,7 +84,7 @@ const BbsCourseDetail: FC = () => {
             initialValue: "",
         },
     ];
-    const columns = [
+    const columns:TableColumn[] = [
         {
             title: "教程ID",
             key: "courseId",

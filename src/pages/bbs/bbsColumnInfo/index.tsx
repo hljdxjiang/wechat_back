@@ -2,12 +2,13 @@ import React, { FC, useState } from "react";
 import { Input } from "antd";
 import bbsColumnInfoApi from "@/api/bbs/bbsColumnInfo";
 import ViewPage from "@/components/common/viewPage";
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const BbsColumnInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: "columnId",
             slot: <Input placeholder="栏目ID" allowClear />,
@@ -39,7 +40,7 @@ const BbsColumnInfo: FC = () => {
             initialValue: "",
         },
     ];
-    const columns = [
+    const columns:TableColumn[] = [
         {
             title: "栏目ID",
             key: "columnId",

@@ -2,12 +2,13 @@ import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import mallLotteryPrizeApi from '@/api/mall/mallLotteryPrize'
 import ViewPage from '@/components/common/viewPage';
+import { SearchColumn, TableColumn } from '@/app_models/user';
 
 const MallLotteryPrize: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList = [
+    const searchConfigList:SearchColumn[] = [
         {
             key: 'lotteryId',
             slot: <Input placeholder="抽奖ID" allowClear />,
@@ -63,7 +64,7 @@ const MallLotteryPrize: FC = () => {
             initialValue: ''
         }
     ]
-    const columns = [
+    const columns:TableColumn[] = [
 
         {
             title: '抽奖ID',
