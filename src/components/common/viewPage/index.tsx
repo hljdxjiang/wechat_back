@@ -202,6 +202,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
             columns={columns}
             canEdit={canEdit}
             row={selectRow}
+            children={children}
         />
             :
             <>
