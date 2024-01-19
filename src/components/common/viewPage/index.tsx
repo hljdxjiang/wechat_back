@@ -173,7 +173,6 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
     };
 
     const handleOk = (e) => {
-        debugger
         var row;
         if (!e) {
             row = beforeOk();

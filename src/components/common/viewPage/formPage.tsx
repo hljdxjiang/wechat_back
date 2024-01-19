@@ -67,7 +67,6 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
     }
 
     useEffect(() => {
-        debugger
         if (row) {
             var fieldsValue = generateFieldsValue(row);
             form.setFieldsValue(fieldsValue);
