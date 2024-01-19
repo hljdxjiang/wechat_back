@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import wechatMenusMatchruleApi from '@/api/wechat/wechatMenusMatchrule'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const WechatMenusMatchrule: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -77,7 +77,7 @@ const WechatMenusMatchrule: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={wechatMenusMatchruleApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

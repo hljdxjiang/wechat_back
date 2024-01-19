@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import userLocationRecordApi from '@/api/user/userLocationRecord'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const UserLocationRecord: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -87,7 +87,7 @@ const UserLocationRecord: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={userLocationRecordApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

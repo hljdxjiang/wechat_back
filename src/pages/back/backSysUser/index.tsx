@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import { Input, } from 'antd'
-import backSysUserApi from '@/api/back/backSysUser'
-import ModelPage from '@/components/common/modelPage';
+import backSysUserApi from '@/api/back/backSysUser';
 import MySelect from '@/components/common/mySelect';
 import BackSysRoles from "@/api/back/backSysRoles";
 import { error } from 'console';

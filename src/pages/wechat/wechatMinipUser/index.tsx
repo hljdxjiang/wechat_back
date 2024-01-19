@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import wechatMinipUserApi from '@/api/wechat/wechatMinipUser'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const WechatMinipUser: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -182,7 +182,7 @@ const WechatMinipUser: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={wechatMinipUserApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

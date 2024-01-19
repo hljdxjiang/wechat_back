@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backSysMenusApi from '@/api/back/backSysMenus'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const BackSysMenus: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -135,7 +135,7 @@ const BackSysMenus: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={backSysMenusApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

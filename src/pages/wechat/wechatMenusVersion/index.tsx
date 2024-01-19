@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import wechatMenusVersionApi from '@/api/wechat/wechatMenusVersion'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const WechatMenusVersion: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -53,7 +53,7 @@ const WechatMenusVersion: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={wechatMenusVersionApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

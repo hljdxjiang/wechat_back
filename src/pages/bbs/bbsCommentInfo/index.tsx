@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Input } from "antd";
 import bbsCommentInfoApi from "@/api/bbs/bbsCommentInfo";
-import ModelPage from "@/components/common/modelPage";
+import ViewPage from "@/components/common/viewPage";
 
 const BbsCommentInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -98,7 +98,7 @@ const BbsCommentInfo: FC = () => {
     ];
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={bbsCommentInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import sysFlowInfoApi from '@/api/sys/sysFlowInfo'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const SysFlowInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -184,7 +184,7 @@ const SysFlowInfo: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={sysFlowInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

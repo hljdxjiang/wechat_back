@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import userOperaRecordApi from '@/api/user/userOperaRecord'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const UserOperaRecord: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -171,7 +171,7 @@ const UserOperaRecord: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={userOperaRecordApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import sysItemInfoApi from '@/api/sys/sysItemInfo'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const SysItemInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -148,7 +148,7 @@ const SysItemInfo: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={sysItemInfoApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

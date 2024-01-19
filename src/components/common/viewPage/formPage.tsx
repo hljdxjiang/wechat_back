@@ -50,7 +50,7 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
         const fieldsValue = {};
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
-                var item = columns.find((item) => item["dataIndex"] === key)
+                var item = columns.find((its) => its["dataIndex"] === key)
                 if (item) {
                     if (item["editType"] === "date" ||
                         item["editType"] === "datetime" ||
@@ -76,7 +76,7 @@ const FormPage: FC<PageProps> = (props: PageProps) => {
     const handOk = (data): void => {
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
-                var item = columns.find((item) => item["dataIndex"] === key)
+                var item = columns.find((its) => its["dataIndex"] === key)
                 if (item) {
                     if (item["editType"] === "date" ||
                         item["editType"] === "datetime" ||

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import bbsCourseResourceApi from '@/api/bbs/bbsCourseResource'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const BbsCourseResource: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -112,7 +112,7 @@ const BbsCourseResource: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={bbsCourseResourceApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

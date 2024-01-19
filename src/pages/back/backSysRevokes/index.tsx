@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import backSysRevokesApi from '@/api/back/backSysRevokes'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const BackSysRevokes: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -75,7 +75,7 @@ const BackSysRevokes: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={backSysRevokesApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}

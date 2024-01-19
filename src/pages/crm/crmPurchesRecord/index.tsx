@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Input, } from 'antd'
 import crmPurchesRecordApi from '@/api/crm/crmPurchesRecord'
-import ModelPage from '@/components/common/modelPage';
+import ViewPage from '@/components/common/viewPage';
 
 const CrmPurchesRecord: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -148,7 +148,7 @@ const CrmPurchesRecord: FC = () => {
     ]
     return (
         <>
-            <ModelPage
+            <ViewPage
                 apiFun={crmPurchesRecordApi.queryByPage}
                 columns={columns}
                 permissionPrefix={"user:list"}
