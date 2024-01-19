@@ -5,6 +5,7 @@ import MySelect from '@/components/common/mySelect';
 import BackSysRoles from "@/api/back/backSysRoles";
 import { error } from 'console';
 import ViewPage from '@/components/common/viewPage';
+import { ButtonInfo } from '@/app_models/user';
 
 const BackSysUser: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
@@ -58,19 +59,6 @@ const BackSysUser: FC = () => {
             rules: [],
             initialValue: ''
         }
-        , {
-            key: 'idNo',
-            slot: <Input placeholder="证件号" allowClear />,
-            rules: [],
-            initialValue: ''
-        }
-        , {
-            key: 'status',
-            slot: <MySelect
-            placeholder="状态" defaultValue="0" paramType="aaa" allowClear={true} />,
-            rules: [],
-            initialValue: ''
-        }
     ]
     const columns = [
         {
@@ -80,11 +68,12 @@ const BackSysUser: FC = () => {
         },
         {
             title: '角色ID',
+            key: 'roleId',
             dataIndex: 'roleId',
             editType: "select",
-            render:selectData.find(item => item.name === item.value)?.name,        
+            render: selectData.find(item => item.name === item.value)?.name,
             data: selectData,
-        },
+        }
 
         , {
             title: '姓名',
@@ -108,14 +97,14 @@ const BackSysUser: FC = () => {
             title: '证件号',
             key: 'idNo',
             dataIndex: 'idNo',
-            tableShow:false,
+            tableShow: false,
         }
 
         , {
             title: '证件类型',
             key: 'idType',
             dataIndex: 'idType',
-            tableShow:false,
+            tableShow: false,
         }
 
         , {
@@ -130,6 +119,12 @@ const BackSysUser: FC = () => {
             dataIndex: 'status',
         }
     ]
+
+    const rowBtns: ButtonInfo[] = [{
+        title: "重置密码",
+        key: "reset",
+        func: backSysUserApi.deleteById
+    }]
     return (
         <>
             <ViewPage

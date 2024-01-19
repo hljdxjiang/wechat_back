@@ -3,10 +3,13 @@ import { Button, Popconfirm, message } from "antd";
 import MyTable from "@/components/common/table";
 import { isAuthorized } from "@/assets/js/publicFunc";
 import FormPage from "./formPage";
+import { ButtonInfo } from "@/app_models/user";
 
 interface PageProps {
     columns?: Object[];
     searchConfigList?: Object[];
+    rowBtns?: ButtonInfo[];
+    headerBtns?: ButtonInfo[];
     showAddBtn?: boolean;
     showBatchDelBtn?: boolean;
     showOpeation?: boolean;
@@ -21,6 +24,8 @@ interface PageProps {
 const ViewPage: FC<PageProps> = (props: PageProps) => {
     const {
         columns,
+        rowBtns,
+        headerBtns,
         apiFun,
         searchConfigList,
         children,
@@ -59,6 +64,15 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
                 editFlag: false,
                 render: (text, record) => (
                     <>
+                        {Array.isArray(rowBtns) && (
+                            rowBtns.map((item) => (
+                                <Button className="btn"
+                                    onClick={() => { item.func() }}
+                                    size="small">
+                                    {item.title}
+                                </Button>
+                            ))
+                        )}
                         {isAuthorized(permissionPrefix + ":edit") && (
                             <Button
                                 className="btn"
@@ -79,7 +93,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
                         >
                             查看
                         </Button>
-                        {isAuthorized(permissionPrefix + ":add") && (
+                        {isAuthorized(permissionPrefix + ":del") && (
                             <Popconfirm
                                 title="确认删除?删除后数据将无法恢复"
                                 onCancel={() => { }}
@@ -122,9 +136,9 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
         setCanEdit(false);
     };
     const doDel = (record) => {
-        delApiFun(record).then((res)=>{
+        delApiFun(record).then((res) => {
             message.success("删除成功");
-        }).catch((err)=>{
+        }).catch((err) => {
             console.log(err);
         });
         setTimeout(() => {
@@ -160,22 +174,22 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
     const handleOk = (e) => {
         debugger
         var row;
-        if(!e){
+        if (!e) {
             row = beforeOk();
-        }else{
-            row=e;
+        } else {
+            row = e;
         }
         if (row["id"] === undefined) {
-            addApiFun(row).then((res)=>{
+            addApiFun(row).then((res) => {
                 message.success("添加成功");
-            }).catch((err)=>{
+            }).catch((err) => {
                 console.log(err);
             });
-            
+
         } else {
-            editApiFun(row).then((res)=>{
+            editApiFun(row).then((res) => {
                 message.success("修改成功");
-            }).catch((err)=>{
+            }).catch((err) => {
                 console.log(err);
             });
         }
@@ -206,6 +220,11 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
         />
             :
             <>
+                {Array.isArray(headerBtns) && (headerBtns.map((item) => (
+                    <Button className="fr" onClick={() => { item.func() }} type="primary">
+                        {item.title}
+                    </Button>
+                )))}
                 {isAuthorized(permissionPrefix + ":add") && showAddBtn && <AddBtn />}
                 <MyTable
                     key={key}
@@ -222,7 +241,7 @@ const ViewPage: FC<PageProps> = (props: PageProps) => {
 ViewPage.defaultProps = {
     columns: [],
     searchConfigList: [],
-    children:null,
+    children: null,
     showAddBtn: true,
     showBatchDelBtn: false,
     showOpeation: false,

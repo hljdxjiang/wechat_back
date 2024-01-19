@@ -110,7 +110,7 @@ const preDefinedRoutes: MenuRoute[] = [
                 name: '用户登录历史表',
                 exact: true,
                 key: 'back:userlogin',
-                component: FormView
+                component: BackUserLoginRecord
             }, {
                 path: '/user/sysroles',
                 name: '角色信息表',

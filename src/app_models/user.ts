@@ -26,3 +26,9 @@ export interface UserInfo {
 export interface Revoke {
     revokeid: String
 }
+
+export interface ButtonInfo{
+    title:string,
+    key:String,
+    func:(arg0?: unknown[]) => Promise<{}>;
+}
