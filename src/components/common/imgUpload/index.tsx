@@ -179,5 +179,9 @@ const ImgUpload: FC<Props> = (props) => {
         </>
     )
 }
+ImgUpload.defaultProps={
+    width:320,
+    height:240
+}
 
 export default ImgUpload

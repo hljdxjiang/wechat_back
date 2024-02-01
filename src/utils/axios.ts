@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import {message} from 'antd'
+import MessageCrypto from "./messageCrypto"
 import {store} from '@/store'
 import {HashRouter} from 'react-router-dom'
 import {commonConfirm} from '@/assets/js/publicFunc'

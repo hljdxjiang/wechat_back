@@ -8,7 +8,7 @@ const UserFeedbackInfo: FC = () => {
     const [selectRow, setSelectRow] = useState(Object);
     const [selectKeys, setSelectKeys] = useState([]);
     // 搜索栏配置项
-    const searchConfigList:SearchColumn[] = [
+    const searchConfigList: SearchColumn[] = [
         {
             key: 'userId',
             slot: <Input placeholder="反馈用户ID" allowClear />,
@@ -40,20 +40,20 @@ const UserFeedbackInfo: FC = () => {
             initialValue: ''
         }
     ]
-    const columns:TableColumn[] = [
+    const columns: TableColumn[] = [
         {
             title: '反馈用户ID',
             key: 'userId',
             dataIndex: 'userId',
-            requried:true,
-            rules: [{required: true, message: 'Please select time!' }]
+            requried: true,
+            rules: [{ required: true, message: 'Please select time!' }]
         }
 
         , {
             title: '客户手机号',
             key: 'mobileNo',
             dataIndex: 'mobileNo',
-            requried:true
+            requried: true
         }
 
         , {
@@ -67,14 +67,14 @@ const UserFeedbackInfo: FC = () => {
             title: '反馈类型',
             key: 'feedType',
             dataIndex: 'feedType',
-            requried:true
+            requried: true
         }
 
         , {
             title: '反馈标题',
             key: 'feedTitle',
             dataIndex: 'feedTitle',
-            requried:true
+            requried: true
         }
 
         , {
